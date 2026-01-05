@@ -1,6 +1,6 @@
 ---
 name: codereview
-description: 深度 Code Review 技能，以资深 Go 架构师视角审查代码，聚焦性能、安全性及可读性。支持 review 本地未提交代码、最近 commit、指定 commit/分支/tag。
+description: Deep code review skill for Go code focusing on performance, security, and readability. Supports reviewing local uncommitted code, recent commits, or specified commits/branches/tags.
 compatibility: opencode
 ---
 
@@ -17,6 +17,18 @@ compatibility: opencode
 3. **指定目标**：用户可明确指定 commit hash、分支名或 tag 进行审查
 
 ## Instructions
+
+### Step 0: 环境验证
+
+在执行审查前，验证当前环境是否为 git 仓库：
+
+```bash
+# 检查是否在 git 仓库中
+if ! git rev-parse --git-dir > /dev/null 2>&1; then
+  echo "Error: Not in a git repository"
+  exit 1
+fi
+```
 
 ### Step 1: 确定审查目标
 

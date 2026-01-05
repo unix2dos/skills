@@ -2,6 +2,25 @@
 
 This guide is for AI agents working in this repository.
 
+## 📑 Table of Contents
+
+- [Build & Test Commands](#build--test-commands)
+- [Skill Structure](#skill-structure)
+  - [SKILL.md Format (MANDATORY)](#skillmd-format-mandatory)
+- [Code Style Guidelines](#code-style-guidelines)
+  - [Bash Scripts](#bash-scripts)
+  - [Markdown Instructions](#markdown-instructions)
+  - [Naming Conventions](#naming-conventions)
+- [Documentation Style](#documentation-style)
+  - [SKILL.md Content Structure](#skillmd-content-structure)
+  - [Tone and Clarity](#tone-and-clarity)
+- [Error Handling](#error-handling)
+- [Skill Best Practices](#skill-best-practices)
+- [Adding New Skills](#adding-new-skills)
+- [Integration with OpenCode](#integration-with-opencode)
+
+---
+
 ## Build & Test Commands
 
 **No build system**: This repository uses no package.json, test framework, or build pipeline. Skills are simple markdown files with optional bash scripts.
@@ -10,6 +29,11 @@ This guide is for AI agents working in this repository.
 ```bash
 # Script-based skill (e.g., query-weather)
 ./query-weather/weather.sh "London"
+
+# Output:
+# Location: London
+# Temperature: 12°C
+# Condition: Cloudy
 
 # Prompt-based skills (e.g., blog-polisher)
 # Test by reading SKILL.md and following instructions with sample input
