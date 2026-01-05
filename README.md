@@ -44,6 +44,30 @@ This repository contains modular skills that can be invoked by AI agents (compat
 
 ---
 
+### 🔍 codereview
+
+**Description**: 深度 Code Review 技能，以资深 Go 架构师视角审查代码，聚焦性能、安全性及可读性。
+
+**Usage**: 默认 review 本地未提交的代码，如果没有未提交代码则自动 review 最近一次 commit。也可指定 commit、分支或 tag。
+
+**Features**:
+- **智能范围检测**: 自动识别未提交变更或最近 commit
+- **性能审查**: 内存分配、并发控制、热路径优化
+- **安全性审查**: 输入验证、敏感数据、权限控制
+- **可读性审查**: 命名规范、代码结构、错误处理
+
+**审查规范**:
+- Effective Go
+- Uber Go Style Guide
+- Go Code Review Comments
+
+**Output Format**:
+```
+潜在风险 → 原理分析 → 重构代码
+```
+
+---
+
 ## Skill Structure
 
 Each skill follows this standardized structure:
@@ -111,7 +135,7 @@ To add a new skill to this repository:
 
 ## License
 
-[Add your license here]
+MIT License
 
 ## Contributing
 
