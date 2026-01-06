@@ -1,53 +1,25 @@
 # AGENTS.md
 
-This guide is for AI agents working in this repository.
-
-## 📑 Table of Contents
-
-- [Build & Test Commands](#build--test-commands)
-- [Skill Structure](#skill-structure)
-  - [SKILL.md Format (MANDATORY)](#skillmd-format-mandatory)
-- [Code Style Guidelines](#code-style-guidelines)
-  - [Bash Scripts](#bash-scripts)
-  - [Markdown Instructions](#markdown-instructions)
-  - [Naming Conventions](#naming-conventions)
-- [Documentation Style](#documentation-style)
-  - [SKILL.md Content Structure](#skillmd-content-structure)
-  - [Tone and Clarity](#tone-and-clarity)
-- [Error Handling](#error-handling)
-- [Skill Best Practices](#skill-best-practices)
-- [Adding New Skills](#adding-new-skills)
-- [Integration with OpenCode](#integration-with-opencode)
-
----
+Guide for AI agents working in this repository.
 
 ## Build & Test Commands
 
-**No build system**: This repository uses no package.json, test framework, or build pipeline. Skills are simple markdown files with optional bash scripts.
+**No build system**: Skills are markdown files with optional bash scripts. No package.json, test framework, or build pipeline.
 
-**Testing skills manually**:
+**Testing skills**:
 ```bash
 # Script-based skill (e.g., query-weather)
 ./query-weather/weather.sh "London"
 
-# Output:
-# Location: London
-# Temperature: 12°C
-# Condition: Cloudy
-
 # Prompt-based skills (e.g., blog-polisher)
-# Test by reading SKILL.md and following instructions with sample input
+# Verify instructions are clear and actionable by reading SKILL.md
 ```
 
-**No automated testing**: Skills are validated by manual testing and code review. When adding skills, test them locally before committing.
-
-**Installation test**: After creating a skill, verify it can be invoked from ~/.claude/skills/
+**Validation**: Manual testing and code review. Test locally before committing.
 
 ---
 
 ## Skill Structure
-
-Every skill must follow this exact structure:
 
 ```
 <skill-name>/
@@ -62,20 +34,23 @@ YAML frontmatter followed by markdown:
 ```yaml
 ---
 name: skill-name                    # lowercase, hyphenated
-description: What this skill does   # concise, searchable
+description: What this skill does   # concise, searchable, start with verb
 compatibility: opencode             # always "opencode"
 ---
 
 # Skill Title
 
 Instructions for the AI agent.
+
+## Instructions
+
+Step-by-step guidance.
 ```
 
 **Rules**:
-- `name`: lowercase, hyphenated, no spaces
-- `description`: 1-2 sentences, start with verb (e.g., "Retrieve weather data")
-- Frontmatter must be at the very top
-- Use H1 `#` for skill title (not in frontmatter)
+- Frontmatter at very top
+- H1 `#` for skill title (not in frontmatter)
+- Use `## Instructions` for step-by-step section
 
 ---
 
@@ -83,42 +58,38 @@ Instructions for the AI agent.
 
 ### Bash Scripts
 
-When including bash scripts:
-
 ```bash
 #!/bin/bash
 
 # Comments explain complex logic
-# Use ${VAR:-default} for defaults
-LOCATION="${1:-Beijing}"
+LOCATION="${1:-Beijing}"  # Default value for missing args
 
-# curl: silent mode for clean output
+# Silent mode for clean API output
 curl -s "https://api.example.com"
 ```
 
 **Bash best practices**:
 - Always include `#!/bin/bash` shebang
 - Use `${VAR:-default}` for optional arguments
-- `curl -s` (silent) for API calls to avoid noise
-- Handle edge cases gracefully (default values, error handling)
-- Scripts should be executable: `chmod +x script.sh`
+- `curl -s` (silent) for API calls
+- Handle edge cases gracefully
+- Make executable: `chmod +x script.sh`
 
 ### Markdown Instructions
 
-For prompt-based skills:
-
-- Write clear, actionable instructions
-- Use numbered lists for sequential steps
-- Use code blocks for examples
-- Be specific about expected input/output formats
-- Include "Output Format" section if applicable
+- Direct and imperative: "Run this command", not "You should run"
+- Numbered lists for sequential steps
+- Code blocks for examples
+- Specify expected input/output formats
+- Include "Output Format" section when applicable
 
 ### Naming Conventions
 
 - **Skill directories**: `lowercase-hyphenated`
 - **Bash scripts**: `lowercase-hyphenated.sh`
-- **Variables**: `UPPER_SNAKE_CASE` in bash
+- **Bash variables**: `UPPER_SNAKE_CASE`
 - **Section headers**: H1 for skill title, H2/H3 for sections
+- **File paths in text**: Backticks: `SKILL.md`, `weather.sh`
 
 ---
 
@@ -126,31 +97,30 @@ For prompt-based skills:
 
 ### SKILL.md Content Structure
 
-1. **Brief description** (what the skill does)
-2. **Instructions section** (H2: ## Instructions)
-3. **Step-by-step guidance** (numbered lists)
-4. **Code examples** (when applicable)
-5. **Output format** (when applicable)
+1. Brief description (what the skill does)
+2. Instructions section (`## Instructions`)
+3. Step-by-step guidance (numbered lists)
+4. Code examples (when applicable)
+5. Output format (when applicable)
 
 ### Tone and Clarity
 
-- Direct and imperative: "Run this command", not "You should run"
-- Use backticks for file paths: `SKILL.md`, `weather.sh`
-- Use code blocks for multi-line examples
-- Be exhaustive: don't assume agents will infer behavior
+- Imperative verbs: "Run", "Invoke", "Check" - not passive voice
+- Exhaustive instructions: don't assume agents infer behavior
+- Code blocks for multi-line examples
 
 ---
 
 ## Error Handling
 
 **Script-based skills**:
-- Provide sensible defaults for missing arguments
-- Don't crash silently - validate inputs when possible
-- Example: `LOCATION="${1:-Beijing}"` (default if not provided)
+- Provide sensible defaults for missing arguments: `${VAR:-default}`
+- Validate inputs when possible
+- Don't crash silently
 
 **Prompt-based skills**:
-- Specify what to do if input is invalid
-- Include fallback behavior in instructions
+- Specify fallback behavior for invalid input
+- Include error handling in instructions
 
 ---
 
@@ -158,9 +128,33 @@ For prompt-based skills:
 
 1. **Single Purpose**: Each skill does one thing well
 2. **No Secrets**: Never include API keys or credentials
-3. **Explicit Instructions**: Agents must know exactly how to invoke
+3. **Explicit Instructions**: Agents know exactly how to invoke
 4. **Clear Description**: Frontmatter must be searchable
 5. **Test Locally**: Verify scripts work before committing
+
+---
+
+## Skill Types
+
+### Script-Based Skills
+- Include executable scripts (bash, python, etc.)
+- Scripts invoked via bash with arguments
+- Use absolute paths: `~/.claude/skills/<skill-name>/script.sh`
+
+### Prompt-Based Skills
+- Pure documentation with instructions
+- Agent reads and performs task using its capabilities
+- Example: `blog-polisher`, `confidence-check`
+
+---
+
+## Integration with OpenCode
+
+Skills are invoked via the `skill` tool. Frontmatter fields are used by the system:
+
+- `name`: skill identifier for invocation
+- `description`: searchable skill catalog
+- `compatibility`: platform filter (always "opencode")
 
 ---
 
@@ -168,18 +162,6 @@ For prompt-based skills:
 
 1. Create directory: `mkdir new-skill`
 2. Create SKILL.md with proper frontmatter
-3. Add scripts if needed (make executable: `chmod +x script.sh`)
+3. Add scripts if needed: `chmod +x script.sh`
 4. Test manually
-5. Update README.md if adding to documentation
-
----
-
-## Integration with OpenCode
-
-Skills are invoked via the `skill` tool. The frontmatter fields are used by the system:
-
-- `name`: skill identifier for invocation
-- `description`: searchable skill catalog
-- `compatibility`: platform filter
-
-Always ensure `compatibility: opencode` is set.
+5. Verify invocation from `~/.claude/skills/`
