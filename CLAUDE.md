@@ -85,3 +85,5 @@ This repository has no build pipeline, package.json, or test suite. Skills are:
 
 - **query-weather**: Fetches weather data from wttr.in API using a bash script
 - **blog-polisher**: Pure prompt-based skill for polishing technical blog posts
+- **codereview**: Deep code review for Go code focusing on performance, security, and readability
+- **confidence-check**: Pre-implementation gate that validates readiness before coding (weighted scoring across 5 checks)

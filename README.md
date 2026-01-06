@@ -68,6 +68,36 @@ Potential Risks → Analysis → Refactored Code
 
 ---
 
+### 🎯 confidence-check
+
+**Description**: Pre-implementation gate that validates readiness before coding. Spend 100-200 tokens here to save 5,000-50,000 tokens on wrong-direction work.
+
+**Usage**: Use proactively before EVERY implementation - starting features, fixes, refactors, or making architecture decisions.
+
+**Features**:
+- **Weighted Scoring**: 5 checks with configurable weights (requires ≥80% to proceed)
+- **Duplicate Detection**: Prevents reinventing existing implementations
+- **Architecture Compliance**: Ensures use of existing tech stack and patterns
+- **Official Docs Verification**: Validates against authoritative sources
+- **OSS Reference**: Finds proven implementations for guidance
+- **Root Cause Analysis**: Identifies underlying issues before fixing symptoms
+
+**Checks & Weights**:
+| Check | Weight |
+|-------|--------|
+| No Duplicates | 25% |
+| Architecture Compliant | 25% |
+| Official Docs Verified | 20% |
+| Working OSS Reference | 15% |
+| Root Cause Identified | 15% |
+
+**Decision Thresholds**:
+- **≥80%**: ✅ Proceed to implementation
+- **70-79%**: ⚠️ Present alternatives, ask clarifying questions
+- **<70%**: ❌ STOP - Request more context from user
+
+---
+
 ## Skill Structure
 
 Each skill follows this standardized structure:
