@@ -8,24 +8,6 @@ This repository contains modular skills that can be invoked by AI agents (compat
 
 ## Available Skills
 
-### 🌤️ query-weather
-
-**Description**: Retrieve current weather and forecast for a specific location.
-
-**Usage**: Invoke when users request weather information for any city or location.
-
-**Implementation**:
-- Fetches real-time weather data from [wttr.in](https://wttr.in/)
-- Returns formatted current weather and forecast
-- Default location: Beijing (can be overridden)
-
-**Example**:
-```bash
-~/.claude/skills/query-weather/weather.sh "London"
-```
-
----
-
 ### ✍️ technical-content-optimizer
 
 **Description**: 技术博客内容优化专家，润色技术文章使其更专业、逻辑清晰、结构规范，去除「AI味」。
@@ -159,11 +141,11 @@ Step-by-step guidance for execution.
 Skills are designed to be invoked through the `skill` tool by AI agents:
 
 ```
-User: "What's the weather in Tokyo?"
-Agent: [Invokes query-weather skill]
-
 User: "Review my blog post"
-Agent: [Invokes blog-polisher skill with the draft]
+Agent: [Invokes technical-content-optimizer skill with the draft]
+
+User: "Generate a diagram for my API flow"
+Agent: [Invokes mermaid-generator skill]
 ```
 
 ## Adding New Skills
