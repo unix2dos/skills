@@ -26,9 +26,9 @@ This repository contains modular skills that can be invoked by AI agents (compat
 
 ---
 
-### ✍️ blog-polisher
+### ✍️ technical-content-optimizer
 
-**Description**: Polish technical blog posts to be more professional, logical, and well-structured, removing "AI flavor".
+**Description**: 技术博客内容优化专家，润色技术文章使其更专业、逻辑清晰、结构规范，去除「AI味」。
 
 **Usage**: Invoke when users provide blog post drafts that need editorial improvement.
 
@@ -95,6 +95,34 @@ Potential Risks → Analysis → Refactored Code
 - **≥80%**: ✅ Proceed to implementation
 - **70-79%**: ⚠️ Present alternatives, ask clarifying questions
 - **<70%**: ❌ STOP - Request more context from user
+
+---
+
+### 📊 mermaid-generator
+
+**Description**: 根据用户描述智能选择最合适的图表类型并生成语法正确、配色鲜艳的 Mermaid 代码。
+
+**Usage**: 当用户需要可视化流程、关系、时序、架构等信息时调用。
+
+**Features**:
+- **智能类型选择**: 根据场景关键词自动推荐最适合的图表类型
+- **语法安全**: 所有文本标签用双引号包裹，避免特殊符号导致解析错误
+- **鲜艳配色**: 使用现代化配色方案，视觉效果出众
+- **全格式支持**: 流程图、时序图、类图、ER图、甘特图、状态图等 15+ 种类型
+
+**Supported Chart Types**:
+| 类型 | 语法 | 适用场景 |
+|-----|------|---------|
+| 流程图 | `flowchart` | 步骤、决策、分支 |
+| 时序图 | `sequenceDiagram` | API调用、消息交互 |
+| 类图 | `classDiagram` | OOP、继承关系 |
+| ER图 | `erDiagram` | 数据库设计 |
+| 甘特图 | `gantt` | 项目进度 |
+| 状态图 | `stateDiagram-v2` | 生命周期 |
+| 饼图 | `pie` | 占比分布 |
+| 思维导图 | `mindmap` | 知识结构 |
+| Git图 | `gitGraph` | 版本控制 |
+| 时间线 | `timeline` | 里程碑 |
 
 ---
 
