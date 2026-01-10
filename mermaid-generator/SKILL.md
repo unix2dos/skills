@@ -153,6 +153,20 @@ flowchart TD
 - `A>"旗帜形"]` - 输入/标记
 - `A[/"平行四边形"/]` - 输入/输出
 
+**边标签语法（⚠️ 常见错误）**:
+
+```mermaid
+%% ✅ 正确：边标签只能有一对 |...|
+A -->|"条件一/条件二"| B
+A -->|"个人开发，原型设计"| C
+
+%% ❌ 错误：不能用多个 | 分隔
+A -->|条件一|条件二| B  %% 会报错！
+```
+
+**换行语法**:
+- 使用 `<br/>` 在节点内换行：`A["第一行<br/>第二行"]`
+
 ---
 
 ### 🔄 时序图 (Sequence Diagram)
@@ -589,3 +603,5 @@ block-beta
 | 样式不显示 | classDef 名称不匹配 | 确保 `class` 引用正确的 classDef 名称 |
 | classDef 语法错误 | 在不支持的图表中使用 | classDef 仅支持 flowchart，其他类型用 themeVariables |
 | sequenceDiagram 渲染失败 | 混用了 class/classDef 语法 | 移除 classDef，改用 themeVariables 配色 |
+| 边标签渲染失败 | 使用多个竖线分隔 | `-->|条件一|条件二|` 改为 `-->|"条件一/条件二"|` |
+| mindmap 解析失败 | init 配置或 root 语法 | 移除 `%%{init}%%`，使用 `root[文本]`，2 空格缩进 |
