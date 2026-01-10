@@ -24,10 +24,31 @@ A[用户登录(必填)] --> B[验证: 检查密码]
 
 ### 🎨 配色策略
 
-使用 `%%{init}%%` 配置 + `classDef` 定义样式，确保兼容性和美观：
+使用 `%%{init}%%` 配置主题变量，这是**最通用的配色方式**，兼容所有图表类型：
 
 ```mermaid
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#4F46E5', 'primaryTextColor': '#fff', 'primaryBorderColor': '#3730A3', 'lineColor': '#6366F1', 'secondaryColor': '#10B981', 'tertiaryColor': '#F59E0B'}}}%%
+```
+
+### ⚠️ 图表类型语法限制（必须遵守）
+
+> **不同图表类型支持的样式语法不同，混用会导致渲染失败！**
+
+| 语法 | 支持的图表类型 | 说明 |
+|-----|---------------|------|
+| `classDef` + `class` | **仅 flowchart** | 流程图专属 |
+| `style` 关键字 | classDiagram, erDiagram | 类图/ER图 |
+| `themeVariables` | **所有类型** ✅ | 推荐使用 |
+
+```mermaid
+%% ❌ 错误：在 sequenceDiagram 中使用 classDef（会报错）
+sequenceDiagram
+    classDef client fill:#4F46E5  %% 不支持！
+
+%% ✅ 正确：sequenceDiagram 只能用 themeVariables
+%%{init: {'themeVariables': {'actorBkg': '#4F46E5'}}}%%
+sequenceDiagram
+    participant C as "客户端"
 ```
 
 **推荐配色板（鲜艳现代风格）**:
@@ -83,7 +104,7 @@ A[用户登录(必填)] --> B[验证: 检查密码]
 [图表类型声明]
     [节点和关系定义 - 所有标签用双引号包裹]
 
-    %% 样式定义
+    %% 样式定义（仅 flowchart 支持，其他图表类型请删除以下内容）
     classDef primary fill:#4F46E5,stroke:#3730A3,color:#fff
     classDef success fill:#10B981,stroke:#059669,color:#fff
     classDef warning fill:#F59E0B,stroke:#D97706,color:#fff
@@ -401,33 +422,38 @@ gitGraph
 
 ### 🧠 思维导图 (Mindmap)
 
+> ⚠️ **兼容性提示**: Obsidian 的 Mermaid 版本较旧，使用简化语法确保兼容。
+
 ```mermaid
-%%{init: {'theme': 'base'}}%%
 mindmap
-    root(("项目架构"))
-        前端
-            React
-            Vue
-            Angular
-        后端
-            Go
-                Gin
-                Echo
-            Python
-                Django
-                FastAPI
-        数据库
-            关系型
-                MySQL
-                PostgreSQL
-            非关系型
-                MongoDB
-                Redis
-        DevOps
-            Docker
-            Kubernetes
-            CI/CD
+  root[项目架构]
+    前端
+      React
+      Vue
+      Angular
+    后端
+      Go
+        Gin
+        Echo
+      Python
+        Django
+        FastAPI
+    数据库
+      关系型
+        MySQL
+        PostgreSQL
+      非关系型
+        MongoDB
+        Redis
+    DevOps
+      Docker
+      Kubernetes
 ```
+
+**语法规则**:
+- 根节点: `root[文本]` 或 `root((文本))`（部分环境不兼容双括号）
+- 使用 **2 空格缩进**表示层级关系
+- 避免使用 `%%{init}%%` 主题配置（兼容性问题）
 
 ---
 
@@ -529,7 +555,7 @@ block-beta
 
 1. **所有标签用双引号包裹**: `A["文本(备注)"]` ✅
 2. **使用 init 配置主题**: `%%{init: {'theme': 'base', ...}}%%`
-3. **定义 classDef 颜色类**: 确保视觉鲜艳
+3. **定义 classDef 颜色类**: 仅用于 flowchart，其他图表类型使用 themeVariables
 4. **添加注释说明**: 复杂节点添加 `%% 注释`
 5. **中文友好**: 所有标签内容可用中文
 
@@ -561,3 +587,5 @@ block-beta
 | Unexpected token | 括号/冒号未转义 | `["文本(说明)"]` 或 `["类型: 描述"]` |
 | 主题不生效 | init 语法错误 | 检查 JSON 格式，使用单引号 |
 | 样式不显示 | classDef 名称不匹配 | 确保 `class` 引用正确的 classDef 名称 |
+| classDef 语法错误 | 在不支持的图表中使用 | classDef 仅支持 flowchart，其他类型用 themeVariables |
+| sequenceDiagram 渲染失败 | 混用了 class/classDef 语法 | 移除 classDef，改用 themeVariables 配色 |
