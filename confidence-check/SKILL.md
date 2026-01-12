@@ -1,92 +1,134 @@
 ---
 name: confidence-check
-description: Pre-implementation gate to validate readiness before coding. Use when starting features, fixes, refactors, or making architecture decisions. Triggers on "before implementing", "verify readiness", "should I proceed", "am I ready".
+description: 实施前置信度检查。用于新功能开发、Bug修复、代码重构等复杂任务开始前。自动触发，无需手动调用。
 compatibility: opencode
 ---
 
-# Confidence Check
+# 实施前置信度检查
 
-Pre-implementation gate. Spend 100-200 tokens here to save 5,000-50,000 tokens on wrong-direction work.
+在动手写代码前花 100-200 tokens 做检查，可避免走错方向浪费 5,000-50,000 tokens。
 
-## Instructions
+---
 
-When the user is about to start implementing code, follow these steps:
+## 自动触发规则
 
-### Step 1: Determine If Check Is Needed
+### 触发检查的场景
 
-**USE this skill when:**
-- Starting any feature, fix, or refactor
-- About to write production code
-- Making architecture/stack decisions
-- Integrating with unfamiliar code
-- User seems confident (overconfidence = highest risk)
+识别到以下复杂任务时 **自动触发**：
 
-**SKIP this skill when:**
-- Pure research/exploration tasks
-- Reading/explaining existing code
-- Documentation-only changes
+| 任务类型 | 触发关键词 |
+|----------|------------|
+| **新功能开发** | 实现、开发、添加、创建功能、implement、add feature |
+| **Bug 修复** | 修复、解决、fix、bug、错误、问题 |
+| **代码重构** | 重构、优化、refactor、改进 |
+| **架构变更** | 架构、设计、迁移、migrate |
 
-### Step 2: Create Todo List (MANDATORY)
+### 跳过检查的场景
 
-Create 5 todo items (1 per check):
-1. Search for duplicate implementations (use Grep/Glob tools)
-2. Verify architecture compliance (check CLAUDE.md, existing patterns)
-3. Check official documentation (use web search or Context7)
-4. Find working OSS reference (search GitHub, Stack Overflow)
-5. Identify root cause (for bugs: review errors, logs, traces)
+以下情况 **不触发检查**：
+- 单行修改、变量重命名
+- 纯文档变更（README、注释）
+- 代码阅读/解释请求
+- 用户明确说"跳过检查"（需先提醒风险）
 
-### Step 3: Execute Each Check & Score
+---
 
-| Check | Weight | Pass Criteria |
-|-------|--------|---------------|
-| **No Duplicates** | 25% | No similar implementation exists in codebase |
-| **Architecture Compliant** | 25% | Uses existing tech stack and patterns |
-| **Official Docs Verified** | 20% | Official docs reviewed and understood |
-| **Working OSS Reference** | 15% | Proven implementation found for reference |
-| **Root Cause Identified** | 15% | Root cause is clear (for bug fixes) |
+## 检查流程
 
-**Task-specific weight adjustments:**
-- **Bug Fix:** Root cause (40%) + Docs (30%) + OSS (30%)
-- **New Feature:** Duplicates (40%) + Architecture (30%) + Docs (30%)
-- **Refactor:** Architecture (50%) + Duplicates (30%) + OSS (20%)
+### 步骤 1：识别任务类型
 
-### Step 4: Make Decision Based on Score
+分析用户请求，判断属于以下哪种类型：
+- **新功能开发**
+- **Bug 修复**
+- **代码重构**
 
-| Score | Action |
-|-------|--------|
-| ≥80% | ✅ **Proceed** to implementation |
-| 70-79% | ⚠️ **Pause** - Present alternatives, ask clarifying questions |
-| <70% | ❌ **STOP** - Request more context from user |
+### 步骤 2：执行对应检查项
 
-### Step 5: Output Results
+根据任务类型，执行对应的检查项。每项检查需要 **实际执行**（使用工具搜索）+ **上下文分析**。
 
-Present findings in this format:
+#### 新功能开发检查项
+
+| 检查项 | 权重 | 执行方式 |
+|--------|------|----------|
+| **重复实现检查** | 40% | 使用 grep/glob 搜索代码库，查找是否已有类似实现 |
+| **架构合规检查** | 30% | 检查 CLAUDE.md/AGENTS.md、审查现有代码模式 |
+| **官方文档验证** | 30% | 搜索官方文档，确认 API 用法和最佳实践 |
+
+#### Bug 修复检查项
+
+| 检查项 | 权重 | 执行方式 |
+|--------|------|----------|
+| **根因分析** | 40% | 审查错误日志、堆栈跟踪，定位问题根源 |
+| **官方文档验证** | 30% | 搜索相关 API/库的文档和已知问题 |
+| **OSS 参考方案** | 30% | 搜索 GitHub Issues、Stack Overflow 查找解决方案 |
+
+#### 代码重构检查项
+
+| 检查项 | 权重 | 执行方式 |
+|--------|------|----------|
+| **架构合规检查** | 50% | 确认重构方向符合项目架构规范 |
+| **重复实现检查** | 30% | 确认没有重复造轮子 |
+| **OSS 最佳实践** | 20% | 参考开源项目的类似实现 |
+
+### 步骤 3：计算综合评分
+
+每项检查评分为 0-100%，根据权重计算综合得分。
+
+### 步骤 4：做出决策
+
+| 综合评分 | 决策 | 行为 |
+|----------|------|------|
+| ≥80% | ✅ 继续实施 | 直接开始编码 |
+| 70-79% | ⚠️ 需要澄清 | 提出问题，等待用户确认 |
+| <70% | ❌ 暂停 | 说明风险，请求补充信息 |
+
+---
+
+## 输出格式
+
+检查完成后，输出以下格式的报告：
 
 ```
-Confidence Checks:
-   [✅/❌] No duplicate implementations found
-   [✅/❌] Uses existing tech stack
-   [✅/❌] Official documentation verified
-   [✅/❌] Working OSS implementation found
-   [✅/❌] Root cause identified
+📋 实施前置信度检查
 
-Confidence: X.XX (XX%)
-Decision: [Proceed/Ask Questions/Stop]
+任务类型：[新功能 / Bug修复 / 重构]
+
+检查结果：
+   [✅/❌] 重复实现检查 - [具体发现说明]
+   [✅/❌] 架构合规检查 - [具体发现说明]
+   [✅/❌] 官方文档验证 - [具体发现说明]
+   [✅/❌] OSS 参考方案 - [具体发现说明]
+   [✅/❌] 根因分析 - [具体发现说明]（仅 Bug 修复）
+
+综合评分：XX%
+决策：[✅ 继续实施 / ⚠️ 需要澄清 / ❌ 暂停并补充信息]
+
+建议：
+- [可操作的具体建议 1]
+- [可操作的具体建议 2]
 ```
 
 ---
 
-## Response Templates
+## 跳过检查的处理
 
-**If user says "Skip the check, this is straightforward":**
-> Straightforward tasks fail 40% of the time from duplicate implementations or architecture mismatches. Confidence check takes 2 minutes. Which checks did you already complete?
+如果用户要求跳过检查（如"跳过检查"、"直接开始"、"不用检查"），先输出以下风险提醒：
+
+> ⚠️ **跳过前置检查可能带来的风险：**
+> - 40% 的"简单"任务存在重复实现
+> - 30% 的返工由架构假设错误导致
+> - 5 分钟检查可节省 3 小时调试时间
+>
+> 你已经完成了哪些检查？确认继续吗？
+
+等待用户确认后，再开始实施。
 
 ---
 
-## Red Flags to Watch
+## 常见风险信号
 
-| Thought | Reality |
-|---------|---------|
-| "This is too simple to check" | 40% of "simple" tasks duplicate existing code |
-| "I already know the architecture" | Assumptions cause 30% of rework |
-| "Official docs take too long" | 5 min reading saves 3 hours debugging |
+| 用户想法 | 实际风险 |
+|----------|----------|
+| "这个太简单了，不用检查" | 40% 的"简单"任务会写出重复代码 |
+| "我已经知道架构了" | 30% 的返工由错误假设导致 |
+| "官方文档太耗时间" | 5 分钟阅读可节省 3 小时调试 |
