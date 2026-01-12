@@ -6,6 +6,12 @@ A collection of reusable AI agent skills designed to extend and enhance agent ca
 
 This repository contains modular skills that can be invoked by AI agents (compatible with OpenCode/OhMyOpenCode). Skills are packaged with clear descriptions, instructions, and optional executable scripts to perform specialized tasks.
 
+```bash
+rm -rf ~/.config/opencode/skill && ln -s ~/workspace/skills/ ~/.config/opencode/skill
+rm -rf ~/.claude/skills && ln -s ~/workspace/skills/ ~/.claude/skills
+rm -rf ~/.config/alma/skills && ln -s ~/workspace/skills/ ~/.config/alma/skills          
+```
+
 ## Available Skills
 
 ### ✍️ technical-content-optimizer
@@ -47,6 +53,25 @@ This repository contains modular skills that can be invoked by AI agents (compat
 ```
 Potential Risks → Analysis → Refactored Code
 ```
+
+---
+
+### 🧹 code-simplifier
+
+**Description**: 代码简化与优化专家。专注减少代码复杂度、提升可读性，遵循 YAGNI、KISS 和 DRY 原则。
+
+**Usage**: 当代码过于复杂、需要重构、消除冗余或优化性能建议时调用。支持分析模式（提供建议）和执行模式（直接修改）。
+
+**Features**:
+- **Complexity Control**: Keep cyclomatic complexity low (≤ 10 recommended)
+- **Early Returns**: Flatten nested logic with guard clauses
+- **YAGNI/KISS/DRY**: Systematic removal of over-engineering and redundancy
+- **Preserves Functionality**: Ensures core behavior remains unchanged while simplifying
+- **Multi-language Support**: Idiomatic patterns for Go and other major languages
+
+**Operating Modes**:
+1. **Analysis Mode**: Identify issues, estimate LOC reduction, prioritize changes
+2. **Execution Mode**: Direct application of simplifications and refactoring
 
 ---
 

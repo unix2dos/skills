@@ -11,7 +11,7 @@ Guide for AI agents working in this repository.
 # Script-based skill (e.g., query-weather)
 ./query-weather/weather.sh "London"
 
-# Prompt-based skills (e.g., blog-polisher)
+# Prompt-based skills (e.g., technical-content-optimizer)
 # Verify instructions are clear and actionable by reading SKILL.md
 ```
 
