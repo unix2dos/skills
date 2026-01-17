@@ -27,7 +27,7 @@ A[用户登录(必填)] --> B[验证: 检查密码]
 使用 `%%{init}%%` 配置主题变量，这是**最通用的配色方式**，兼容所有图表类型：
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#4F46E5', 'primaryTextColor': '#fff', 'primaryBorderColor': '#3730A3', 'lineColor': '#6366F1', 'secondaryColor': '#10B981', 'tertiaryColor': '#F59E0B'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#4F46E5', 'primaryTextColor': '#000', 'primaryBorderColor': '#3730A3', 'lineColor': '#6366F1', 'secondaryColor': '#10B981', 'tertiaryColor': '#F59E0B'}}}%%
 ```
 
 ### ⚠️ 图表类型语法限制（必须遵守）
