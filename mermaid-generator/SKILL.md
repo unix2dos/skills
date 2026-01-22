@@ -120,7 +120,7 @@ sequenceDiagram
 ### 📈 流程图 (Flowchart)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#4F46E5', 'primaryTextColor': '#fff', 'primaryBorderColor': '#3730A3', 'lineColor': '#6366F1', 'secondaryColor': '#10B981', 'tertiaryColor': '#F59E0B'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#4F46E5', 'primaryTextColor': '#000', 'primaryBorderColor': '#3730A3', 'lineColor': '#6366F1', 'secondaryColor': '#10B981', 'tertiaryColor': '#F59E0B'}}}%%
 flowchart TD
     A["开始"] --> B{"条件判断"}
     B -->|"是"| C["执行操作A"]
@@ -172,7 +172,7 @@ A -->|条件一|条件二| B  %% 会报错！
 ### 🔄 时序图 (Sequence Diagram)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'actorBkg': '#4F46E5', 'actorTextColor': '#fff', 'actorBorder': '#3730A3', 'signalColor': '#6366F1', 'activationBkgColor': '#E0E7FF', 'activationBorderColor': '#4F46E5'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'actorBkg': '#4F46E5', 'actorTextColor': '#000', 'actorBorder': '#3730A3', 'signalColor': '#6366F1', 'activationBkgColor': '#E0E7FF', 'activationBorderColor': '#4F46E5'}}}%%
 sequenceDiagram
     autonumber
     participant U as "用户"
@@ -267,7 +267,7 @@ classDiagram
 ### 🔀 状态图 (State Diagram)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#4F46E5', 'primaryTextColor': '#fff'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#4F46E5', 'primaryTextColor': '#000'}}}%%
 stateDiagram-v2
     [*] --> Idle: "初始化"
 
@@ -339,7 +339,7 @@ erDiagram
 ### 📅 甘特图 (Gantt Chart)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#4F46E5', 'primaryTextColor': '#fff', 'primaryBorderColor': '#3730A3', 'gridColor': '#E5E7EB', 'todayLineColor': '#EF4444'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#4F46E5', 'primaryTextColor': '#000', 'primaryBorderColor': '#3730A3', 'gridColor': '#E5E7EB', 'todayLineColor': '#EF4444'}}}%%
 gantt
     title 项目开发进度
     dateFormat  YYYY-MM-DD
