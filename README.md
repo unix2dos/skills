@@ -9,7 +9,7 @@ This repository contains modular skills that can be invoked by AI agents (compat
 ```bash
 rm -rf ~/.config/opencode/skill && ln -s ~/workspace/skills/ ~/.config/opencode/skill
 rm -rf ~/.claude/skills && ln -s ~/workspace/skills/ ~/.claude/skills
-rm -rf ~/.config/alma/skills && ln -s ~/workspace/skills/ ~/.config/alma/skills          
+rm -rf ~/.config/alma/skills && ln -s ~/workspace/skills/ ~/.config/alma/skills
 ```
 
 ## Available Skills
@@ -32,27 +32,48 @@ rm -rf ~/.config/alma/skills && ln -s ~/workspace/skills/ ~/.config/alma/skills
 
 ---
 
-### 🔍 codereview
+### 🔍 code-review
 
-**Description**: Deep code review skill for Go code focusing on performance, security, and readability.
+**Description**: Deep code review skill for Go code focusing on performance, security, concurrency safety, and readability.
 
-**Usage**: Default reviews local uncommitted code; automatically reviews the most recent commit if there are no uncommitted changes. Can also review specified commits, branches, or tags.
+**Usage**: Default reviews local uncommitted code; automatically reviews the most recent commit if working directory is clean. Supports reviewing specified commits, branches, or tags. Offers concise and detailed output modes.
 
 **Features**:
 - **Smart Scope Detection**: Automatically detects uncommitted changes or recent commits
-- **Performance Review**: Memory allocation, concurrency control, hot path optimization
-- **Security Review**: Input validation, sensitive data, access control
-- **Readability Review**: Naming conventions, code structure, error handling
+- **Performance Review**: Memory allocation, slice/map pre-allocation, sync.Pool usage
+- **Concurrency Safety**: Mutex pairing, channel blocking, goroutine lifecycle
+- **Security Review**: SQL injection, command injection, path traversal, sensitive data
+- **Readability Review**: Naming conventions, cyclomatic complexity, early returns
+- **Domain-Specific**: Web API (Gin/Echo), microservices, database (GORM), message queues
 
 **Review Standards**:
 - Effective Go
 - Uber Go Style Guide
 - Go Code Review Comments
 
+**Output Modes**:
+- **Concise Mode**: Table format with issues and recommendations
+- **Detailed Mode**: Full analysis with risk explanation and refactored code examples
+
+---
+
+### 🔧 code-refactor
+
+**Description**: Golang code refactoring expert focused on large-scale data processing systems. Follows SOLID principles, idiomatic Go, and enterprise design patterns.
+
+**Usage**: Invoke when users need to refactor code, optimize functions, improve code quality, reduce complexity, or enhance maintainability, extensibility, and testability.
+
+**Refactoring Priorities**:
+| Priority | Focus | Description |
+|----------|-------|-------------|
+| P0 | Behavioral Equivalence | Preserve API contracts, boundary conditions, concurrency safety |
+| P1 | Maintainability | Single responsibility, self-documenting names, nesting ≤ 3, cyclomatic complexity ≤ 10 |
+| P2 | Extensibility | Interface segregation, dependency injection, functional options |
+| P3 | Testability | Interface-based DI, avoid package-level variables, prefer pure functions |
+
 **Output Format**:
-```
-Potential Risks → Analysis → Refactored Code
-```
+1. **Refactoring Strategy**: Core changes, design patterns used, trade-offs
+2. **Risk Assessment**: Breaking changes, performance impact, dependency changes
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-name: codereview
+name: code-review
 description: codereview / code review / 代码审查 - Go 代码深度审查技能，专注于性能、安全性、并发安全和可读性。支持审查本地未提交代码、最近 commit 或指定的 commit/分支/tag。支持简洁/详细两种输出模式。
 compatibility: opencode
 ---

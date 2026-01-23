@@ -144,7 +144,7 @@ curl -s "https://api.example.com"
 ### Prompt-Based Skills
 - Pure documentation with instructions
 - Agent reads and performs task using its capabilities
-- Example: `technical-content-optimizer`, `confidence-check`
+- Example: `technical-content-optimizer`, `confidence-check`, `code-review`, `code-refactor`
 
 ---
 
