@@ -31,6 +31,7 @@ rm -rf ~/.config/alma/skills ; ln -s ~/workspace/skills/ ~/.config/alma/skills
 |------|------|----------|----------|
 | ✍️ technical-content-optimizer | 技术博客润色，去除 AI 味，提升专业性 | 逻辑审查、语调转换、结构重组、去 AI 化 | 中文 |
 | 📊 mermaid-generator | 智能图表生成，自动选择最佳类型 | 智能类型选择、语法安全、鲜艳配色、15+ 图表类型 | 通用 |
+| 💡 insight-miner | 每日洞见挖掘，跨学科思维模型生成 | 知识奇点、底层模型、行动原则、历史统计 | 通用 |
 
 ### 🔧 工具类
 
@@ -39,7 +40,6 @@ rm -rf ~/.config/alma/skills ; ln -s ~/workspace/skills/ ~/.config/alma/skills
 | 📰 news-tracker | 新闻追踪与智能问答，获取最新动态 | 主题识别、时间智能、来源权威、中文输出 | 通用 |
 | ⚖️ value-judge | 多维度价值评估，对书籍/项目/文章打分 | 类型识别、维度评分、结构化报告、推荐指数 | 通用 |
 | 🛠️ skill-creator | Skill 创建指南，扩展 AI 能力 | 渐进披露、资源打包、模板生成、验证打包 | 通用 |
-| 💡 insight-miner | 每日洞见挖掘，跨学科思维模型生成 | 知识奇点、底层模型、行动原则、历史统计 | 通用 |
 
 ---
 
