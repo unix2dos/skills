@@ -15,6 +15,7 @@ LINK_PATHS=(
   "$HOME/.config/alma/skills"
   "$HOME/.gemini/antigravity/skills"
   "$HOME/.codex/skills"
+  "$HOME/clawd/skills"
 )
 
 for LINK_PATH in "${LINK_PATHS[@]}"; do
