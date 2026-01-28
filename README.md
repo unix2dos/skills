@@ -16,131 +16,110 @@ rm -rf ~/.config/alma/skills ; ln -s ~/workspace/skills/ ~/.config/alma/skills
 
 ## Available Skills
 
-### ✍️ technical-content-optimizer
+### 🛠️ 技术类
 
-**Description**: 技术博客内容优化专家，润色技术文章使其更专业、逻辑清晰、结构规范，去除「AI味」。
+| 名称 | 描述 | 主要特性 | 适用范围 |
+|------|------|----------|----------|
+| 🔍 code-review | Go 代码深度审查，聚焦性能、安全、并发、可读性 | 智能范围检测、性能审查、并发安全、安全扫描 | Go |
+| 🔧 code-refactor | 代码重构专家，遵循 SOLID 原则和企业设计模式 | 行为等价、可维护性、可扩展性、可测试性 | Go |
+| 🧹 code-simplifier | 代码简化优化，遵循 YAGNI/KISS/DRY 原则 | 复杂度控制、早返回、冗余消除、多语言支持 | 通用 |
+| 🎯 confidence-check | 实施前置信度检查，避免无效编码 | 重复检测、架构合规、文档验证、根因分析 | 通用 |
 
-**Usage**: Invoke when users provide blog post drafts that need editorial improvement.
+### ✨ 创作类
 
-**Features**:
-- **Logical Audit**: Identifies logical fallacies, circular reasoning, and technical inaccuracies
-- **Tone Shift**: Transforms robotic AI writing into professional senior engineer voice
-- **Structural Reorganization**: Ensures proper hierarchy and narrative flow
-- **De-AI**: Removes robotic transitions, overly enthusiastic language, and redundant summaries
+| 名称 | 描述 | 主要特性 | 适用范围 |
+|------|------|----------|----------|
+| ✍️ technical-content-optimizer | 技术博客润色，去除 AI 味，提升专业性 | 逻辑审查、语调转换、结构重组、去 AI 化 | 中文 |
+| 📊 mermaid-generator | 智能图表生成，自动选择最佳类型 | 智能类型选择、语法安全、鲜艳配色、15+ 图表类型 | 通用 |
 
-**Output Format**:
-1. Editor's Summary (logical issues + structural changes)
-2. Full polished blog post draft
+### 🔧 工具类
+
+| 名称 | 描述 | 主要特性 | 适用范围 |
+|------|------|----------|----------|
+| 📰 news-tracker | 新闻追踪与智能问答，获取最新动态 | 主题识别、时间智能、来源权威、中文输出 | 通用 |
+| ⚖️ value-judge | 多维度价值评估，对书籍/项目/文章打分 | 类型识别、维度评分、结构化报告、推荐指数 | 通用 |
+| 🛠️ skill-creator | Skill 创建指南，扩展 AI 能力 | 渐进披露、资源打包、模板生成、验证打包 | 通用 |
 
 ---
 
+## Skill Details
+
 ### 🔍 code-review
 
-**Description**: Deep code review skill for Go code focusing on performance, security, concurrency safety, and readability.
+**Usage**: 默认审查本地未提交代码；工作目录干净时自动审查最近提交。支持指定 commit/branch/tag，提供简洁和详细两种输出模式。
 
-**Usage**: Default reviews local uncommitted code; automatically reviews the most recent commit if working directory is clean. Supports reviewing specified commits, branches, or tags. Offers concise and detailed output modes.
-
-**Features**:
-- **Smart Scope Detection**: Automatically detects uncommitted changes or recent commits
-- **Performance Review**: Memory allocation, slice/map pre-allocation, sync.Pool usage
-- **Concurrency Safety**: Mutex pairing, channel blocking, goroutine lifecycle
-- **Security Review**: SQL injection, command injection, path traversal, sensitive data
-- **Readability Review**: Naming conventions, cyclomatic complexity, early returns
-- **Domain-Specific**: Web API (Gin/Echo), microservices, database (GORM), message queues
-
-**Review Standards**:
-- Effective Go
-- Uber Go Style Guide
-- Go Code Review Comments
+**Review Standards**: Effective Go、Uber Go Style Guide、Go Code Review Comments
 
 **Output Modes**:
-- **Concise Mode**: Table format with issues and recommendations
-- **Detailed Mode**: Full analysis with risk explanation and refactored code examples
+- **简洁模式**: 表格形式列出问题和建议
+- **详细模式**: 完整分析，含风险说明和重构代码示例
 
 ---
 
 ### 🔧 code-refactor
 
-**Description**: Golang code refactoring expert focused on large-scale data processing systems. Follows SOLID principles, idiomatic Go, and enterprise design patterns.
-
-**Usage**: Invoke when users need to refactor code, optimize functions, improve code quality, reduce complexity, or enhance maintainability, extensibility, and testability.
+**Usage**: 需要重构代码、优化函数、提升代码质量、降低复杂度、增强可维护性/可扩展性/可测试性时调用。
 
 **Refactoring Priorities**:
-| Priority | Focus | Description |
-|----------|-------|-------------|
-| P0 | Behavioral Equivalence | Preserve API contracts, boundary conditions, concurrency safety |
-| P1 | Maintainability | Single responsibility, self-documenting names, nesting ≤ 3, cyclomatic complexity ≤ 10 |
-| P2 | Extensibility | Interface segregation, dependency injection, functional options |
-| P3 | Testability | Interface-based DI, avoid package-level variables, prefer pure functions |
 
-**Output Format**:
-1. **Refactoring Strategy**: Core changes, design patterns used, trade-offs
-2. **Risk Assessment**: Breaking changes, performance impact, dependency changes
+| 优先级 | 聚焦 | 描述 |
+|--------|------|------|
+| P0 | 行为等价 | 保持 API 契约、边界条件、并发安全 |
+| P1 | 可维护性 | 单一职责、自说明命名、嵌套 ≤ 3、圈复杂度 ≤ 10 |
+| P2 | 可扩展性 | 接口隔离、依赖注入、函数选项模式 |
+| P3 | 可测试性 | 基于接口的 DI、避免包级变量、偏向纯函数 |
+
+**Output Format**: 重构策略 + 风险评估
 
 ---
 
 ### 🧹 code-simplifier
 
-**Description**: 代码简化与优化专家。专注减少代码复杂度、提升可读性，遵循 YAGNI、KISS 和 DRY 原则。
-
-**Usage**: 当代码过于复杂、需要重构、消除冗余或优化性能建议时调用。支持分析模式（提供建议）和执行模式（直接修改）。
-
-**Features**:
-- **Complexity Control**: Keep cyclomatic complexity low (≤ 10 recommended)
-- **Early Returns**: Flatten nested logic with guard clauses
-- **YAGNI/KISS/DRY**: Systematic removal of over-engineering and redundancy
-- **Preserves Functionality**: Ensures core behavior remains unchanged while simplifying
-- **Multi-language Support**: Idiomatic patterns for Go and other major languages
+**Usage**: 代码过于复杂、需要重构、消除冗余或优化性能建议时调用。支持分析模式和执行模式。
 
 **Operating Modes**:
-1. **Analysis Mode**: Identify issues, estimate LOC reduction, prioritize changes
-2. **Execution Mode**: Direct application of simplifications and refactoring
+1. **分析模式**: 识别问题、估算 LOC 减少、优先级排序
+2. **执行模式**: 直接应用简化和重构
 
 ---
 
 ### 🎯 confidence-check
 
-**Description**: Pre-implementation gate that validates readiness before coding. Spend 100-200 tokens here to save 5,000-50,000 tokens on wrong-direction work.
-
-**Usage**: Use proactively before EVERY implementation - starting features, fixes, refactors, or making architecture decisions.
-
-**Features**:
-- **Weighted Scoring**: 5 checks with configurable weights (requires ≥80% to proceed)
-- **Duplicate Detection**: Prevents reinventing existing implementations
-- **Architecture Compliance**: Ensures use of existing tech stack and patterns
-- **Official Docs Verification**: Validates against authoritative sources
-- **OSS Reference**: Finds proven implementations for guidance
-- **Root Cause Analysis**: Identifies underlying issues before fixing symptoms
+**Usage**: 每次实施前主动使用——开始功能开发、修复、重构或架构决策时。
 
 **Checks & Weights**:
-| Check | Weight |
-|-------|--------|
-| No Duplicates | 25% |
-| Architecture Compliant | 25% |
-| Official Docs Verified | 20% |
-| Working OSS Reference | 15% |
-| Root Cause Identified | 15% |
+
+| 检查项 | 权重 |
+|--------|------|
+| 无重复实现 | 25% |
+| 架构合规 | 25% |
+| 官方文档验证 | 20% |
+| 有效 OSS 参考 | 15% |
+| 根因已识别 | 15% |
 
 **Decision Thresholds**:
-- **≥80%**: ✅ Proceed to implementation
-- **70-79%**: ⚠️ Present alternatives, ask clarifying questions
-- **<70%**: ❌ STOP - Request more context from user
+- **≥80%**: ✅ 继续实施
+- **70-79%**: ⚠️ 提出替代方案，询问澄清问题
+- **<70%**: ❌ 停止 - 向用户请求更多上下文
+
+---
+
+### ✍️ technical-content-optimizer
+
+**Usage**: 用户提供需要编辑改进的博客草稿时调用。
+
+**Output Format**:
+1. 编辑摘要（逻辑问题 + 结构变更）
+2. 完整润色后的博客草稿
 
 ---
 
 ### 📊 mermaid-generator
 
-**Description**: 根据用户描述智能选择最合适的图表类型并生成语法正确、配色鲜艳的 Mermaid 代码。
-
-**Usage**: 当用户需要可视化流程、关系、时序、架构等信息时调用。
-
-**Features**:
-- **智能类型选择**: 根据场景关键词自动推荐最适合的图表类型
-- **语法安全**: 所有文本标签用双引号包裹，避免特殊符号导致解析错误
-- **鲜艳配色**: 使用现代化配色方案，视觉效果出众
-- **全格式支持**: 流程图、时序图、类图、ER图、甘特图、状态图等 15+ 种类型
+**Usage**: 需要可视化流程、关系、时序、架构等信息时调用。
 
 **Supported Chart Types**:
+
 | 类型 | 语法 | 适用场景 |
 |-----|------|---------|
 | 流程图 | `flowchart` | 步骤、决策、分支 |
@@ -153,6 +132,40 @@ rm -rf ~/.config/alma/skills ; ln -s ~/workspace/skills/ ~/.config/alma/skills
 | 思维导图 | `mindmap` | 知识结构 |
 | Git图 | `gitGraph` | 版本控制 |
 | 时间线 | `timeline` | 里程碑 |
+
+---
+
+### 📰 news-tracker
+
+**Usage**: 查询某领域最新新闻、了解公司动态、追踪人物近况、获取地区新闻、了解产品情况、追踪事件进展，或询问需要最新信息才能回答的问题时调用。
+
+**Output Format**:
+- **新闻列表**: 标题、摘要、来源、时间、相关性星级、链接
+- **智能问答**: 直接回答 + 信息来源
+
+---
+
+### ⚖️ value-judge
+
+**Usage**: 评估某内容是否值得投入时间、对已阅读内容打分总结、比较多个资源价值、询问"值不值得看/学"时调用。
+
+**Supported Types**: 📚 书籍、📝 文章、🐙 GitHub项目、🎬 视频/课程、🔧 工具/产品、📄 论文
+
+**Output Format**: 总分(1-100) + 快速结论 + 维度评分 + 详细评价（优点/不足/建议）
+
+---
+
+### 🛠️ skill-creator
+
+**Usage**: 需要创建新 Skill 或更新现有 Skill 时调用。
+
+**Creation Process**:
+1. 通过具体示例理解 Skill
+2. 规划可复用内容（scripts/references/assets）
+3. 初始化 Skill（运行 init_skill.py）
+4. 编辑 Skill（实现资源并编写 SKILL.md）
+5. 打包 Skill（运行 package_skill.py）
+6. 基于实际使用迭代
 
 ---
 
