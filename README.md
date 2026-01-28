@@ -9,7 +9,7 @@ This repository contains modular skills that can be invoked by AI agents (compat
 ```bash
 rm -rf ~/.claude/skills ; ln -s ~/workspace/skills/ ~/.claude/skills
 rm -rf ~/.codex/skills ; ln -s ~/workspace/skills/ ~/.codex/skills
-rm -rf ~/.config/opencode/skill ; ln -s ~/workspace/skills/ ~/.config/opencode/skill
+rm -rf ~/.config/opencode/skills ; ln -s ~/workspace/skills/ ~/.config/opencode/skills
 rm -rf ~/.gemini/antigravity/skills ; ln -s ~/workspace/skills/ ~/.gemini/antigravity/skills
 rm -rf ~/.config/alma/skills ; ln -s ~/workspace/skills/ ~/.config/alma/skills
 ```
