@@ -6,9 +6,6 @@ A collection of reusable AI agent skills designed to extend and enhance agent ca
 
 This repository contains modular skills that can be invoked by AI agents (compatible with OpenCode/OhMyOpenCode). Skills are packaged with clear descriptions, instructions, and optional executable scripts to perform specialized tasks.
 
-```bash
-./link-skills.sh
-```
 
 ## Available Skills
 
