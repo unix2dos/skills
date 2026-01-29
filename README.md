@@ -7,11 +7,7 @@ A collection of reusable AI agent skills designed to extend and enhance agent ca
 This repository contains modular skills that can be invoked by AI agents (compatible with OpenCode/OhMyOpenCode). Skills are packaged with clear descriptions, instructions, and optional executable scripts to perform specialized tasks.
 
 ```bash
-rm -rf ~/.claude/skills ; ln -s ~/workspace/skills/ ~/.claude/skills
-rm -rf ~/.codex/skills ; ln -s ~/workspace/skills/ ~/.codex/skills
-rm -rf ~/.config/opencode/skills ; ln -s ~/workspace/skills/ ~/.config/opencode/skills
-rm -rf ~/.gemini/antigravity/skills ; ln -s ~/workspace/skills/ ~/.gemini/antigravity/skills
-rm -rf ~/.config/alma/skills ; ln -s ~/workspace/skills/ ~/.config/alma/skills
+./link-skills.sh
 ```
 
 ## Available Skills
