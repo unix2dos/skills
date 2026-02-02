@@ -15,7 +15,7 @@ LINK_PATHS=(
   "$HOME/.config/opencode/skills"
   "$HOME/.config/alma/skills"
   "$HOME/.gemini/antigravity/skills"
-  "$HOME/clawd/skills"
+  "$HOME/.openclaw/skills"
 )
 
 for LINK_PATH in "${LINK_PATHS[@]}"; do
