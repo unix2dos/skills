@@ -29,7 +29,7 @@ description: 洞见挖掘者 - 每日深度洞察生成器。从知识海洋中�
 
 ### Step 1: 检查已用奇点
 
-1. 读取 `used_anchors.json`（与本 SKILL.md 同目录）
+1. 读取 `insight_miner_history.json`（与本 SKILL.md 同目录）
 2. 如果文件不存在，初始化为 `{"anchors": [], "max_size": 1000}`
 3. 提取所有已用奇点名称，作为排除集合
 
@@ -142,7 +142,7 @@ description: 洞见挖掘者 - 每日深度洞察生成器。从知识海洋中�
 
 ### Step 6: 保存数据
 
-1. **更新 used_anchors.json**:
+1. **更新 insight_miner_history.json**:
    ```json
    {
      "name": "奇点名称",
@@ -154,7 +154,7 @@ description: 洞见挖掘者 - 每日深度洞察生成器。从知识海洋中�
    - 如果达到 1000 条，移除最旧的一条（FIFO）
 
 2. **保存洞见文件**:
-   - 路径: `insights/YYYY-MM-DD_主题标题.md`
+   - 路径: `insight_miner_outputs/YYYY-MM-DD_主题标题.md`
    - 内容: 完整的洞见输出
 
 ---

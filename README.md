@@ -38,6 +38,7 @@ This repository contains modular skills that can be invoked by AI agents (compat
 | 📖 daily-knowledge | 每日知识官，随机分享跨领域知识 | 查重机制、领域轮换、输出保存、历史记录 | 通用 |
 | 💡 insight-miner | 每日洞见挖掘，跨学科思维模型生成 | 知识奇点、底层模型、行动原则、历史统计 | 通用 |
 | 🏛️ history-autopsy | 历史解剖学家，深度四维解剖历史事件 | 四维解剖、输出保存、多维透镜、查重机制 | 通用 |
+| 🌍 geo-explorer | 地理系统分析师，三透镜解构人地互动 | 多尺度分析、输出保存、概念模型、查重机制 | 通用 |
 
 ### 🔧 工具类
 
