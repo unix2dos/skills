@@ -34,6 +34,7 @@ This repository contains modular skills that can be invoked by AI agents (compat
 |------|------|----------|----------|
 | 📰 news-tracker | 新闻追踪与智能问答，获取最新动态 | 主题识别、时间智能、来源权威、中文输出 | 通用 |
 | 🔥 hackernews | Hacker News API，获取热门新闻/评论/用户 | 免 API Key、热门/最新/Ask HN、用户资料 | 通用 |
+| 📡 news-aggregator-skill | 多源新闻聚合，支持 8 大平台实时抓取 | HN/微博/GitHub/36氪/V2EX/腾讯/华尔街、智能关键词扩展、深度抓取 | 通用 |
 | ⚖️ value-judge | 多维度价值评估，对书籍/项目/文章打分 | 类型识别、维度评分、结构化报告、推荐指数 | 通用 |
 
 ### 🔧 工具类
@@ -58,6 +59,7 @@ This repository contains modular skills that can be invoked by AI agents (compat
 | find-skills | [vercel-labs/skills](https://github.com/vercel-labs/skills/blob/main/skills/find-skills/SKILL.md) |
 | hackernews | [vm0-ai/vm0-skills](https://github.com/vm0-ai/vm0-skills/tree/main/hackernews) |
 | planning-with-files | [OthmanAdi/planning-with-files](https://github.com/OthmanAdi/planning-with-files) |
+| news-aggregator-skill | [cclank/news-aggregator-skill](https://github.com/cclank/news-aggregator-skill) |
 
 ---
 
