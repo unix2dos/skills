@@ -36,6 +36,7 @@ This repository contains modular skills that can be invoked by AI agents (compat
 | 🛠️ skill-creator | Skill 创建指南，扩展 AI 能力 | 渐进披露、资源打包、模板生成、验证打包 | 通用 |
 | 🔍 find-skills | 发现并安装开源 Agent Skills | CLI 搜索、智能推荐、一键安装 | 通用 |
 | 📹 yt-dlp-downloader | 多平台视频下载，支持 YouTube/B站/抖音等 | 音频提取、字幕下载、画质选择、千站支持 | 通用 |
+| 🔥 hackernews | Hacker News API，获取热门新闻/评论/用户 | 免 API Key、热门/最新/Ask HN、用户资料 | 通用 |
 
 ---
 
@@ -49,6 +50,7 @@ This repository contains modular skills that can be invoked by AI agents (compat
 | yt-dlp-downloader | [MapleShaw/yt-dlp-downloader-skill](https://github.com/MapleShaw/yt-dlp-downloader-skill/blob/master/SKILL.md) |
 | humanizer-zh | [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh/blob/main/SKILL.md) |
 | find-skills | [vercel-labs/skills](https://github.com/vercel-labs/skills/blob/main/skills/find-skills/SKILL.md) |
+| hackernews | [vm0-ai/vm0-skills](https://github.com/vm0-ai/vm0-skills/tree/main/hackernews) |
 
 ---
 
