@@ -37,8 +37,8 @@ This repository contains modular skills that can be invoked by AI agents (compat
 | 📡 news-aggregator-skill | 多源新闻聚合，支持 8 大平台实时抓取 | HN/微博/GitHub/36氪/V2EX/腾讯/华尔街、智能关键词扩展、深度抓取 | 通用 |
 | 📖 daily-knowledge | 每日知识官，随机分享跨领域知识 | 查重机制、领域轮换、输出保存、历史记录 | 通用 |
 | 💡 insight-miner | 每日洞见挖掘，跨学科思维模型生成 | 知识奇点、底层模型、行动原则、历史统计 | 通用 |
-| 🏛️ history-autopsy | 历史解剖学家，深度四维解剖历史事件 | 四维解剖、输出保存、多维透镜、查重机制 | 通用 |
-| 🌍 geo-explorer | 地理系统分析师，三透镜解构人地互动 | 多尺度分析、输出保存、概念模型、查重机制 | 通用 |
+| 🏛️ history-autopsy | 历史大事件框架速览，形成认知框架 | 热点优先、框架概览、金句速记、查重机制 | 通用 |
+| 🌍 geo-explorer | 地缘认知探索器，5分钟读懂一个地方的“地缘人设” | 热点优先、ASCII关系图、地图搜索、查重机制 | 通用 |
 
 ### 🔧 工具类
 
