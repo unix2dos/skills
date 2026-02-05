@@ -35,7 +35,8 @@ This repository contains modular skills that can be invoked by AI agents (compat
 | 📰 news-tracker | 新闻追踪与智能问答，获取最新动态 | 主题识别、时间智能、来源权威、中文输出 | 通用 |
 | 🔥 hackernews | Hacker News API，获取热门新闻/评论/用户 | 免 API Key、热门/最新/Ask HN、用户资料 | 通用 |
 | 📡 news-aggregator-skill | 多源新闻聚合，支持 8 大平台实时抓取 | HN/微博/GitHub/36氪/V2EX/腾讯/华尔街、智能关键词扩展、深度抓取 | 通用 |
-| 📖 daily-knowledge | 每日知识官，随机分享跨领域知识 | 查重机制、领域轮换、输出保存、历史记录 | 通用 |
+| 📖 daily-knowledge | 每日知识官，轻松好读的跨领域知识分享 | L2-L3语气、查重机制、领域轮换、金句密度 | 通用 |
+| 🧘 wisdom-decoder | 智慧解码器，佛学/哲学/心理学深度解读 | 核心解码、顶尖路线图、禁忌洞察、陌生视角 | 通用 |
 | 💡 insight-miner | 每日洞见挖掘，跨学科思维模型生成 | 知识奇点、底层模型、行动原则、历史统计 | 通用 |
 | 🏛️ history-autopsy | 历史大事件框架速览，形成认知框架 | 热点优先、框架概览、金句速记、查重机制 | 通用 |
 | 🌍 geo-explorer | 地缘认知探索器，5分钟读懂一个地方的“地缘人设” | 热点优先、ASCII关系图、地图搜索、查重机制 | 通用 |
