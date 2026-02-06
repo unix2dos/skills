@@ -1,0 +1,5 @@
+# Book Recommender 输出文件
+book_outputs/
+
+# 历史记录
+book_history.json

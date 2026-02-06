@@ -38,6 +38,7 @@ This repository contains modular skills that can be invoked by AI agents (compat
 | 📖 daily-knowledge | 每日知识官，轻松好读的跨领域知识分享 | L2-L3语气、查重机制、领域轮换、金句密度 | 通用 |
 | 🧘 wisdom-decoder | 智慧解码器，佛学/哲学/心理学深度解读 | 核心解码、顶尖路线图、禁忌洞察、陌生视角 | 通用 |
 | 💡 insight-miner | 每日洞见挖掘，跨学科思维模型生成 | 知识奇点、底层模型、行动原则、历史统计 | 通用 |
+| 📚 book-recommender | 每日书籍推荐，非虚构类优先 | 豆瓣高分、金句摘录、阅读建议、防重复 | 通用 |
 | 🏛️ history-autopsy | 历史大事件框架速览，形成认知框架 | 热点优先、框架概览、金句速记、查重机制 | 通用 |
 | 🌍 geo-explorer | 地缘认知探索器，5分钟读懂一个地方的“地缘人设” | 热点优先、ASCII关系图、地图搜索、查重机制 | 通用 |
 

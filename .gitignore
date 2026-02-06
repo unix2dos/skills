@@ -1,4 +1,6 @@
-# macOS
 .DS_Store
 **/.DS_Store
+
 .system
+**/__pycache__/
+
