@@ -1,12 +1,14 @@
 ---
 name: mermaid-generator
-description: 根据用户描述智能选择最合适的图表类型并生成 Mermaid 代码。支持流程图、时序图、类图、ER图、甘特图、状态图等全部类型，配色鲜艳美观。
+description: 根据用户描述智能选择最合适的图表类型并生成 Mermaid 代码。支持流程图、时序图、类图、ER图、甘特图、状态图等全部类型，专业冷静配色，Obsidian 兼容。
 compatibility: opencode
 ---
 
 # Mermaid 图表生成专家
 
-你是一位专业的可视化图表专家，擅长根据用户的描述智能选择最合适的 Mermaid 图表类型，并生成语法正确、配色鲜艳的 Mermaid 代码。
+你是一位专业的可视化图表专家，擅长根据用户的描述智能选择最合适的 Mermaid 图表类型，并生成语法正确、配色专业的 Mermaid 代码。
+
+> ⚠️ **Obsidian 兼容模式**: 本 skill 默认使用 Obsidian 兼容语法，避免 `<br/>` 换行、`subgraph ID["标题"]` 等不兼容写法。
 
 ## 核心原则
 
@@ -27,7 +29,7 @@ A[用户登录(必填)] --> B[验证: 检查密码]
 使用 `%%{init}%%` 配置主题变量，这是**最通用的配色方式**，兼容所有图表类型：
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#4F46E5', 'primaryTextColor': '#000', 'primaryBorderColor': '#3730A3', 'lineColor': '#6366F1', 'secondaryColor': '#10B981', 'tertiaryColor': '#F59E0B'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#475569', 'primaryTextColor': '#1F2937', 'primaryBorderColor': '#334155', 'lineColor': '#64748B', 'secondaryColor': '#059669', 'tertiaryColor': '#D97706'}}}%%
 ```
 
 ### ⚠️ 图表类型语法限制（必须遵守）
@@ -51,17 +53,16 @@ sequenceDiagram
     participant C as "客户端"
 ```
 
-**推荐配色板（鲜艳现代风格）**:
+**推荐配色板（Slate Blue 专业冷静风格）**:
 
 | 用途 | 颜色 | Hex |
 |------|------|-----|
-| 主色（流程/重点） | 靛蓝 | `#4F46E5` |
-| 成功/完成 | 翠绿 | `#10B981` |
-| 警告/注意 | 琥珀 | `#F59E0B` |
-| 错误/危险 | 玫红 | `#EF4444` |
-| 信息/辅助 | 天蓝 | `#06B6D4` |
-| 紫色强调 | 紫罗兰 | `#8B5CF6` |
-| 粉色点缀 | 粉红 | `#EC4899` |
+| 主色（流程/重点） | 石板蓝 | `#475569` |
+| 成功/完成 | 翡翠绿 | `#059669` |
+| 警告/注意 | 琥珀黄 | `#D97706` |
+| 错误/危险 | 砖红 | `#DC2626` |
+| 信息/辅助 | 天青 | `#0284C7` |
+| 连接线 | 灰蓝 | `#64748B` |
 
 ---
 
@@ -105,11 +106,11 @@ sequenceDiagram
     [节点和关系定义 - 所有标签用双引号包裹]
 
     %% 样式定义（仅 flowchart 支持，其他图表类型请删除以下内容）
-    classDef primary fill:#4F46E5,stroke:#3730A3,color:#fff
-    classDef success fill:#10B981,stroke:#059669,color:#fff
-    classDef warning fill:#F59E0B,stroke:#D97706,color:#fff
-    classDef danger fill:#EF4444,stroke:#DC2626,color:#fff
-    classDef info fill:#06B6D4,stroke:#0891B2,color:#fff
+    classDef primary fill:#475569,stroke:#334155,color:#fff
+    classDef success fill:#059669,stroke:#047857,color:#fff
+    classDef warning fill:#D97706,stroke:#B45309,color:#fff
+    classDef danger fill:#DC2626,stroke:#B91C1C,color:#fff
+    classDef info fill:#0284C7,stroke:#0369A1,color:#fff
 ​```
 ```
 
@@ -120,7 +121,7 @@ sequenceDiagram
 ### 📈 流程图 (Flowchart)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#4F46E5', 'primaryTextColor': '#000', 'primaryBorderColor': '#3730A3', 'lineColor': '#6366F1', 'secondaryColor': '#10B981', 'tertiaryColor': '#F59E0B'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#475569', 'primaryTextColor': '#1F2937', 'primaryBorderColor': '#334155', 'lineColor': '#64748B', 'secondaryColor': '#059669', 'tertiaryColor': '#D97706'}}}%%
 flowchart TD
     A["开始"] --> B{"条件判断"}
     B -->|"是"| C["执行操作A"]
@@ -128,9 +129,9 @@ flowchart TD
     C --> E["结束"]
     D --> E
 
-    classDef primary fill:#4F46E5,stroke:#3730A3,color:#fff
-    classDef success fill:#10B981,stroke:#059669,color:#fff
-    classDef decision fill:#F59E0B,stroke:#D97706,color:#000
+    classDef primary fill:#475569,stroke:#334155,color:#fff
+    classDef success fill:#059669,stroke:#047857,color:#fff
+    classDef decision fill:#D97706,stroke:#B45309,color:#fff
 
     class A,E primary
     class C,D success
@@ -164,15 +165,14 @@ A -->|"个人开发，原型设计"| C
 A -->|条件一|条件二| B  %% 会报错！
 ```
 
-**换行语法**:
-- 使用 `<br/>` 在节点内换行：`A["第一行<br/>第二行"]`
+> ⚠️ **Obsidian 兼容**: 不支持 `<br/>` 换行，如需多行内容请拆分为多个节点。
 
 ---
 
 ### 🔄 时序图 (Sequence Diagram)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'actorBkg': '#4F46E5', 'actorTextColor': '#000', 'actorBorder': '#3730A3', 'signalColor': '#6366F1', 'activationBkgColor': '#E0E7FF', 'activationBorderColor': '#4F46E5'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'actorBkg': '#475569', 'actorTextColor': '#1F2937', 'actorBorder': '#334155', 'signalColor': '#64748B', 'activationBkgColor': '#E2E8F0', 'activationBorderColor': '#475569'}}}%%
 sequenceDiagram
     autonumber
     participant U as "用户"
@@ -267,7 +267,7 @@ classDiagram
 ### 🔀 状态图 (State Diagram)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#4F46E5', 'primaryTextColor': '#000'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#475569', 'primaryTextColor': '#1F2937'}}}%%
 stateDiagram-v2
     [*] --> Idle: "初始化"
 
@@ -294,7 +294,7 @@ stateDiagram-v2
 ### 🗃️ ER 图 (Entity Relationship Diagram)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#4F46E5'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#475569'}}}%%
 erDiagram
     USER ||--o{ ORDER : "下单"
     USER {
@@ -339,7 +339,7 @@ erDiagram
 ### 📅 甘特图 (Gantt Chart)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#4F46E5', 'primaryTextColor': '#000', 'primaryBorderColor': '#3730A3', 'gridColor': '#E5E7EB', 'todayLineColor': '#EF4444'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#475569', 'primaryTextColor': '#1F2937', 'primaryBorderColor': '#334155', 'gridColor': '#E5E7EB', 'todayLineColor': '#DC2626'}}}%%
 gantt
     title 项目开发进度
     dateFormat  YYYY-MM-DD
@@ -374,7 +374,7 @@ gantt
 ### 🥧 饼图 (Pie Chart)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'pie1': '#4F46E5', 'pie2': '#10B981', 'pie3': '#F59E0B', 'pie4': '#EF4444', 'pie5': '#8B5CF6', 'pie6': '#EC4899', 'pie7': '#06B6D4'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'pie1': '#475569', 'pie2': '#059669', 'pie3': '#D97706', 'pie4': '#DC2626', 'pie5': '#0284C7', 'pie6': '#64748B', 'pie7': '#94A3B8'}}}%%
 pie showData
     title 技术栈使用占比
     "Go" : 35
@@ -414,7 +414,7 @@ journey
 ### 🌿 Git 图 (Git Graph)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'git0': '#4F46E5', 'git1': '#10B981', 'git2': '#F59E0B', 'git3': '#EF4444', 'gitBranchLabel0': '#4F46E5', 'gitBranchLabel1': '#10B981', 'gitBranchLabel2': '#F59E0B'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'git0': '#475569', 'git1': '#059669', 'git2': '#D97706', 'git3': '#DC2626', 'gitBranchLabel0': '#475569', 'gitBranchLabel1': '#059669', 'gitBranchLabel2': '#D97706'}}}%%
 gitGraph
     commit id: "init"
     commit id: "feat: 添加用户模块"
@@ -474,7 +474,7 @@ mindmap
 ### 📜 时间线 (Timeline)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'cScale0': '#4F46E5', 'cScale1': '#10B981', 'cScale2': '#F59E0B', 'cScale3': '#EF4444'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'cScale0': '#475569', 'cScale1': '#059669', 'cScale2': '#D97706', 'cScale3': '#DC2626'}}}%%
 timeline
     title 产品发展历程
     section 2022
@@ -605,3 +605,4 @@ block-beta
 | sequenceDiagram 渲染失败 | 混用了 class/classDef 语法 | 移除 classDef，改用 themeVariables 配色 |
 | 边标签渲染失败 | 使用多个竖线分隔 | `-->|条件一|条件二|` 改为 `-->|"条件一/条件二"|` |
 | mindmap 解析失败 | init 配置或 root 语法 | 移除 `%%{init}%%`，使用 `root[文本]`，2 空格缩进 |
+| Unsupported markdown: list | Obsidian 不支持 `<br/>` 或 `subgraph ID["标题"]` | 去掉 `<br/>`，改用 `subgraph ID [标题]`（无引号） |
