@@ -260,29 +260,43 @@ def fetch_wallstreetcn(limit=5, keyword=None):
 
 def fetch_producthunt(limit=5, keyword=None):
     try:
-        # Using RSS for speed and reliability without API key
+        # Using RSS/Atom feed for speed and reliability without API key
         response = requests.get("https://www.producthunt.com/feed", headers=HEADERS, timeout=10)
-        soup = BeautifulSoup(response.text, 'xml')
-        if not soup.find('item'): soup = BeautifulSoup(response.text, 'html.parser')
-        
+
+        # BeautifulSoup's 'xml' parser requires lxml; fall back gracefully.
+        try:
+            soup = BeautifulSoup(response.text, 'xml')
+        except Exception:
+            soup = BeautifulSoup(response.text, 'html.parser')
+        if not soup.find('item') and not soup.find('entry'):
+            soup = BeautifulSoup(response.text, 'html.parser')
+
         items = []
         for entry in soup.find_all(['item', 'entry']):
-            title = entry.find('title').get_text(strip=True)
+            title_tag = entry.find('title')
+            title = title_tag.get_text(strip=True) if title_tag else ""
+            if not title:
+                continue
+
             link_tag = entry.find('link')
-            url = link_tag.get('href') or link_tag.get_text(strip=True) if link_tag else ""
-            
-            pubBox = entry.find('pubDate') or entry.find('published')
-            pub = pubBox.get_text(strip=True) if pubBox else ""
-            
+            url = ""
+            if link_tag is not None:
+                url = link_tag.get('href') or link_tag.get_text(strip=True) or ""
+
+            pub_box = entry.find('pubDate') or entry.find('published')
+            pub = pub_box.get_text(strip=True) if pub_box else ""
+
             items.append({
-                "source": "Product Hunt", 
-                "title": title, 
+                "source": "Product Hunt",
+                "title": title,
                 "url": url,
                 "time": pub,
-                "heat": "Top Product" # RSS implies top rank
+                "heat": "Top Product"  # Feed item; exact upvote count not available here
             })
+
         return filter_items(items, keyword)[:limit]
-    except: return []
+    except Exception:
+        return []
 
 def main():
     parser = argparse.ArgumentParser()
