@@ -29,7 +29,7 @@ A[用户登录(必填)] --> B[验证: 检查密码]
 使用 `%%{init}%%` 配置主题变量，这是**最通用的配色方式**，兼容所有图表类型：
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#475569', 'primaryTextColor': '#1F2937', 'primaryBorderColor': '#334155', 'lineColor': '#64748B', 'secondaryColor': '#059669', 'tertiaryColor': '#D97706'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#3B82F6', 'primaryTextColor': '#1E3A5F', 'primaryBorderColor': '#2563EB', 'lineColor': '#60A5FA', 'secondaryColor': '#10B981', 'tertiaryColor': '#F59E0B'}}}%%
 ```
 
 ### ⚠️ 图表类型语法限制（必须遵守）
@@ -53,16 +53,16 @@ sequenceDiagram
     participant C as "客户端"
 ```
 
-**推荐配色板（Slate Blue 专业冷静风格）**:
+**推荐配色板（明亮蓝专业风格）**:
 
 | 用途 | 颜色 | Hex |
 |------|------|-----|
-| 主色（流程/重点） | 石板蓝 | `#475569` |
-| 成功/完成 | 翡翠绿 | `#059669` |
-| 警告/注意 | 琥珀黄 | `#D97706` |
-| 错误/危险 | 砖红 | `#DC2626` |
-| 信息/辅助 | 天青 | `#0284C7` |
-| 连接线 | 灰蓝 | `#64748B` |
+| 主色（流程/重点） | 明亮蓝 | `#3B82F6` |
+| 成功/完成 | 翠绿 | `#10B981` |
+| 警告/注意 | 琥珀 | `#F59E0B` |
+| 错误/危险 | 红色 | `#EF4444` |
+| 信息/辅助 | 天蓝 | `#0EA5E9` |
+| 连接线 | 浅蓝 | `#60A5FA` |
 
 ---
 
@@ -106,11 +106,11 @@ sequenceDiagram
     [节点和关系定义 - 所有标签用双引号包裹]
 
     %% 样式定义（仅 flowchart 支持，其他图表类型请删除以下内容）
-    classDef primary fill:#475569,stroke:#334155,color:#fff
-    classDef success fill:#059669,stroke:#047857,color:#fff
-    classDef warning fill:#D97706,stroke:#B45309,color:#fff
-    classDef danger fill:#DC2626,stroke:#B91C1C,color:#fff
-    classDef info fill:#0284C7,stroke:#0369A1,color:#fff
+    classDef primary fill:#3B82F6,stroke:#2563EB,color:#fff
+    classDef success fill:#10B981,stroke:#059669,color:#fff
+    classDef warning fill:#F59E0B,stroke:#D97706,color:#fff
+    classDef danger fill:#EF4444,stroke:#DC2626,color:#fff
+    classDef info fill:#0EA5E9,stroke:#0284C7,color:#fff
 ​```
 ```
 
@@ -121,7 +121,7 @@ sequenceDiagram
 ### 📈 流程图 (Flowchart)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#475569', 'primaryTextColor': '#1F2937', 'primaryBorderColor': '#334155', 'lineColor': '#64748B', 'secondaryColor': '#059669', 'tertiaryColor': '#D97706'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#3B82F6', 'primaryTextColor': '#1E3A5F', 'primaryBorderColor': '#2563EB', 'lineColor': '#60A5FA', 'secondaryColor': '#10B981', 'tertiaryColor': '#F59E0B'}}}%%
 flowchart TD
     A["开始"] --> B{"条件判断"}
     B -->|"是"| C["执行操作A"]
@@ -129,9 +129,9 @@ flowchart TD
     C --> E["结束"]
     D --> E
 
-    classDef primary fill:#475569,stroke:#334155,color:#fff
-    classDef success fill:#059669,stroke:#047857,color:#fff
-    classDef decision fill:#D97706,stroke:#B45309,color:#fff
+    classDef primary fill:#3B82F6,stroke:#2563EB,color:#fff
+    classDef success fill:#10B981,stroke:#059669,color:#fff
+    classDef decision fill:#F59E0B,stroke:#D97706,color:#fff
 
     class A,E primary
     class C,D success
@@ -172,7 +172,7 @@ A -->|条件一|条件二| B  %% 会报错！
 ### 🔄 时序图 (Sequence Diagram)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'actorBkg': '#475569', 'actorTextColor': '#1F2937', 'actorBorder': '#334155', 'signalColor': '#64748B', 'activationBkgColor': '#E2E8F0', 'activationBorderColor': '#475569'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'actorBkg': '#3B82F6', 'actorTextColor': '#1E3A5F', 'actorBorder': '#2563EB', 'signalColor': '#60A5FA', 'activationBkgColor': '#DBEAFE', 'activationBorderColor': '#3B82F6'}}}%%
 sequenceDiagram
     autonumber
     participant U as "用户"
@@ -267,7 +267,7 @@ classDiagram
 ### 🔀 状态图 (State Diagram)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#475569', 'primaryTextColor': '#1F2937'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#3B82F6', 'primaryTextColor': '#1E3A5F'}}}%%
 stateDiagram-v2
     [*] --> Idle: "初始化"
 
@@ -294,7 +294,7 @@ stateDiagram-v2
 ### 🗃️ ER 图 (Entity Relationship Diagram)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#475569'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#3B82F6'}}}%%
 erDiagram
     USER ||--o{ ORDER : "下单"
     USER {
@@ -339,7 +339,7 @@ erDiagram
 ### 📅 甘特图 (Gantt Chart)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#475569', 'primaryTextColor': '#1F2937', 'primaryBorderColor': '#334155', 'gridColor': '#E5E7EB', 'todayLineColor': '#DC2626'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#3B82F6', 'primaryTextColor': '#1E3A5F', 'primaryBorderColor': '#2563EB', 'gridColor': '#E5E7EB', 'todayLineColor': '#EF4444'}}}%%
 gantt
     title 项目开发进度
     dateFormat  YYYY-MM-DD
@@ -374,7 +374,7 @@ gantt
 ### 🥧 饼图 (Pie Chart)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'pie1': '#475569', 'pie2': '#059669', 'pie3': '#D97706', 'pie4': '#DC2626', 'pie5': '#0284C7', 'pie6': '#64748B', 'pie7': '#94A3B8'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'pie1': '#3B82F6', 'pie2': '#10B981', 'pie3': '#F59E0B', 'pie4': '#EF4444', 'pie5': '#0EA5E9', 'pie6': '#8B5CF6', 'pie7': '#EC4899'}}}%%
 pie showData
     title 技术栈使用占比
     "Go" : 35
@@ -414,7 +414,7 @@ journey
 ### 🌿 Git 图 (Git Graph)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'git0': '#475569', 'git1': '#059669', 'git2': '#D97706', 'git3': '#DC2626', 'gitBranchLabel0': '#475569', 'gitBranchLabel1': '#059669', 'gitBranchLabel2': '#D97706'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'git0': '#3B82F6', 'git1': '#10B981', 'git2': '#F59E0B', 'git3': '#EF4444', 'gitBranchLabel0': '#3B82F6', 'gitBranchLabel1': '#10B981', 'gitBranchLabel2': '#F59E0B'}}}%%
 gitGraph
     commit id: "init"
     commit id: "feat: 添加用户模块"
@@ -474,7 +474,7 @@ mindmap
 ### 📜 时间线 (Timeline)
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': {'cScale0': '#475569', 'cScale1': '#059669', 'cScale2': '#D97706', 'cScale3': '#DC2626'}}}%%
+%%{init: {'theme': 'base', 'themeVariables': {'cScale0': '#3B82F6', 'cScale1': '#10B981', 'cScale2': '#F59E0B', 'cScale3': '#EF4444'}}}%%
 timeline
     title 产品发展历程
     section 2022
