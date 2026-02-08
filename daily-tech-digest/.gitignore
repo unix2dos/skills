@@ -1,0 +1,6 @@
+# 输出目录
+daily-tech-digest_outputs/
+
+# Python
+__pycache__/
+*.pyc

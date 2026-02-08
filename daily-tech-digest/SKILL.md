@@ -57,16 +57,17 @@ python3 scripts/fetch_digest.py --source v2ex,github,nodeseek --limit 5
 
 当用户说 **"给我今天的技术热帖"** 或类似触发词时：
 
-1. **执行脚本**获取原始数据：
+1. **执行脚本**获取原始数据（自动保存到 `daily-tech-digest_outputs/`）：
    ```bash
-   python3 scripts/fetch_digest.py --source all --limit 5 --format json
+   python3 scripts/fetch_digest.py --source all --limit 5
    ```
 
-2. **AI 深度解读**：对每条热帖生成 1-2 句解读，说明：
+2. **AI 后处理**：
+   - 将 Reddit 英文标题翻译成中文
+   - 对每条热帖生成 1-2 句解读
    - 这条为什么值得关注？
-   - 对开发者有什么启发？
 
-3. **生成报告**：保存到 `daily-tech-digest_outputs/digest_YYYYMMDD_HHMM.md`
+3. **更新保存的 Markdown 文件**：加入翻译和解读内容
 
 4. **展示给用户**：在对话中呈现完整报告
 
