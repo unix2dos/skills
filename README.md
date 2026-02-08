@@ -41,6 +41,7 @@ This repository contains modular skills that can be invoked by AI agents (compat
 | 📚 book-recommender | 每日书籍推荐，非虚构类优先 | 豆瓣高分、金句摘录、阅读建议、防重复 | 通用 |
 | 🏛️ history-autopsy | 历史大事件框架速览，形成认知框架 | 热点优先、框架概览、金句速记、查重机制 | 通用 |
 | 🌍 geo-explorer | 地缘认知探索器，5分钟读懂一个地方的“地缘人设” | 热点优先、ASCII关系图、地图搜索、查重机制 | 通用 |
+| 📖 learn-tech | 技术知识学习助手，费曼技巧深度讲解 | MECE架构图、5W2H分析、避坑指南、微型实践 | 通用 |
 
 ### 🔧 工具类
 
