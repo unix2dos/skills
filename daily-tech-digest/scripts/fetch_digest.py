@@ -231,9 +231,8 @@ SOURCES = OrderedDict([
 def main():
     parser = argparse.ArgumentParser(description="Daily Tech Digest - 技术热帖聚合")
     parser.add_argument("--source", default="all",
-                        help="数据源: v2ex, linuxdo, nodeseek, reddit, github, producthunt, all")
+                        help="数据源: github, producthunt, reddit, v2ex, linuxdo, nodeseek, all")
     parser.add_argument("--limit", type=int, default=5, help="每个源的条数 (默认 5)")
-    parser.add_argument("--output", "-o", help="Markdown 输出文件路径 (可选)")
     args = parser.parse_args()
 
     # 确定要抓取的源

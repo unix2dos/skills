@@ -11,25 +11,20 @@ description: "每日技术论坛热帖聚合器。聚焦 V2EX、linux.do、Nodes
 
 | 源 | 类型 | 获取内容 | 状态 |
 |----|------|----------|------|
-| V2EX | 论坛 | 官方热帖 API | ✅ |
-| linux.do | Discourse 论坛 | 最新帖子(按赞排序) | ⚠️ 可能被限制 |
-| Nodeseek | VPS 论坛 | 日榜 (第三方 API) | ✅ |
-| Reddit | r/programming | Hot posts | ✅ |
 | GitHub | Trending | 今日热门仓库 | ✅ |
 | Product Hunt | 产品发布 | 高票产品 | ✅ |
-
-> **Note**: linux.do 有反爬保护，在某些网络环境下可能返回 403。
+| Reddit | r/programming | Hot posts | ✅ |
+| V2EX | 论坛 | 官方热帖 API | ✅ |
+| linux.do | Discourse 论坛 | 热帖 (RSS) | ✅ |
+| Nodeseek | VPS 论坛 | 日榜 (第三方 API) | ✅ |
 
 ## 使用方法
 
 ### 快速开始
 
 ```bash
-# 获取全部源 (JSON 格式)
+# 获取全部源 (输出 JSON)
 python3 scripts/fetch_digest.py --source all --limit 5
-
-# 获取全部源 (Markdown 格式)
-python3 scripts/fetch_digest.py --source all --limit 5 --format markdown
 ```
 
 ### 单独源
@@ -49,9 +44,8 @@ python3 scripts/fetch_digest.py --source v2ex,github,nodeseek --limit 5
 
 | 参数 | 说明 | 默认值 |
 |------|------|--------|
-| `--source` | 数据源，可用: `v2ex`, `linuxdo`, `nodeseek`, `reddit`, `github`, `producthunt`, `all` | `all` |
+| `--source` | 数据源: `github`, `producthunt`, `reddit`, `v2ex`, `linuxdo`, `nodeseek`, `all` | `all` |
 | `--limit` | 每个源获取的条数 | `5` |
-| `--format` | 输出格式: `json` 或 `markdown` | `json` |
 
 ## Agent 执行流程
 
@@ -75,22 +69,41 @@ python3 scripts/fetch_digest.py --source v2ex,github,nodeseek --limit 5
 ### Markdown 报告结构
 
 ```markdown
-# 📰 Daily Tech Digest - 2026-02-08
+# 📰 Daily Tech Digest
 
-## 🔥 今日亮点
-> 3-5 条最值得关注的内容
+> Generated: 2026-02-08 14:00
 
-## V2EX 热帖
-1. [标题](链接)
-   - 热度: XX 回复
-   - 💡 解读: 为什么这条值得关注...
+## GITHUB
 
-## GitHub Trending
 1. [owner / repo](链接)
-   - ⭐ 1.2k stars today
-   - 💡 解读: 这个项目解决了什么问题...
+   - 热度: ⭐ 1,234
+   - 简介中文翻译...
 
-...
+## PRODUCTHUNT
+
+1. [产品名](链接)
+   - 热度: 🔺 882 votes
+   - 简介中文翻译...
+
+## REDDIT
+
+1. [标题中文翻译](链接)
+   - 热度: ↑710 / 97 评论
+
+## V2EX
+
+1. [标题](链接)
+   - 热度: 57 回复
+
+## LINUXDO
+
+1. [标题](链接)
+   - 热度: 🔥 Hot
+
+## NODESEEK
+
+1. [标题](链接)
+   - 热度: 热度 5498
 ```
 
 ## 配置
