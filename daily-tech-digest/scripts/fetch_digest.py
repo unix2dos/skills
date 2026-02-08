@@ -252,52 +252,10 @@ def main():
         fetcher = SOURCES[source_name]
         all_results[source_name] = fetcher(args.limit)
 
-    # 输出 JSON 到 stdout (供 Agent 后续处理，如翻译 Reddit 标题)
+    # 只输出 JSON 到 stdout (供 Agent 后续处理：翻译 + 生成 Markdown + 保存)
     print(json.dumps(all_results, indent=2, ensure_ascii=False))
-
-    # 自动保存 Markdown 文件
-    now = datetime.now()
-    date_str = now.strftime("%Y-%m-%d")
-    time_str = now.strftime("%Y-%m-%d %H:%M")
-
-    lines = []
-    lines.append(f"# 📰 Daily Tech Digest\n")
-    lines.append(f"> Generated: {time_str}\n")
-
-    for source_name, items in all_results.items():
-        lines.append(f"\n## {source_name.upper()}\n")
-        if not items:
-            lines.append("- ⚠️ 获取失败或无数据\n")
-            continue
-        for i, item in enumerate(items, 1):
-            title = item.get("title", "Unknown")
-            url = item.get("url", "#")
-            heat = item.get("heat", "")
-            lines.append(f"{i}. [{title}]({url})")
-            lines.append(f"   - 热度: {heat}")
-            # 额外信息
-            if item.get("tagline"):
-                lines.append(f"   - {item['tagline']}")
-            if item.get("description"):
-                lines.append(f"   - {item['description'][:80]}...")
-            lines.append("")
-
-    output_content = "\n".join(lines)
-
-    # 保存到文件
-    if args.output:
-        output_path = args.output
-    else:
-        # 默认保存到 outputs 目录
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        output_dir = os.path.join(script_dir, "..", "daily-tech-digest_outputs")
-        os.makedirs(output_dir, exist_ok=True)
-        output_path = os.path.join(output_dir, f"digest_{date_str}.md")
-
-    with open(output_path, "w", encoding="utf-8") as f:
-        f.write(output_content)
-    sys.stderr.write(f"[Saved] {output_path}\n")
 
 
 if __name__ == "__main__":
     main()
+
