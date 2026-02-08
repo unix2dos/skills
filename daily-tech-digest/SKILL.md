@@ -73,37 +73,43 @@ python3 scripts/fetch_digest.py --source v2ex,github,nodeseek --limit 5
 
 > Generated: 2026-02-08 14:00
 
-## GITHUB
+---
 
-1. [owner / repo](链接)
-   - 热度: ⭐ 1,234
-   - 简介中文翻译...
+## 🔥 GitHub Trending
 
-## PRODUCTHUNT
+1. [owner/repo](链接) ⭐1.2k
+   简介中文翻译...
 
-1. [产品名](链接)
-   - 热度: 🔺 882 votes
-   - 简介中文翻译...
+---
 
-## REDDIT
+## 🚀 Product Hunt
 
-1. [标题中文翻译](链接)
-   - 热度: ↑710 / 97 评论
+1. [产品名](链接) 🔺882
+   简介中文翻译...
 
-## V2EX
+---
 
-1. [标题](链接)
-   - 热度: 57 回复
+## 💬 Reddit r/programming
 
-## LINUXDO
+1. [标题中文翻译](链接) ↑710
 
-1. [标题](链接)
-   - 热度: 🔥 Hot
+---
 
-## NODESEEK
+## 🌐 V2EX
 
-1. [标题](链接)
-   - 热度: 热度 5498
+1. [标题](链接) 57回复
+
+---
+
+## 🐧 linux.do
+
+1. [标题](链接) 🔥
+
+---
+
+## 📊 Nodeseek
+
+1. [标题](链接) 热度5498
 ```
 
 ## 配置
