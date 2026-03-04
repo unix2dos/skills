@@ -17,7 +17,6 @@ This repository contains modular skills that can be invoked by AI agents (compat
 | 🔧 code-refactor | 代码重构专家，遵循 SOLID 原则和企业设计模式 | 行为等价、可维护性、可扩展性、可测试性 | Go |
 | 🧹 code-simplifier | 代码简化优化，遵循 YAGNI/KISS/DRY 原则 | 复杂度控制、早返回、冗余消除、多语言支持 | 通用 |
 | 🎯 confidence-check | 实施前置信度检查，避免无效编码 | 重复检测、架构合规、文档验证、根因分析 | 通用 |
-| 📋 planning-with-files | Manus 风格文件规划，复杂任务管理 | 任务分解、进度追踪、会话恢复、错误日志 | 通用 |
 
 ### ✨ 创作类
 
@@ -64,7 +63,7 @@ This repository contains modular skills that can be invoked by AI agents (compat
 | humanizer-zh | [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh/blob/main/SKILL.md) |
 | find-skills | [vercel-labs/skills](https://github.com/vercel-labs/skills/blob/main/skills/find-skills/SKILL.md) |
 | hackernews | [vm0-ai/vm0-skills](https://github.com/vm0-ai/vm0-skills/tree/main/hackernews) |
-| planning-with-files | [OthmanAdi/planning-with-files](https://github.com/OthmanAdi/planning-with-files) |
+
 
 ---
 
