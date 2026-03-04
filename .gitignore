@@ -4,3 +4,10 @@
 .system
 **/__pycache__/
 
+# superpowers skills (symlinks from ~/.codex/superpowers)
+brainstorming
+executing-plans
+requesting-code-review
+systematic-debugging
+test-driven-development
+writing-plans
