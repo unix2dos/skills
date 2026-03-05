@@ -29,6 +29,7 @@ SKILLS=(
   "humanizer-zh|op7418/Humanizer-zh|.|main"
   "find-skills|vercel-labs/skills|skills/find-skills|main"
   "hackernews|vm0-ai/vm0-skills|hackernews|main"
+  "architecture-designer|Jeffallan/claude-skills|skills/architecture-designer|main"
 )
 
 # 仓库根目录同步时需要排除的文件（不属于 skill 内容的仓库元文件）
