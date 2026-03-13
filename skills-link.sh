@@ -10,6 +10,7 @@ if [ ! -d "$SKILLS_DIR" ]; then
 fi
 
 LINK_PATHS=(
+  "$HOME/.agents/skills"
   "$HOME/.claude/skills"
   "$HOME/.codex/skills"
   "$HOME/.config/opencode/skills"
