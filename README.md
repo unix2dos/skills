@@ -6,6 +6,8 @@ A collection of reusable AI agent skills designed to extend and enhance agent ca
 
 This repository contains modular skills that can be invoked by AI agents (compatible with OpenCode/OhMyOpenCode). Skills are packaged with clear descriptions, instructions, and optional executable scripts to perform specialized tasks.
 
+This repository is the owned-source layer only. Runtime aggregation for local Codex and agents entrypoints is managed outside this repository by `/Users/liuwei/workspace/dotfiles/agents/skills/install.sh`.
+
 
 ## Available Skills
 
@@ -109,6 +111,8 @@ Agent: [Invokes technical-content-optimizer skill with the draft]
 User: "Generate a diagram for my API flow"
 Agent: [Invokes mermaid-generator skill]
 ```
+
+If you want to expose only this repository to a single tool-specific path, use `./skills-link.sh <target-path>`. Do not use this repository as the machine-wide aggregation layer for third-party or generated skills.
 
 ## Adding New Skills
 
