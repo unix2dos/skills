@@ -8,7 +8,7 @@ TARGET_PATH="${1:-}"
 if [ -z "$TARGET_PATH" ]; then
   echo "Usage: $0 <target-path>" >&2
   echo "This helper links only the owned skills repository to one explicit target." >&2
-  echo "For the machine-wide aggregated install layer, use /Users/liuwei/workspace/dotfiles/codex/skills-install.sh." >&2
+  echo "For the machine-wide aggregated install layer, use /Users/liuwei/workspace/dotfiles/agents/skills/install.sh." >&2
   exit 1
 fi
 

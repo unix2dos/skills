@@ -6,7 +6,7 @@ A collection of reusable AI agent skills designed to extend and enhance agent ca
 
 This repository contains modular skills that can be invoked by AI agents (compatible with OpenCode/OhMyOpenCode). Skills are packaged with clear descriptions, instructions, and optional executable scripts to perform specialized tasks.
 
-This repository is the owned-source layer only. Runtime aggregation for local Codex and agents entrypoints is managed outside this repository by `/Users/liuwei/workspace/dotfiles/codex/skills-install.sh`.
+This repository is the owned-source layer only. Runtime aggregation for local Codex and agents entrypoints is managed outside this repository by `/Users/liuwei/workspace/dotfiles/agents/skills/install.sh`.
 
 
 ## Available Skills
