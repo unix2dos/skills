@@ -2,31 +2,18 @@
 
 set -euo pipefail
 
-SKILLS_DIR="${1:-$HOME/workspace/skills}"
+REPO_ROOT="$(cd "$(dirname "$0")" && pwd)"
+TARGET_PATH="${1:-}"
 
-if [ ! -d "$SKILLS_DIR" ]; then
-  echo "Error: skills directory not found: $SKILLS_DIR" >&2
+if [ -z "$TARGET_PATH" ]; then
+  echo "Usage: $0 <target-path>" >&2
+  echo "This helper links only the owned skills repository to one explicit target." >&2
+  echo "For the machine-wide aggregated install layer, use /Users/liuwei/workspace/dotfiles/codex/skills-install.sh." >&2
   exit 1
 fi
 
-LINK_PATHS=(
-  "$HOME/.agents/skills"
-  "$HOME/.claude/skills"
-  "$HOME/.codex/skills"
-  "$HOME/.config/opencode/skills"
-  "$HOME/.config/alma/skills"
-  "$HOME/.gemini/antigravity/skills"
-  "$HOME/.openclaw/skills"
-)
+mkdir -p "$(dirname "$TARGET_PATH")"
+rm -rf "$TARGET_PATH"
+ln -s "$REPO_ROOT" "$TARGET_PATH"
 
-for LINK_PATH in "${LINK_PATHS[@]}"; do
-  PARENT_DIR="$(dirname "$LINK_PATH")"
-  mkdir -p "$PARENT_DIR"
-
-  if [ -e "$LINK_PATH" ] || [ -L "$LINK_PATH" ]; then
-    rm -rf "$LINK_PATH"
-  fi
-
-  ln -s "$SKILLS_DIR" "$LINK_PATH"
-  echo "Linked $LINK_PATH -> $SKILLS_DIR"
-done
+echo "Linked $TARGET_PATH -> $REPO_ROOT"
