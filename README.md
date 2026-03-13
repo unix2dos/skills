@@ -65,6 +65,7 @@ This repository contains modular skills that can be invoked by AI agents (compat
 | find-skills | [vercel-labs/skills](https://github.com/vercel-labs/skills/blob/main/skills/find-skills/SKILL.md) |
 | hackernews | [vm0-ai/vm0-skills](https://github.com/vm0-ai/vm0-skills/tree/main/hackernews) |
 | architecture-designer | [Jeffallan/claude-skills](https://github.com/Jeffallan/claude-skills/tree/main/skills/architecture-designer) |
+| asking-clarifying-questions | [ed3dai/ed3d-plugins](https://github.com/ed3dai/ed3d-plugins/tree/main/plugins/ed3d-plan-and-execute/skills/asking-clarifying-questions) |
 
 
 ---
