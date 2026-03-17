@@ -1,63 +1,392 @@
 ---
 name: code-review
-description: codereview / code review / 代码审查 - Go 代码审查技能，专注于性能、并发安全、安全性和可读性四大核心维度。
-compatibility: opencode
+description: Conduct thorough, constructive code reviews for quality and security. Use when reviewing pull requests, checking code quality, identifying bugs, or auditing security. Handles best practices, SOLID principles, security vulnerabilities, performance analysis, and testing coverage.
+allowed-tools: Read Grep Glob
+metadata:
+  tags: code-review, code-quality, security, best-practices, PR-review
+  platforms: Claude, ChatGPT, Gemini
 ---
 
-# Go 代码审查
 
-你是一位资深 Go 架构师，遵循 **Effective Go** 及 **Uber Go Style Guide** 规范。所有输出使用**中文**。
+# Code Review
 
-## 审查目标
-| 优先级 | 场景 | 行为 |
-|--------|------|------|
-| 1 | 用户指定文件/函数 | 仅审查指定内容 |
-| 2 | 用户无指定 | `git diff HEAD` 获取变更，若无变更则 `git diff HEAD~1..HEAD` |
-| 3 | 用户指定 commit/分支/tag | `git diff <ref>~1..<ref>` |
+## When to use this skill
+- Reviewing pull requests
+- Checking code quality
+- Providing feedback on implementations
+- Identifying potential bugs
+- Suggesting improvements
+- Security audits
+- Performance analysis
 
-## 审查维度
+## Instructions
 
-### 🔴 性能
-关注架构层面的性能瓶颈：内存分配模式、热路径优化、数据结构选择、缓存策略、I/O 效率。识别可能导致 GC 压力或 CPU 密集的代码模式。
+### Step 1: Understand the context
 
-### 🔒 并发安全
-审视并发模型设计：锁竞争与死锁风险、channel 使用模式、goroutine 生命周期管理、共享状态保护策略。关注 race condition 和资源泄漏。
+**Read the PR description**:
+- What is the goal of this change?
+- Which issues does it address?
+- Are there any special considerations?
 
-### 🔐 安全性
-从攻击者视角审查：注入漏洞（SQL/命令/路径）、敏感数据处理、认证授权边界、输入验证完整性。识别可被利用的安全弱点。
+**Check the scope**:
+- How many files changed?
+- What type of changes? (feature, bugfix, refactor)
+- Are tests included?
 
-### 📖 可读性
-评估代码的可维护性：命名表达力、函数职责清晰度、错误处理一致性、复杂度控制、日志与可观测性。关注未来维护者的认知负担。
+### Step 2: High-level review
 
-## 输出格式
-```markdown
-## 📋 代码审查报告
+**Architecture and design**:
+- Does the approach make sense?
+- Is it consistent with existing patterns?
+- Are there simpler alternatives?
+- Is the code in the right place?
 
-**审查目标**：`<file/commit>` | **时间**：YYYY-MM-DD HH:MM
+**Code organization**:
+- Clear separation of concerns?
+- Appropriate abstraction levels?
+- Logical file/folder structure?
 
-| 等级 | 位置 | 问题 | 建议 |
-|------|------|------|------|
-| 🔴 严重 | `file:line` | 描述 | 建议 |
-| 🟠 高 | `file:line` | 描述 | 建议 |
+### Step 3: Detailed code review
 
-### 📊 统计
-🔴 严重 X | 🟠 高 X | 🟡 中 X | 🟢 低 X
+**Naming**:
+- [ ] Variables: descriptive, meaningful names
+- [ ] Functions: verb-based, clear purpose
+- [ ] Classes: noun-based, single responsibility
+- [ ] Constants: UPPER_CASE for true constants
+- [ ] Avoid abbreviations unless widely known
 
-### 💡 总体评价
-一句话总结 + 改进方向
+**Functions**:
+- [ ] Single responsibility
+- [ ] Reasonable length (< 50 lines ideally)
+- [ ] Clear inputs and outputs
+- [ ] Minimal side effects
+- [ ] Proper error handling
 
-### ✨ 亮点（可选）
-值得称赞的代码实践
+**Classes and objects**:
+- [ ] Single responsibility principle
+- [ ] Open/closed principle
+- [ ] Liskov substitution principle
+- [ ] Interface segregation
+- [ ] Dependency inversion
+
+**Error handling**:
+- [ ] All errors caught and handled
+- [ ] Meaningful error messages
+- [ ] Proper logging
+- [ ] No silent failures
+- [ ] User-friendly errors for UI
+
+**Code quality**:
+- [ ] No code duplication (DRY)
+- [ ] No dead code
+- [ ] No commented-out code
+- [ ] No magic numbers
+- [ ] Consistent formatting
+
+### Step 4: Security review
+
+**Input validation**:
+- [ ] All user inputs validated
+- [ ] Type checking
+- [ ] Range checking
+- [ ] Format validation
+
+**Authentication & Authorization**:
+- [ ] Proper authentication checks
+- [ ] Authorization for sensitive operations
+- [ ] Session management
+- [ ] Password handling (hashing, salting)
+
+**Data protection**:
+- [ ] No hardcoded secrets
+- [ ] Sensitive data encrypted
+- [ ] SQL injection prevention
+- [ ] XSS prevention
+- [ ] CSRF protection
+
+**Dependencies**:
+- [ ] No vulnerable packages
+- [ ] Dependencies up-to-date
+- [ ] Minimal dependency usage
+
+### Step 5: Performance review
+
+**Algorithms**:
+- [ ] Appropriate algorithm choice
+- [ ] Reasonable time complexity
+- [ ] Reasonable space complexity
+- [ ] No unnecessary loops
+
+**Database**:
+- [ ] Efficient queries
+- [ ] Proper indexing
+- [ ] N+1 query prevention
+- [ ] Connection pooling
+
+**Caching**:
+- [ ] Appropriate caching strategy
+- [ ] Cache invalidation handled
+- [ ] Memory usage reasonable
+
+**Resource management**:
+- [ ] Files properly closed
+- [ ] Connections released
+- [ ] Memory leaks prevented
+
+### Step 6: Testing review
+
+**Test coverage**:
+- [ ] Unit tests for new code
+- [ ] Integration tests if needed
+- [ ] Edge cases covered
+- [ ] Error cases tested
+
+**Test quality**:
+- [ ] Tests are readable
+- [ ] Tests are maintainable
+- [ ] Tests are deterministic
+- [ ] No test interdependencies
+- [ ] Proper test data setup/teardown
+
+**Test naming**:
+```python
+# Good
+def test_user_creation_with_valid_data_succeeds():
+    pass
+
+# Bad
+def test1():
+    pass
 ```
 
-## 风险等级
-| 等级 | 含义 | 处理 |
-|------|------|------|
-| 🔴 严重 | 安全漏洞、数据丢失、死锁 | 必须立即修复 |
-| 🟠 高 | 性能问题、goroutine 泄漏 | 应尽快修复 |
-| 🟡 中 | 代码规范、可维护性 | 建议修复 |
-| 🟢 低 | 风格偏好、微小优化 | 可选 |
+### Step 7: Documentation review
 
-## 参考规范
-- [Effective Go](https://go.dev/doc/effective_go)
-- [Uber Go Style Guide](https://github.com/uber-go/guide/blob/master/style.md)
+**Code comments**:
+- [ ] Complex logic explained
+- [ ] No obvious comments
+- [ ] TODOs have tickets
+- [ ] Comments are accurate
+
+**Function documentation**:
+```python
+def calculate_total(items: List[Item], tax_rate: float) -> Decimal:
+    """
+    Calculate the total price including tax.
+
+    Args:
+        items: List of items to calculate total for
+        tax_rate: Tax rate as decimal (e.g., 0.1 for 10%)
+
+    Returns:
+        Total price including tax
+
+    Raises:
+        ValueError: If tax_rate is negative
+    """
+    pass
+```
+
+**README/docs**:
+- [ ] README updated if needed
+- [ ] API docs updated
+- [ ] Migration guide if breaking changes
+
+### Step 8: Provide feedback
+
+**Be constructive**:
+```
+✅ Good:
+"Consider extracting this logic into a separate function for better
+testability and reusability:
+
+def validate_email(email: str) -> bool:
+    return '@' in email and '.' in email.split('@')[1]
+
+This would make it easier to test and reuse across the codebase."
+
+❌ Bad:
+"This is wrong. Rewrite it."
+```
+
+**Be specific**:
+```
+✅ Good:
+"On line 45, this query could cause N+1 problem. Consider using
+.select_related('author') to fetch related objects in a single query."
+
+❌ Bad:
+"Performance issues here."
+```
+
+**Prioritize issues**:
+- 🔴 Critical: Security, data loss, major bugs
+- 🟡 Important: Performance, maintainability
+- 🟢 Nice-to-have: Style, minor improvements
+
+**Acknowledge good work**:
+```
+"Nice use of the strategy pattern here! This makes it easy to add
+new payment methods in the future."
+```
+
+## Review checklist
+
+### Functionality
+- [ ] Code does what it's supposed to do
+- [ ] Edge cases handled
+- [ ] Error cases handled
+- [ ] No obvious bugs
+
+### Code Quality
+- [ ] Clear, descriptive naming
+- [ ] Functions are small and focused
+- [ ] No code duplication
+- [ ] Consistent with codebase style
+- [ ] No code smells
+
+### Security
+- [ ] Input validation
+- [ ] No hardcoded secrets
+- [ ] Authentication/authorization
+- [ ] No SQL injection vulnerabilities
+- [ ] No XSS vulnerabilities
+
+### Performance
+- [ ] No obvious bottlenecks
+- [ ] Efficient algorithms
+- [ ] Proper database queries
+- [ ] Resource management
+
+### Testing
+- [ ] Tests included
+- [ ] Good test coverage
+- [ ] Tests are maintainable
+- [ ] Edge cases tested
+
+### Documentation
+- [ ] Code is self-documenting
+- [ ] Comments where needed
+- [ ] Docs updated
+- [ ] Breaking changes documented
+
+## Common issues
+
+### Anti-patterns
+
+**God class**:
+```python
+# Bad: One class doing everything
+class UserManager:
+    def create_user(self): pass
+    def send_email(self): pass
+    def process_payment(self): pass
+    def generate_report(self): pass
+```
+
+**Magic numbers**:
+```python
+# Bad
+if user.age > 18:
+    pass
+
+# Good
+MINIMUM_AGE = 18
+if user.age > MINIMUM_AGE:
+    pass
+```
+
+**Deep nesting**:
+```python
+# Bad
+if condition1:
+    if condition2:
+        if condition3:
+            if condition4:
+                # deeply nested code
+
+# Good (early returns)
+if not condition1:
+    return
+if not condition2:
+    return
+if not condition3:
+    return
+if not condition4:
+    return
+# flat code
+```
+
+### Security vulnerabilities
+
+**SQL Injection**:
+```python
+# Bad
+query = f"SELECT * FROM users WHERE id = {user_id}"
+
+# Good
+query = "SELECT * FROM users WHERE id = %s"
+cursor.execute(query, (user_id,))
+```
+
+**XSS**:
+```javascript
+// Bad
+element.innerHTML = userInput;
+
+// Good
+element.textContent = userInput;
+```
+
+**Hardcoded secrets**:
+```python
+# Bad
+API_KEY = "sk-1234567890abcdef"
+
+# Good
+API_KEY = os.environ.get("API_KEY")
+```
+
+## Best practices
+
+1. **Review promptly**: Don't make authors wait
+2. **Be respectful**: Focus on code, not the person
+3. **Explain why**: Don't just say what's wrong
+4. **Suggest alternatives**: Show better approaches
+5. **Use examples**: Code examples clarify feedback
+6. **Pick your battles**: Focus on important issues
+7. **Acknowledge good work**: Positive feedback matters
+8. **Review your own code first**: Catch obvious issues
+9. **Use automated tools**: Let tools catch style issues
+10. **Be consistent**: Apply same standards to all code
+
+## Tools to use
+
+**Linters**:
+- Python: pylint, flake8, black
+- JavaScript: eslint, prettier
+- Go: golint, gofmt
+- Rust: clippy, rustfmt
+
+**Security**:
+- Bandit (Python)
+- npm audit (Node.js)
+- OWASP Dependency-Check
+
+**Code quality**:
+- SonarQube
+- CodeClimate
+- Codacy
+
+## References
+
+- [Google Code Review Guidelines](https://google.github.io/eng-practices/review/)
+- [OWASP Top 10](https://owasp.org/www-project-top-ten/)
+- [Clean Code by Robert C. Martin](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882)
+
+## Examples
+
+### Example 1: Basic usage
+<!-- Add example content here -->
+
+### Example 2: Advanced usage
+<!-- Add advanced example content here -->
