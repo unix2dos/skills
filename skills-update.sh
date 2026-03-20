@@ -24,7 +24,7 @@ NC='\033[0m' # No Color
 # ─── 三方 Skill 映射表 ───────────────────────────────────────────
 # 格式: "本地目录名|GitHub仓库|上游子目录(. 表示仓库根目录)|默认分支"
 SKILLS=(
-  "code-review|supercent-io/skills-template|.agent-skills/code-review|main"
+  "my-code-review|supercent-io/skills-template|.agent-skills/code-review|main"
   "skill-creator|anthropics/skills|skills/skill-creator|main"
   "yt-dlp-downloader|MapleShaw/yt-dlp-downloader-skill|.|master"
   "humanizer-zh|op7418/Humanizer-zh|.|main"
