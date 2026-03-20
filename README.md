@@ -15,6 +15,8 @@ A curated collection of AI agent skills that extend agent capabilities for code 
 | 🎯 [confidence-check](./confidence-check/SKILL.md) | 实施前置信度检查，避免无效编码 | 重复检测、架构合规、文档验证、根因分析 | 通用 |
 | 🏛️ [architecture-designer](./architecture-designer/SKILL.md) | 架构设计专家，用于系统设计和架构决策 | 架构模式推荐、ADR文档、系统设计、数据库选型 | 通用 |
 | ❓ [asking-clarifying-questions](./asking-clarifying-questions/SKILL.md) | 需求澄清，消除矛盾、歧义和假设 | 矛盾解决、术语消歧、边界澄清、假设验证 | 通用 |
+| 👑 [strategic-product-advisor](./strategic-product-advisor/SKILL.md) | 顶级战略产品师，深度战略审视与商业化路径 | 五维战略诊断、商业化路线图、PMF评估、竞品分析 | 通用 |
+| 🎨 [ui-ux-auditor](./ui-ux-auditor/SKILL.md) | 顶级 UI/UX 设计审计师，系统性设计审查与体验重构 | 六维设计诊断、视觉层次、留白与呼吸感、一致性审查 | 通用 |
 
 ### ✨ 创作类
 
@@ -39,6 +41,7 @@ A curated collection of AI agent skills that extend agent capabilities for code 
 | 🏛️ [history-autopsy](./history-autopsy/SKILL.md) | 历史大事件框架速览，形成认知框架 | 热点优先、框架概览、金句速记、查重机制 | 通用 |
 | 🌍 [geo-explorer](./geo-explorer/SKILL.md) | 地缘认知探索器，5分钟读懂一个地方的"地缘人设" | 热点优先、ASCII关系图、地图搜索、查重机制 | 通用 |
 | 📖 [learn-tech](./learn-tech/SKILL.md) | 技术知识学习助手，费曼技巧深度讲解 | MECE架构图、5W2H分析、避坑指南、微型实践 | 通用 |
+| 🚀 [project-hunter](./project-hunter/SKILL.md) | AI 时代项目机会发现器，挖掘高潜力赚钱方向 | 多角度搜索、趋势洞察、四维评估、独立开发路线 | 通用 |
 
 ### 🔧 工具类
 
