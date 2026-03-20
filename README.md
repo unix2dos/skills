@@ -40,21 +40,6 @@ A curated collection of AI agent skills that extend agent capabilities for code 
 
 ---
 
-## Community Skills
-
-以下社区 skills 已迁移至 [skills-manager](https://github.com/unix2dos/dotfiles/tree/main/skills-manager) 统一管理，感谢原作者的贡献：
-
-| Skill | 来源 |
-|-------|------|
-| my-code-review | [supercent-io/skills-template](https://github.com/supercent-io/skills-template/tree/main/.agent-skills/code-review) |
-| skill-creator | [anthropics/skills](https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md) |
-| yt-dlp-downloader | [MapleShaw/yt-dlp-downloader-skill](https://github.com/MapleShaw/yt-dlp-downloader-skill/blob/master/SKILL.md) |
-| humanizer-zh | [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh/blob/main/SKILL.md) |
-| find-skills | [vercel-labs/skills](https://github.com/vercel-labs/skills/blob/main/skills/find-skills/SKILL.md) |
-| hackernews | [vm0-ai/vm0-skills](https://github.com/vm0-ai/vm0-skills/tree/main/hackernews) |
-| architecture-designer | [Jeffallan/claude-skills](https://github.com/Jeffallan/claude-skills/tree/main/skills/architecture-designer) |
-| asking-clarifying-questions | [ed3dai/ed3d-plugins](https://github.com/ed3dai/ed3d-plugins/tree/main/plugins/ed3d-plan-and-execute/skills/asking-clarifying-questions) |
-
 ## Skill Structure
 
 ```
