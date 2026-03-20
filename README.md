@@ -8,7 +8,7 @@ A curated collection of AI agent skills that extend agent capabilities for code 
 
 | 名称 | 描述 | 主要特性 | 适用范围 |
 |------|------|----------|----------|
-| 🔍 [code-review](./code-review/SKILL.md) | 通用代码审查，覆盖质量、安全、性能、测试全维度 | 7步结构化审查、SOLID原则、反模式识别、安全审计 | 通用 |
+| 🔍 [my-code-review](./my-code-review/SKILL.md) | 通用代码审查，覆盖质量、安全、性能、测试全维度 | 7步结构化审查、SOLID原则、反模式识别、安全审计 | 通用 |
 | 🔍 [go-code-review](./go-code-review/SKILL.md) | Go 代码深度审查，聚焦性能、安全、并发、可读性 | 智能范围检测、性能审查、并发安全、安全扫描 | Go |
 | 🔧 [code-refactor](./code-refactor/SKILL.md) | 代码重构专家，遵循 SOLID 原则和企业设计模式 | 行为等价、可维护性、可扩展性、可测试性 | Go |
 | 🧹 [code-simplifier](./code-simplifier/SKILL.md) | 代码简化优化，遵循 YAGNI/KISS/DRY 原则 | 复杂度控制、早返回、冗余消除、多语言支持 | 通用 |
@@ -56,7 +56,7 @@ A curated collection of AI agent skills that extend agent capabilities for code 
 
 | Skill | 来源 |
 |-------|------|
-| code-review | [supercent-io/skills-template](https://github.com/supercent-io/skills-template/tree/main/.agent-skills/code-review) |
+| my-code-review | [supercent-io/skills-template](https://github.com/supercent-io/skills-template/tree/main/.agent-skills/code-review) |
 | skill-creator | [anthropics/skills](https://github.com/anthropics/skills/blob/main/skills/skill-creator/SKILL.md) |
 | yt-dlp-downloader | [MapleShaw/yt-dlp-downloader-skill](https://github.com/MapleShaw/yt-dlp-downloader-skill/blob/master/SKILL.md) |
 | humanizer-zh | [op7418/Humanizer-zh](https://github.com/op7418/Humanizer-zh/blob/main/SKILL.md) |

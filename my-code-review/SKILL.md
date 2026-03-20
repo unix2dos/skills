@@ -1,5 +1,5 @@
 ---
-name: code-review
+name: my-code-review
 description: Conduct thorough, constructive code reviews for quality and security. Use when reviewing pull requests, checking code quality, identifying bugs, or auditing security. Handles best practices, SOLID principles, security vulnerabilities, performance analysis, and testing coverage.
 allowed-tools: Read Grep Glob
 metadata:
