@@ -92,7 +92,15 @@ sequenceDiagram
 
 ### Step 2: 生成 Mermaid 代码
 
-参考 chart-templates.md 中的完整模板生成代码。所有标签用双引号包裹，使用 `%%{init}%%` 配置主题。
+参考 chart-templates.md 中的完整模板生成代码。
+
+**写完代码后，输出前过一遍这三条：**
+
+| 检查项 | 正确 ✅ | 错误 ❌ |
+|--------|--------|--------|
+| 所有节点标签有双引号 | `A["文字(说明)"]` | `A[文字(说明)]` |
+| 配色用对了语法 | flowchart 用 `classDef`；其他图表只用 `%%{init themeVariables}%%` | 在 sequenceDiagram 里写 `classDef` |
+| 无 `<br/>` 换行 | 多行内容拆成多个节点 | `A["第一行<br/>第二行"]` |
 
 **输出格式**:
 
