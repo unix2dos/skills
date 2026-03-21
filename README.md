@@ -14,6 +14,7 @@ A curated collection of AI agent skills that extend agent capabilities for code 
 | 🎯 [confidence-check](./confidence-check/SKILL.md) | 实施前置信度检查，避免无效编码 | 重复检测、架构合规、文档验证、根因分析 | 通用 |
 | 👑 [strategic-product-advisor](./strategic-product-advisor/SKILL.md) | 顶级战略产品师，深度战略审视与商业化路径 | 五维战略诊断、商业化路线图、PMF评估、竞品分析 | 通用 |
 | 🎨 [ui-ux-auditor](./ui-ux-auditor/SKILL.md) | 顶级 UI/UX 设计审计师，系统性设计审查与体验重构 | 六维设计诊断、视觉层次、留白与呼吸感、一致性审查 | 通用 |
+| 🔬 [autoresearch](./autoresearch/SKILL.md) | 自动化 Skill 优化，基于 Karpathy autoresearch 方法论 | 二元评估、自主实验循环、变异保留/丢弃、实时仪表盘 | 通用 |
 
 ### ✨ 创作类
 
