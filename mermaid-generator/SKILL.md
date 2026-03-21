@@ -1,6 +1,6 @@
 ---
 name: mermaid-generator
-description: 根据用户描述智能选择最合适的图表类型并生成 Mermaid 代码。支持流程图、时序图、类图、ER图、甘特图、状态图等全部类型，专业冷静配色，Obsidian 兼容。
+description: Use when the user needs to generate diagrams, flowcharts, sequence diagrams, ER diagrams, or any visual chart in Mermaid format - triggers on "画图"、"图表"、"流程图"、"mermaid"
 compatibility: opencode
 ---
 

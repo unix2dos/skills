@@ -1,6 +1,6 @@
 ---
 name: technical-content-optimizer
-description: 润色中文技术博客，去除冗余表达，提升专业性和逻辑性，消除"AI味"，确保代码规范。
+description: Use when polishing or editing Chinese technical blog posts - removes redundancy, improves professionalism, eliminates AI-sounding prose, and ensures code formatting
 ---
 
 # 技术内容优化专家

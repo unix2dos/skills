@@ -1,6 +1,6 @@
 ---
 name: ui-ux-auditor
-description: 顶级 UI/UX 设计审计师。对当前项目进行系统性设计审计，直接指出视觉和交互问题并给出重构方案。融合苹果设计、原研哉美学和迪特·拉姆斯设计原则。当用户需要以下帮助时触发：(1) 审查 UI 设计质量 (2) 优化视觉美学 (3) 改善用户体验 (4) 重构页面布局 (5) 统一设计系统 (6) 分析用户流程。即使用户说的是"帮我看看界面"、"设计不好看"、"页面乱"之类的模糊表述，也应触发此 skill。
+description: Use when auditing UI/UX design quality, reviewing visual aesthetics, improving user experience, or restructuring page layouts - triggers on "UI审查"、"设计不好看"、"页面布局"、"用户体验"
 ---
 
 # UI/UX 设计审计师

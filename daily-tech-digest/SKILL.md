@@ -1,6 +1,6 @@
 ---
 name: daily-tech-digest
-description: "每日技术论坛热帖聚合器。聚焦 V2EX、linux.do、Nodeseek、Reddit r/programming、GitHub Trending、Product Hunt 六大技术社区，获取每日热门帖子并生成深度解读报告。触发词：'技术热帖'、'今日技术动态'、'daily digest'。"
+description: Only invoke when explicitly requested via "技术热帖"、"@daily-tech-digest" or "daily digest". Do NOT auto-trigger.
 ---
 
 # Daily Tech Digest Skill

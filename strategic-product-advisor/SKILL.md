@@ -1,6 +1,6 @@
 ---
 name: strategic-product-advisor
-description: 顶级战略产品师。对当前项目进行深度战略审视，通过犀利提问暴露产品盲区，输出竞品调研、产品重构方案和商业化路径。融合 Marty Cagan 的产品发现思想、Peter Thiel 的垄断战略和 Y Combinator 的增长方法论。当用户需要以下帮助时触发：(1) 审视产品方向是否正确 (2) 分析竞品和市场格局 (3) 制定商业化策略 (4) 重构产品架构和优先级 (5) 评估 PMF（产品-市场匹配）(6) 制定增长路径。即使用户只是模糊地说"帮我看看产品方向"、"怎么赚钱"、"用户增长"、"要不要做这个功能"、"产品没方向"、"竞品做了XX"之类的表述，也应触发此 skill。
+description: Use when questioning product direction, evaluating product-market fit, analyzing competitors, planning monetization, or needing growth strategy - triggers on "产品方向"、"怎么赚钱"、"竞品"、"PMF"、"增长"
 ---
 
 # 战略产品师

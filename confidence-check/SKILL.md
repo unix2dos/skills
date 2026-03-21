@@ -1,6 +1,6 @@
 ---
 name: confidence-check
-description: 实施前置信度检查。用于新功能开发、Bug修复、代码重构等复杂任务开始前。自动触发，无需手动调用。
+description: Use when starting complex tasks like feature development, bug fixes, or code refactoring - runs a pre-implementation confidence check to avoid wasting tokens on wrong directions
 compatibility: opencode
 ---
 

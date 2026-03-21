@@ -1,6 +1,6 @@
 ---
 name: history-autopsy
-description: 历史大事件框架速览 - 每日一个宏观历史大事件的框架式概览。优先关联近期热点，形成系统认知框架，提供社交谈资。输出包含定义、起因、进程、影响、认知框架、谈资速记六大模块。
+description: Only invoke when explicitly requested via "历史速览"、"@history-autopsy" or "history autopsy". Do NOT auto-trigger.
 ---
 
 # 历史大事件框架速览

@@ -1,6 +1,6 @@
 ---
 name: go-code-review
-description: codereview / code review / 代码审查 - Go 代码审查技能，专注于性能、并发安全、安全性和可读性四大核心维度。
+description: Use when reviewing Go code for performance, concurrency safety, security vulnerabilities, or readability issues
 compatibility: opencode
 ---
 

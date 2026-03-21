@@ -1,6 +1,6 @@
 ---
 name: wisdom-decoder
-description: 智慧解码器 - 随机佛学/哲学/心理学知识解码。把深刻道理讲透 + 给出可执行实践方法。触发方式：@wisdom-decoder。输出包含核心解码、顶尖路线图、禁忌洞察、陌生视角四大模块。
+description: Only invoke when explicitly requested via "智慧解码"、"@wisdom-decoder" or "wisdom decoder". Do NOT auto-trigger.
 ---
 
 # 智慧解码器

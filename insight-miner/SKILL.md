@@ -1,6 +1,6 @@
 ---
 name: insight-miner
-description: 洞见挖掘者 - 每日深度洞察生成器。从知识海洋中随机捕获一个"知识奇点"，通过跨学科模型应用，将其转化为可操作的思维框架与行动原则。当用户需要：(1) 获取每日洞见或灵感 (2) 探索跨学科思维模型 (3) 将抽象知识转化为行动原则 (4) 寻求认知突破与思维升级时使用。支持随机生成、指定领域生成、查看历史、统计分析等功能。触发方式：@insight-miner 或 "给我一个洞见"、"今日洞察"、"挖掘一个新想法"等。
+description: Only invoke when explicitly requested via "洞见"、"@insight-miner" or "insight". Do NOT auto-trigger.
 ---
 
 # Insight Miner - 洞见挖掘者

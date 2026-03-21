@@ -1,6 +1,6 @@
 ---
 name: project-hunter
-description: AI 时代项目机会发现器。搜索当下最值得投入的、有发展潜力的项目方向，覆盖游戏、工具、SaaS、开源、插件、AI Agent、自动化等全品类。适合会 AI 编程的开发者寻找创业/副业方向。当用户提到"做什么项目"、"有什么机会"、"值得投入"、"发展潜力"、"创业方向"、"副业"、"独立开发"、"indie hacker"、"AI 时代机会"、"项目灵感"等话题时触发。即使用户只是模糊地表达想做点什么、想找方向，也应该触发此 skill。
+description: Use when looking for project ideas, startup directions, side business opportunities, or indie hacker inspiration - triggers on "做什么项目"、"创业方向"、"副业"、"项目灵感"、"indie hacker"
 ---
 
 # Project Hunter — AI 时代项目机会发现器

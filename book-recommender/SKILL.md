@@ -1,6 +1,6 @@
 ---
 name: book-recommender
-description: 每日书籍推荐官 - 每天为你推荐一本值得阅读的好书。专注于非虚构类（社会学/心理学/哲学优先），能给人生启发的经典之作。输出包含书名、作者、豆瓣评分、内容简介、金句摘录、适合人群、阅读建议。触发方式：@book-rec 或 "推荐一本书"、"今日书籍"、"有什么书推荐"等。
+description: Only invoke when explicitly requested via "推荐一本书"、"书籍推荐"、"@book-rec" or "book recommendation". Do NOT auto-trigger.
 ---
 
 # Book Recommender - 每日书籍推荐官

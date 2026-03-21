@@ -1,6 +1,6 @@
 ---
 name: value-judge
-description: 价值判断与打分工具。对书籍、文章、GitHub项目、视频课程、工具产品、论文等进行多维度评分。当用户需要：(1) 评估某内容是否值得投入时间 (2) 对已阅读/使用的内容进行打分总结 (3) 比较多个资源的价值高低 (4) 询问"值不值得看/学"时使用。支持 URL 输入或直接粘贴内容。
+description: Use when evaluating whether a book, article, GitHub project, video course, tool, or paper is worth investing time in, or when comparing value across multiple resources
 ---
 
 # 价值判断与打分
