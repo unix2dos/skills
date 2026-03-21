@@ -1,0 +1,23 @@
+{
+  "skill_name": "ui-ux-auditor",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "UI审查一下这个登录表单，帮我找出问题：\n\n```html\n<div style=\"background:#fff;padding:20px\">\n  <p style=\"font-size:24px;font-weight:bold;color:#333\">登录</p>\n  <div>\n    <p>用户名</p>\n    <input type=\"text\" placeholder=\"请输入用户名\" style=\"border:1px solid #ccc;padding:5px;width:200px\">\n  </div>\n  <div style=\"margin-top:10px\">\n    <p>密码</p>\n    <input type=\"password\" placeholder=\"请输入密码\" style=\"border:1px solid #ccc;padding:5px;width:200px\">\n  </div>\n  <div style=\"margin-top:15px\">\n    <button style=\"background:#1890ff;color:#fff;padding:8px 16px;border:none;cursor:pointer\">登录</button>\n    <button style=\"background:#52c41a;color:#fff;padding:8px 16px;border:none;cursor:pointer;margin-left:10px\">注册</button>\n    <button style=\"background:#faad14;color:#fff;padding:6px 12px;border:none;cursor:pointer;margin-left:8px\">忘记密码</button>\n  </div>\n</div>\n```\n\n这是桌面端应用。",
+      "expected_output": "完整的 UI/UX 诊断报告，包含：综合评分表（7维度）、严重问题section、改进建议section、做得好的部分、优先级路线图。应指出：三个按钮权重相同（CTA混乱）、无label关联、无hover/focus状态、内边距5px过小、颜色硬编码等问题。",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "@ui-ux-auditor 这是我们的仪表盘卡片组件，移动端产品，帮我做设计审计：\n\n```css\n.card { background: white; border: 1px solid #e0e0e0; border-radius: 4px; padding: 12px; margin: 8px; }\n.card-title { font-size: 18px; font-weight: 700; color: #000000; }\n.card-subtitle { font-size: 16px; color: #333; margin-top: 2px; }\n.card-value { font-size: 32px; font-weight: 900; color: #1890ff; margin-top: 8px; }\n.card-change { font-size: 14px; color: #52c41a; }\n.card-footer { font-size: 13px; color: #999; margin-top: 3px; }\n.card-action { background: #1890ff; color: white; padding: 4px 8px; font-size: 11px; border-radius: 2px; }\n```\n\n```html\n<div class=\"card\">\n  <div class=\"card-title\">月销售额</div>\n  <div class=\"card-subtitle\">2024年3月数据</div>\n  <div class=\"card-value\">¥128,450</div>\n  <div class=\"card-change\">↑ 12.3% 较上月</div>\n  <div class=\"card-footer\">最后更新：10分钟前</div>\n  <button class=\"card-action\">查看详情</button>\n</div>\n```",
+      "expected_output": "完整的 UI/UX 诊断报告。应指出：字号层级混乱（18/16/32/14/13/11共6个层级）、行间距过小（margin-top:2px/3px）、按钮触控目标过小（移动端4px 8px远不足44px）、border-radius:2px与卡片4px不一致、无hover/active状态等问题。",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "设计审计一下这个导航组件，告诉我有什么问题需要修复：\n\n```jsx\nexport function Nav() {\n  return (\n    <nav style={{display:'flex', justifyContent:'space-between', padding:'10px 20px', background:'#001529'}}>\n      <div style={{color:'white', fontSize:'20px', fontWeight:'bold'}}>MyApp</div>\n      <div style={{display:'flex', gap:'5px'}}>\n        <a href=\"/\" style={{color:'rgba(255,255,255,0.65)', padding:'0 15px', fontSize:'14px'}}>首页</a>\n        <a href=\"/dashboard\" style={{color:'white', padding:'0 15px', fontSize:'14px', borderBottom:'2px solid #1890ff'}}>仪表盘</a>\n        <a href=\"/users\" style={{color:'rgba(255,255,255,0.65)', padding:'0 15px', fontSize:'14px'}}>用户管理</a>\n        <a href=\"/settings\" style={{color:'rgba(255,255,255,0.65)', padding:'0 15px', fontSize:'14px'}}>系统设置</a>\n        <a href=\"/reports\" style={{color:'rgba(255,255,255,0.65)', padding:'0 15px', fontSize:'14px'}}>报表</a>\n        <a href=\"/analytics\" style={{color:'rgba(255,255,255,0.65)', padding:'0 15px', fontSize:'14px'}}>数据分析</a>\n        <a href=\"/logs\" style={{color:'rgba(255,255,255,0.65)', padding:'0 15px', fontSize:'14px'}}>操作日志</a>\n      </div>\n      <div>\n        <img src=\"/avatar.png\" style={{width:'32px', height:'32px', borderRadius:'50%'}} />\n        <span style={{color:'white', marginLeft:'8px', fontSize:'14px'}}>管理员</span>\n      </div>\n    </nav>\n  );\n}",
+      "expected_output": "完整的 UI/UX 诊断报告。应指出：img没有alt属性（可访问性）、gap:5px导航项间距过小、所有样式内联（无设计系统）、无键盘focus样式、缺少移动端适配、hover状态仅靠颜色区分等问题。",
+      "files": []
+    }
+  ]
+}
