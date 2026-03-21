@@ -1,6 +1,6 @@
 ---
 name: strategic-product-advisor
-description: Use when questioning product direction, evaluating product-market fit, analyzing competitors, planning monetization, or needing growth strategy - triggers on "产品方向"、"怎么赚钱"、"竞品"、"PMF"、"增长"
+description: Only invoke when explicitly requested via "产品方向"、"怎么赚钱"、"竞品分析"、"@strategic-product-advisor". Do NOT auto-trigger.
 ---
 
 # 战略产品分析

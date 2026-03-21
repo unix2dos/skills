@@ -7,6 +7,17 @@ description: Use when refactoring Go code for better structure, maintainability,
 
 Golang 代码重构技能，帮助重构和优化 Go 代码。
 
+## When to Use
+- 需要改变代码结构（拆函数、拆模块、改接口）
+- 需要引入设计模式（依赖注入、函数选项模式等）
+- 改善可扩展性、可测试性
+- 涉及 SOLID 原则级别的结构调整
+
+## When NOT to Use
+- 只需要删代码、降复杂度、去冗余 → 用 **code-simplifier**
+- 需要审查安全/并发/性能问题 → 用 **go-code-review**
+- 非 Go 语言代码 → 用 **code-simplifier**（支持任何语言）
+
 ## 重构约束（按优先级执行）
 
 ### P0 - 行为等价性（不可妥协）

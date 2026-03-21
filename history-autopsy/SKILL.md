@@ -60,7 +60,7 @@ description: Only invoke when explicitly requested via "历史速览"、"@histor
 
 1. **热点优先**：通过上述流程获取热点，选择能建立"历史透镜"关系的大事件
 2. **创新加分**：不局限于预设池，有创意的冷门选题加分
-3. **去重机制**：已讲过的事件不再重复（记录于 `history_autopsy_log.json`）
+3. **去重机制**：已讲过的事件不再重复（参见下方"去重与保存"章节）
 4. **多样性**：避免连续选择同一地区/时期
 
 ### 事件类型池（参考，鼓励跳出）
@@ -96,20 +96,11 @@ description: Only invoke when explicitly requested via "历史速览"、"@histor
 - 非洲
 - 全球性事件
 
-## 查重流程
+## 去重与保存
 
-1. 读取 `history_autopsy_log.json`（若不存在则视为空数组 `[]`）
-2. 检查候选事件是否已在历史中
-3. 若重复：重新选择（最多 3 次）
-4. 若 3 次后仍重复：
-   > 您的历史档案已相当丰富！人类历史浩如烟海，请稍后再试或指定您感兴趣的历史时期。
-5. 若成功：将事件名称追加到历史并写回
-
-## 输出保存
-
-1. **保存目录**：`history_autopsy_outputs/`
-2. **文件命名**：`{YYYY-MM-DD}_{事件名称}.md`
-3. 保存完成后告知用户文件路径
+去重流程参见 `shared/dedup-history.md`。本 Skill 配置：
+- 历史文件：`history_autopsy_log.json`
+- 输出目录：`history_autopsy_outputs/`，文件名 `{YYYY-MM-DD}_{事件名称}.md`
 
 ## 输出格式（严格遵守）
 

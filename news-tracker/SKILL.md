@@ -1,6 +1,6 @@
 ---
 name: news-tracker
-description: Use when the user asks about latest news, recent developments, or current status of any topic, company, person, product, or event - keywords include "新闻"、"动态"、"最新"、"最近"、"进展"
+description: Only invoke when explicitly requested via "新闻"、"最新动态"、"@news-tracker" or "latest news". Do NOT auto-trigger.
 ---
 
 # News Tracker

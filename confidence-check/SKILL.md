@@ -1,7 +1,6 @@
 ---
 name: confidence-check
 description: Use when starting complex tasks like feature development, bug fixes, or code refactoring - runs a pre-implementation confidence check to avoid wasting tokens on wrong directions
-compatibility: opencode
 ---
 
 # 实施前置信度检查

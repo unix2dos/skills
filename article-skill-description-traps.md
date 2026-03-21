@@ -245,7 +245,78 @@ mermaid-generator/
 
 拆分后 SKILL.md 从 1,694 词降到 530 词，模板文件只在 Claude 确认了图表类型后才被引用加载。单次对话节省约 1,100 token 的无效加载。
 
-## 8. 一条检验标准
+## 8. 相似 Skill 必须划清边界
+
+审完 description 和正文，还剩一个隐蔽问题：我有两个 Skill 功能高度重叠，但没有任何边界说明。
+
+`code-simplifier` 做代码简化，`code-refactor` 做代码重构。听起来不同，但用户说"这段代码太复杂了帮我改改"时，Claude 不知道该加载哪个。两个 Skill 的 description 都能匹配，最终靠运气决定。
+
+规范的 SKILL.md 标准结构里有一个 `## When to Use` 章节，要求包含"When NOT to use"。这不是可选装饰——对于功能相近的 Skill，这是路由能否正确分流的关键。
+
+修正方式是在两个 Skill 里互相指向对方：
+
+```markdown
+# code-simplifier 中
+## When to Use
+- 代码嵌套过深、圈复杂度过高
+- 存在明显的 YAGNI 违规
+- 需要"减法"：删代码、砍抽象、inline 只用一次的函数
+
+## When NOT to Use
+- 需要改接口签名、拆模块、引入设计模式 → 用 code-refactor
+- 需要审查安全/并发问题 → 用 go-code-review
+```
+
+```markdown
+# code-refactor 中
+## When to Use
+- 需要改变代码结构（拆函数、拆模块、改接口）
+- 需要引入设计模式（依赖注入、函数选项模式等）
+
+## When NOT to Use
+- 只需要删代码、降复杂度、去冗余 → 用 code-simplifier
+- 非 Go 语言代码 → 用 code-simplifier（支持任何语言）
+```
+
+划界的本质是给 Claude 一张路由表：用户的意图匹配 A 还是 B，边界条件是什么，歧义时选哪个。没有这张表，Claude 只能猜。
+
+## 9. Frontmatter 只支持两个字段
+
+规范明确说：**frontmatter 只支持 `name` 和 `description`。** 但我有 3 个 Skill 加了 `compatibility: opencode`——这是为了兼容另一个 AI 编码工具。Claude Code 会静默忽略它，但它占 token、可能影响解析，属于无效负载。删除即可。
+
+## 10. 7 份相同的去重代码
+
+7 个内容生成类 Skill 各自实现了一套几乎相同的去重逻辑：
+
+```
+1. 读取 xxx_history.json（若不存在则视为空数组）
+2. 检查候选内容是否已在历史中
+3. 若重复：重新选择（最多 3 次）
+4. 生成内容
+5. 追加记录到 xxx_history.json
+6. 如果达到 N 条，移除最旧的一条（FIFO）
+```
+
+每个 Skill 里这段逻辑占 50-80 词，7 份就是 350-560 词的纯重复。解决方案是抽取为一个通用 supporting file：
+
+```
+skills/
+  shared/
+    dedup-history.md    # 通用去重流程
+```
+
+各 Skill 用两行引用替代：
+
+```markdown
+## 去重与保存
+去重流程参见 shared/dedup-history.md。本 Skill 配置：
+- 历史文件：wisdom_history.json，领域轮换排除最近 2 条
+- 输出目录：wisdom_decoder_outputs/
+```
+
+规范里有对应的建议："Use cross-references — Don't repeat what's in cross-referenced skills"。道理一样：同一段逻辑写 7 遍，改一处要改 7 处，还容易漏。
+
+## 11. 一条检验标准
 
 写完 description 后，用这个问题检验：
 
@@ -259,10 +330,6 @@ mermaid-generator/
 
 ## 参考资料
 
-- [superpowers/writing-skills](https://github.com/obra/superpowers-marketplace/tree/main/superpowers/skills/writing-skills) — superpowers 插件中的 Skill 编写规范，本文所有规范引用的来源
-- [anthropic-best-practices.md](https://github.com/obra/superpowers-marketplace/tree/main/superpowers/skills/writing-skills/anthropic-best-practices.md) — 同目录下的 Anthropic 官方最佳实践参考文档
-
-
-
-
+- [superpowers/writing-skills](https://github.com/obra/superpowers/blob/main/skills/writing-skills/SKILL.md) — superpowers 插件中的 Skill 编写规范，本文所有规范引用的来源
+- [anthropic-best-practices.md](https://github.com/davila7/claude-code-templates/blob/main/cli-tool/components/skills/development/writing-skills/anthropic-best-practices.md) — 同目录下的 Anthropic 官方最佳实践参考文档
 

@@ -44,9 +44,7 @@ description: Only invoke when explicitly requested via "推荐一本书"、"书�
 
 ### Step 1: 检查已推荐书籍
 
-1. 读取 `book_history.json`（与本 SKILL.md 同目录）
-2. 如果文件不存在，初始化为 `{"books": [], "max_size": 500}`
-3. 提取所有已推荐书名，作为排除集合
+去重流程参见 `shared/dedup-history.md`。历史文件：`book_history.json`，上限 500 条。
 
 ### Step 2: 选择/确认书籍
 
@@ -256,20 +254,7 @@ description: Only invoke when explicitly requested via "推荐一本书"、"书�
 
 ### Step 4: 保存数据
 
-1. **更新 book_history.json**:
-   ```json
-   {
-     "title": "书名",
-     "author": "作者",
-     "category": "分类",
-     "date": "YYYY-MM-DD"
-   }
-   ```
-   - 如果达到 500 条，移除最旧的一条（FIFO）
-
-2. **保存推荐文件**:
-   - 路径: `book_outputs/YYYY-MM-DD_书名.md`
-   - 内容: 完整的推荐输出
+更新 `book_history.json` 并保存推荐文件到 `book_outputs/YYYY-MM-DD_书名.md`。
 
 ---
 

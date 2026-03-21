@@ -1,6 +1,6 @@
 ---
 name: project-hunter
-description: Use when looking for project ideas, startup directions, side business opportunities, or indie hacker inspiration - triggers on "做什么项目"、"创业方向"、"副业"、"项目灵感"、"indie hacker"
+description: Only invoke when explicitly requested via "做什么项目"、"创业方向"、"副业"、"@project-hunter" or "project ideas". Do NOT auto-trigger.
 ---
 
 # 项目机会发现

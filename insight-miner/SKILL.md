@@ -53,9 +53,7 @@ description: Only invoke when explicitly requested via "洞见"、"@insight-mine
 
 ### Step 1: 检查已用奇点
 
-1. 读取 `insight_miner_history.json`（与本 SKILL.md 同目录）
-2. 如果文件不存在，初始化为 `{"anchors": [], "max_size": 1000}`
-3. 提取所有已用奇点名称，作为排除集合
+去重流程参见 `shared/dedup-history.md`。历史文件：`insight_miner_history.json`，上限 1000 条。
 
 ### Step 2: 选择知识奇点
 
@@ -241,20 +239,7 @@ description: Only invoke when explicitly requested via "洞见"、"@insight-mine
 
 ### Step 6: 保存数据
 
-1. **更新 insight_miner_history.json**:
-   ```json
-   {
-     "name": "奇点名称",
-     "domain": "应用领域",
-     "date": "YYYY-MM-DD",
-     "title": "生成的主题标题"
-   }
-   ```
-   - 如果达到 1000 条，移除最旧的一条（FIFO）
-
-2. **保存洞见文件**:
-   - 路径: `insight_miner_outputs/YYYY-MM-DD_主题标题.md`
-   - 内容: 完整的洞见输出
+更新 `insight_miner_history.json` 并保存洞见文件到 `insight_miner_outputs/YYYY-MM-DD_主题标题.md`。
 
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: value-judge
-description: Use when evaluating whether a book, article, GitHub project, video course, tool, or paper is worth investing time in, or when comparing value across multiple resources
+description: Only invoke when explicitly requested via "值不值得看"、"评估打分"、"@value-judge" or "evaluate value". Do NOT auto-trigger.
 ---
 
 # 价值判断与打分

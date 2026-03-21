@@ -1,6 +1,6 @@
 ---
 name: ui-ux-auditor
-description: Use when auditing UI/UX design quality, reviewing visual aesthetics, improving user experience, or restructuring page layouts - triggers on "UI审查"、"设计不好看"、"页面布局"、"用户体验"
+description: Only invoke when explicitly requested via "UI审查"、"设计审计"、"@ui-ux-auditor" or "design audit". Do NOT auto-trigger.
 ---
 
 # UI/UX 设计审计

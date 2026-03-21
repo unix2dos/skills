@@ -1,6 +1,6 @@
 ---
 name: learn-tech
-description: Use when the user wants to learn or understand a technical concept in depth - triggers on "学习"、"讲解"、"teach me"、"explain"、"@learn-tech"
+description: Only invoke when explicitly requested via "学习"、"讲解"、"teach me"、"@learn-tech". Do NOT auto-trigger.
 ---
 
 # 技术知识学习

@@ -1,6 +1,6 @@
 ---
 name: technical-content-optimizer
-description: Use when polishing or editing Chinese technical blog posts - removes redundancy, improves professionalism, eliminates AI-sounding prose, and ensures code formatting
+description: Only invoke when explicitly requested via "润色博客"、"技术博客优化"、"@technical-content-optimizer" or "polish blog". Do NOT auto-trigger.
 ---
 
 # 技术内容优化

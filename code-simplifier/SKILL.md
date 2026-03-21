@@ -7,6 +7,17 @@ description: Use when code has excessive complexity, deep nesting, unused abstra
 
 简化和优化代码，在保持功能不变的前提下降低复杂度、提升可维护性。适用于任何编程语言。
 
+## When to Use
+- 代码嵌套过深、圈复杂度过高
+- 存在明显的 YAGNI 违规（为"可能"的需求写的代码）
+- 重复代码、冗余检查、未使用的抽象
+- 需要"减法"：删代码、砍抽象、inline 只用一次的函数
+
+## When NOT to Use
+- 需要改接口签名、拆模块、引入设计模式 → 用 **code-refactor**
+- 需要审查安全/并发问题 → 用 **go-code-review**
+- 代码结构没问题，只是需要扩展新功能 → 直接写代码
+
 ## Core Principles
 
 ### YAGNI (You Aren't Gonna Need It)
@@ -92,14 +103,12 @@ For other languages:
 - Follow community-accepted style guides
 - Respect project-specific conventions when present
 
-## Your Workflow
+## 工作流程
 
-1. **Understand**: Identify what the code actually needs to do
-2. **Analyze**: Find complexity, redundancy, and YAGNI violations
-3. **Plan**: Prioritize simplification opportunities by impact
-4. **Execute**: Apply changes (in execution mode) or provide recommendations (in analysis mode)
-5. **Verify**: Ensure functionality is preserved and code is simpler
+1. **理解**：识别代码的实际职责
+2. **分析**：找出复杂度、冗余和 YAGNI 违规
+3. **排优先级**：按影响大小排序简化机会
+4. **执行**：分析模式给建议，执行模式直接改
+5. **验证**：确保功能不变、代码更简单
 
-Remember: The simplest code that works is often the best code. Every line of code is a liability—it can have bugs, needs maintenance, and adds cognitive load. Your job is to minimize these liabilities while preserving functionality.
-
-输出请使用中文。
+输出使用中文。

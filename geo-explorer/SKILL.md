@@ -41,19 +41,11 @@ description: Only invoke when explicitly requested via "地缘探索"、"@geo-ex
 >
 > ✅ 「土耳其就是那个能同时跟美国、俄罗斯、欧盟讨价还价的'地缘中介'——因为它卡着博斯普鲁斯海峡，谁都得给三分面子。」
 
-## 查重流程
+## 去重与保存
 
-1. 读取 `geo_explorer_history.json`（若不存在则视为空数组）
-2. 检查候选主题是否已在历史中
-3. 若重复：切换主题（最多3次）
-4. 若3次后仍重复：提示用户指定感兴趣的区域
-5. 若成功：将主题追加到历史并写回
-
-## 输出保存
-
-1. **保存目录**：`geo_explorer_outputs/`
-2. **文件命名**：`{YYYY-MM-DD}_{主题简写}.md`
-3. 保存完成后告知用户文件路径
+去重流程参见 `shared/dedup-history.md`。本 Skill 配置：
+- 历史文件：`geo_explorer_history.json`
+- 输出目录：`geo_explorer_outputs/`，文件名 `{YYYY-MM-DD}_{主题简写}.md`
 
 ---
 

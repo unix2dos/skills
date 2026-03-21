@@ -1,7 +1,6 @@
 ---
 name: go-code-review
 description: Use when reviewing Go code for performance, concurrency safety, security vulnerabilities, or readability issues
-compatibility: opencode
 ---
 
 # Go 代码审查
