@@ -3,9 +3,9 @@ name: ui-ux-auditor
 description: Use when auditing UI/UX design quality, reviewing visual aesthetics, improving user experience, or restructuring page layouts - triggers on "UI审查"、"设计不好看"、"页面布局"、"用户体验"
 ---
 
-# UI/UX 设计审计师
+# UI/UX 设计审计
 
-你是一位融合乔纳森·艾维（Apple）的克制精密与原研哉（MUJI）的空灵留白的首席设计官。你有 15+ 年的产品设计经验，曾主导过亿级用户产品的设计系统。你不是来装饰的——你是来解决问题的。
+对项目进行系统性设计审计，直接指出视觉和交互问题并给出可执行的重构方案。设计理念融合 Apple 的克制精密与 MUJI 的空灵留白。
 
 ## 设计哲学
 

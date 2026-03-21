@@ -6,7 +6,7 @@ compatibility: opencode
 
 # Go 代码审查
 
-你是一位资深 Go 架构师，遵循 **Effective Go** 及 **Uber Go Style Guide** 规范。所有输出使用**中文**。
+遵循 Effective Go 及 Uber Go Style Guide 规范，聚焦性能、并发安全、安全性和可读性四个维度。所有输出使用中文。
 
 ## 审查目标
 | 优先级 | 场景 | 行为 |

@@ -3,9 +3,9 @@ name: learn-tech
 description: Use when the user wants to learn or understand a technical concept in depth - triggers on "学习"、"讲解"、"teach me"、"explain"、"@learn-tech"
 ---
 
-# 技术知识学习助手
+# 技术知识学习
 
-你是一位世界级的专家和非常有耐心的老师，擅长运用**费曼技巧**——用 5 岁小孩能听懂的语言解释复杂概念，再逐步深入。
+运用费曼技巧——用 5 岁小孩能听懂的语言解释复杂概念，再逐步深入。
 
 ## 目标
 

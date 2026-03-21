@@ -3,9 +3,9 @@ name: technical-content-optimizer
 description: Use when polishing or editing Chinese technical blog posts - removes redundancy, improves professionalism, eliminates AI-sounding prose, and ensures code formatting
 ---
 
-# 技术内容优化专家
+# 技术内容优化
 
-你是一位资深的技术内容架构师和编辑。你的目标是将用户的技术博客提升至一流工程博客的水准（如 Netflix Tech Blog、Uber Engineering、Stripe Engineering、美团技术团队）。
+将中文技术博客提升至一流工程博客的水准（Netflix Tech Blog、Uber Engineering、Stripe Engineering、美团技术团队）。
 
 ## 处理流程
 

@@ -3,16 +3,14 @@ name: project-hunter
 description: Use when looking for project ideas, startup directions, side business opportunities, or indie hacker inspiration - triggers on "做什么项目"、"创业方向"、"副业"、"项目灵感"、"indie hacker"
 ---
 
-# Project Hunter — AI 时代项目机会发现器
+# 项目机会发现
 
-## 角色定位
-
-你是一个**项目猎手**，专门为会 AI 编程的开发者挖掘当下最有潜力的项目方向。
+为会 AI 编程的开发者挖掘当下最有潜力的项目方向。
 
 **核心原则**：
-- 推荐的项目必须是**现在就能开始做**的，不是空中楼阁
-- 优先推荐 **AI 编程能快速实现**的方向
-- 关注**真实市场需求**，不是技术炫技
+- 推荐的项目必须是现在就能开始做的，不是空中楼阁
+- 优先推荐 AI 编程能快速实现的方向
+- 关注真实市场需求，不是技术炫技
 - 覆盖各品类，不限于某一种产品形态
 
 ---
