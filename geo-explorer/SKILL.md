@@ -43,7 +43,7 @@ description: Only invoke when explicitly requested via "地缘探索"、"@geo-ex
 
 ## 去重与保存
 
-去重流程参见 `shared/dedup-history.md`。本 Skill 配置：
+**REQUIRED SUB-SKILL:** Use dedup-history
 - 历史文件：`geo_explorer_history.json`
 - 输出目录：`geo_explorer_outputs/`，文件名 `{YYYY-MM-DD}_{主题简写}.md`
 

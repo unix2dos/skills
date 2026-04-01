@@ -98,7 +98,7 @@ description: Only invoke when explicitly requested via "历史速览"、"@histor
 
 ## 去重与保存
 
-去重流程参见 `shared/dedup-history.md`。本 Skill 配置：
+**REQUIRED SUB-SKILL:** Use dedup-history
 - 历史文件：`history_autopsy_log.json`
 - 输出目录：`history_autopsy_outputs/`，文件名 `{YYYY-MM-DD}_{事件名称}.md`
 

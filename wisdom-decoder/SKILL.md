@@ -30,7 +30,7 @@ description: Only invoke when explicitly requested via "智慧解码"、"@wisdom
 
 ## 去重与保存
 
-去重流程参见 `shared/dedup-history.md`。本 Skill 配置：
+**REQUIRED SUB-SKILL:** Use dedup-history
 - 历史文件：`wisdom_history.json`，领域轮换排除最近 2 条
 - 输出目录：`wisdom_decoder_outputs/`，文件名 `{YYYY-MM-DD}_{主题}.md`
 

@@ -44,7 +44,7 @@ description: Only invoke when explicitly requested via "推荐一本书"、"书�
 
 ### Step 1: 检查已推荐书籍
 
-去重流程参见 `shared/dedup-history.md`。历史文件：`book_history.json`，上限 500 条。
+**REQUIRED SUB-SKILL:** Use dedup-history。历史文件：`book_history.json`，上限 500 条。
 
 ### Step 2: 选择/确认书籍
 

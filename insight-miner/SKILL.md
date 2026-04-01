@@ -53,7 +53,7 @@ description: Only invoke when explicitly requested via "洞见"、"@insight-mine
 
 ### Step 1: 检查已用奇点
 
-去重流程参见 `shared/dedup-history.md`。历史文件：`insight_miner_history.json`，上限 1000 条。
+**REQUIRED SUB-SKILL:** Use dedup-history。历史文件：`insight_miner_history.json`，上限 1000 条。
 
 ### Step 2: 选择知识奇点
 
