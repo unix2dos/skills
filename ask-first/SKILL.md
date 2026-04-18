@@ -1,6 +1,6 @@
 ---
 name: ask-first
-description: Use when user intent is vague, ambiguous, or under-specified — runs a 3-direction divergence then adaptive dialog to extract tacit intent before any implementation. Auto-triggers on inputs heavy in adjectives but light in concrete objects (e.g. "让它更专业"、"优化一下"、"做个后台"、"modernize this"). Also invoked explicitly via "先问后做"、"帮我想清楚"、"@ask-first".
+description: MUST run BEFORE any implementation, refactoring, or verification skill (including confidence-check, code-refactor, ui-ux-auditor, skill-creator) whenever user input lacks concrete object/action/constraint. Extracts tacit intent via 3-direction divergence + adaptive questioning + playback. Auto-triggers on adjective-heavy inputs ("让它更专业"、"优化一下"、"做个后台"、"modernize this")、overloaded verbs without scope ("重构"、"优化"、"升级")、or missing objects ("改改"、"你看着办"). Explicit invocation: "先问后做"、"帮我想清楚"、"@ask-first".
 ---
 
 # 先问后做（Ask First）
@@ -21,6 +21,17 @@ description: Use when user intent is vague, ambiguous, or under-specified — ru
 - **是**在 AI 行动之前，把用户模糊的意图从缄默区（tacit）拽到显式区（explicit）。
 - 两者是上下游：`ask-first` 管**用户侧输入完整性**，`confidence-check` 管**AI 侧理解完整性**。
 
+### 优先级规则（非常重要）
+
+当一次用户输入**同时匹配**本 Skill 与 `confidence-check`（或 `code-refactor` 等其他实施型 Skill）的触发条件时，**本 Skill 绝对优先**。
+
+判定依据：如果输入中任何一项是「形容词级模糊」而非「具体可度量」，本 Skill 吃下。
+- ❌ "优化 UserService.ts 的**性能**" ← "性能"是形容词级 → **本 Skill 先跑**
+- ❌ "重构 auth 模块" ← "重构"未定形态 → **本 Skill 先跑**
+- ✅ "把 getUserList 改成**分页，每页 20 条**" ← 参数具体 → 让给 confidence-check
+
+只有当输入三要素齐全（**具体对象 + 具体动作 + 具体约束/目标值**）时，本 Skill 才沉默让位。
+
 ---
 
 ## 触发规则
@@ -32,9 +43,12 @@ description: Use when user intent is vague, ambiguous, or under-specified — ru
 | 形容词密度高、具体对象少 | "让它更优雅"、"做得更专业"、"体验要好" |
 | 动作对象缺失 | "优化一下"、"改改"、"你看着办" |
 | 多义动词无边界 | "整合"、"重构"、"升级"（不说改什么、到什么程度） |
+| **有对象但动作形容词化**（易漏档位，必须命中） | "优化 UserService 的**性能**"、"重构 auth **模块**"、"让首页**更现代**" |
 | 类比参照缺失 | "像某某那样" 但没提供链接/截图/样例 |
 | 大任务无边界 | "做个后台系统"、"写个爬虫"、"给我来个 AI 助手" |
 | 价值观形容词 | "高端"、"现代"、"有设计感"、"自然"（未锚定具体参考） |
+
+> 关键原则：**只要动作或目标里出现形容词级词汇（优化/提升/现代/专业/优雅/自然/简洁/高级…），不管有没有具体对象，都立即触发本 Skill**。对象明确 ≠ 意图明确。
 
 ### 显式触发
 
@@ -175,9 +189,34 @@ description: Use when user intent is vague, ambiguous, or under-specified — ru
 这样对吗？不对的地方直接改对应行，其他保持不变。
 ```
 
-- 用户 ✅ 确认 → 开始实施。
+- 用户 ✅ 确认 → **强制进入第 5 步（移交给下游 Skill）**，不得直接开干。
 - 用户 🔧 修改 → 只针对改动项再对齐一轮（不要整个流程重来）。
 - 用户 ❌ 全部推翻 → 回到第 2 步重新发散 3 个方向。
+
+---
+
+### 第 5 步：强制移交下游（Mandatory Handoff）
+
+用户确认意图回放后，**本 Skill 的工作结束**，但不得跳过技术层面的自检。必须**显式声明交接**：
+
+```
+✅ 意图对齐完成。现在切换到 [confidence-check] 做 AI 侧自检（重复实现 / 架构合规 / 官方文档），再开始实施。
+```
+
+根据任务类型选择下游 Skill：
+
+| 原始任务 | 下游 Skill |
+|---------|------------|
+| 代码开发/修改/重构 | `confidence-check` |
+| Go 代码审查 | `go-code-review` |
+| UI/UX 改造 | `ui-ux-auditor` |
+| 创建新 Skill | `skill-creator` |
+| 产品战略决策 | `strategic-product-advisor` |
+| 其他 | 默认 `confidence-check` |
+
+**下游 Skill 不必重新询问意图**——已在第 4 步意图回放中锁定。下游只做各自职责内的检查。
+
+> 为什么必须有这一步：本 Skill 的职责是**让模糊输入变清晰**，不包含技术可行性检查。如果直接跳过 confidence-check 开干，可能会重复实现已有代码、违反项目架构、或误用 API。本步骤是把对齐后的意图"扔回 Skill 生态"的明确信号。
 
 ---
 
@@ -288,14 +327,40 @@ description: Use when user intent is vague, ambiguous, or under-specified — ru
 
 ---
 
-## 与其他 Skill 的协作
+## 与其他 Skill 的关系
 
-| Skill | 协作关系 |
+本 Skill 在生态中是**前置中间件**。具体交接协议已写入**第 5 步**（强制移交），这里只做定性说明：
+
+```
+用户模糊输入
+   │
+   ▼
+┌─────────────────┐
+│   ask-first     │  用户侧：挤出显式意图（本 Skill）
+└────────┬────────┘
+         │ 意图回放 + 用户确认 + 第 5 步显式交接
+         ▼
+     下游 Skill
+  （confidence-check / code-refactor / ui-ux-auditor /
+    skill-creator / strategic-product-advisor …）
+```
+
+### 不耦合的设计
+
+本 Skill **不要求**下游 Skill 修改自己的代码。下游的 `confidence-check` 等保持原样，只靠以下机制达成双层护栏：
+
+1. **优先级规则**（见"定位"章节）：模糊输入永远本 Skill 先吃。
+2. **第 5 步显式交接**：Agent 结束本 Skill 后主动调用下游。
+3. **意图回放作为契约**：下游 Skill 直接读第 4 步的回放块，不重复询问。
+
+### 相关 Skill 分工
+
+| Skill | 关系 |
 |------|---------|
-| `confidence-check` | **下游**。ask-first 完成用户侧对齐后，confidence-check 做 AI 侧自检，形成双层护栏 |
-| `strategic-product-advisor` | **垂直专化版**。做产品战略时优先用它（它有自己的 5 维度提问框架） |
-| `code-refactor` / `ui-ux-auditor` | 当用户说"优化一下代码/界面"但无具体对象时，先跑 ask-first 对齐，再交给它们 |
-| `autoresearch` | 可用于自动优化这个 Skill 本身——用二元评估测"3 轮内能否收敛模糊输入" |
+| `confidence-check` | 默认下游。做 AI 侧自检（重复实现 / 架构 / 文档） |
+| `strategic-product-advisor` | **垂直专化版**。做产品战略时它优先（有自己的 5 维度提问） |
+| `skill-creator` | "写一个 skill" 场景下游 |
+| `autoresearch` | 可用于自动优化本 Skill——eval 指标「3 轮内能否收敛模糊输入」 |
 
 ---
 
