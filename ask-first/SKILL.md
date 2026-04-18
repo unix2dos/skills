@@ -5,13 +5,7 @@ description: MUST run BEFORE any implementation, refactoring, or verification sk
 
 # 先问后做（Ask First）
 
-> **维特根斯坦**：语言的边界即世界的边界，凡不可言说者，必须保持沉默。
-> **波兰尼**：人类所知的，永远多于我们能说出的（缄默知识）。
-> **慧能**：不立文字，教外别传。
-> **Hinton**：理解发生在高维连续向量空间，而非离散符号中。
-> **LeCun**：语言只是现实世界极度低维的投影。
->
-> 用户说出来的，永远少于他想要的。这个 Skill 的职责是把差距补回来——在 AI 动手之前。
+用户说出来的往往少于他想要的。在 AI 动手之前，把缄默意图拉到显式。
 
 ---
 
@@ -393,15 +387,11 @@ description: MUST run BEFORE any implementation, refactoring, or verification sk
 | `confidence-check` | 默认下游。做 AI 侧自检（重复实现 / 架构 / 文档） |
 | `strategic-product-advisor` | **垂直专化版**。做产品战略时它优先（有自己的 5 维度提问） |
 | `skill-creator` | "写一个 skill" 场景下游 |
-| `autoresearch` | 可用于自动优化本 Skill——eval 指标「3 轮内能否收敛模糊输入」 |
 
 ---
 
-## 设计哲学（激活潜在空间）
+## 原则
 
-这个 Skill 自己就是它方法论第 9 条的应用——头部引用维特根斯坦、波兰尼、慧能、Hinton、LeCun，是为了在运行时激活 Agent 的"**哲学 + 认知科学 + AI 研究**"交叉权重，让它以更高质量的模式思考「意图对齐」这件事，而不是退化成套话模板。
-
-核心信念：
 - 用户不是在**隐藏**意图，是**无法表达**意图（缄默知识）。
 - AI 的任务不是"听懂"，而是"**帮用户把意图挤出来**"。
 - 最贵的不是 token，是**走错方向的 token**。
