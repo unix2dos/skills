@@ -12,6 +12,7 @@ A curated collection of AI agent skills that extend agent capabilities for code 
 | 🔧 [code-refactor](./code-refactor/SKILL.md) | 代码重构专家，遵循 SOLID 原则和企业设计模式 | 行为等价、可维护性、可扩展性、可测试性 | Go |
 | 🧹 [code-simplifier](./code-simplifier/SKILL.md) | 代码简化优化，遵循 YAGNI/KISS/DRY 原则 | 复杂度控制、早返回、冗余消除、多语言支持 | 通用 |
 | 🎯 [confidence-check](./confidence-check/SKILL.md) | 实施前置信度检查，避免无效编码 | 重复检测、架构合规、文档验证、根因分析 | 通用 |
+| 🔭 [ask-first](./ask-first/SKILL.md) | 意图对焦器，从模糊输入中挤出显式意图 | 三方向发散、自适应追问、意图回放、参考锚定 | 通用 |
 | 👑 [strategic-product-advisor](./strategic-product-advisor/SKILL.md) | 顶级战略产品师，深度战略审视与商业化路径 | 五维战略诊断、商业化路线图、PMF评估、竞品分析 | 通用 |
 | 🎨 [ui-ux-auditor](./ui-ux-auditor/SKILL.md) | 顶级 UI/UX 设计审计师，系统性设计审查与体验重构 | 六维设计诊断、视觉层次、留白与呼吸感、一致性审查 | 通用 |
 | 🔬 [autoresearch](./autoresearch/SKILL.md) | 自动化 Skill 优化，基于 Karpathy autoresearch 方法论 | 二元评估、自主实验循环、变异保留/丢弃、实时仪表盘 | 通用 |
