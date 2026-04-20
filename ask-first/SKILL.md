@@ -1,6 +1,6 @@
 ---
 name: ask-first
-description: MUST run BEFORE any implementation, refactoring, or verification skill (including confidence-check, code-refactor, ui-ux-auditor, skill-creator) whenever user input lacks concrete object/action/constraint. Extracts tacit intent via 3-direction divergence + adaptive questioning + playback. Auto-triggers on adjective-heavy inputs ("让它更专业"、"优化一下"、"做个后台"、"modernize this")、overloaded verbs without scope ("重构"、"优化"、"升级")、or missing objects ("改改"、"你看着办"). Explicit invocation: "先问后做"、"帮我想清楚"、"@ask-first".
+description: Use when user input lacks a concrete object, action, or constraint and the agent should clarify tacit intent before implementation, refactoring, or verification.
 ---
 
 # 先问后做（Ask First）
