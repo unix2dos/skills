@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Autoresearch · learn-map</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<style>
+  :root {
+    --bg: #fafaf7;
+    --panel: #ffffff;
+    --ink: #2a2a2a;
+    --muted: #8a8a8a;
+    --border: #ececec;
+    --accent: #a8d8ea;
+    --keep: #b5ead7;
+    --discard: #ffd6d6;
+    --baseline: #d8c5ea;
+  }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif; background: var(--bg); color: var(--ink); margin: 0; padding: 24px; line-height: 1.5; }
+  h1 { font-size: 22px; margin: 0 0 4px; font-weight: 600; }
+  .subtitle { color: var(--muted); font-size: 13px; margin-bottom: 24px; }
+  .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; margin-bottom: 20px; }
+  .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 10px; padding: 18px; }
+  .panel h2 { font-size: 14px; margin: 0 0 12px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .stats { display: flex; gap: 18px; flex-wrap: wrap; }
+  .stat { flex: 1; min-width: 120px; }
+  .stat-label { color: var(--muted); font-size: 12px; }
+  .stat-value { font-size: 28px; font-weight: 600; margin-top: 4px; }
+  .status { display: inline-block; padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 500; }
+  .status.running { background: var(--accent); color: #1a4d5c; }
+  .status.complete { background: var(--keep); color: #1a4d3c; }
+  .status.idle { background: #eee; color: var(--muted); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 500; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; }
+  td.score { font-variant-numeric: tabular-nums; font-weight: 600; }
+  .badge { display: inline-block; padding: 2px 8px; border-radius: 8px; font-size: 11px; font-weight: 600; }
+  .badge.keep { background: var(--keep); color: #1a4d3c; }
+  .badge.discard { background: var(--discard); color: #6c1a1a; }
+  .badge.baseline { background: var(--baseline); color: #3b1a4d; }
+  .eval-row { display: flex; align-items: center; gap: 10px; padding: 6px 0; font-size: 13px; }
+  .eval-name { flex: 1; color: var(--ink); }
+  .eval-bar { width: 100px; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden; }
+  .eval-bar-fill { height: 100%; background: var(--keep); transition: width 0.3s; }
+  .eval-pct { width: 50px; text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; font-size: 12px; }
+  .empty { color: var(--muted); font-style: italic; padding: 20px; text-align: center; }
+  #chartWrap { height: 280px; }
+</style>
+</head>
+<body>
+  <h1>Autoresearch · learn-map</h1>
+  <div class="subtitle" id="subtitle">Loading...</div>
+
+  <div class="grid">
+    <div class="panel">
+      <h2>Score progression</h2>
+      <div id="chartWrap"><canvas id="chart"></canvas></div>
+    </div>
+    <div class="panel">
+      <h2>Stats</h2>
+      <div class="stats">
+        <div class="stat"><div class="stat-label">Status</div><div class="stat-value" id="statStatus" style="font-size: 16px; padding-top: 8px;"><span class="status idle">idle</span></div></div>
+        <div class="stat"><div class="stat-label">Experiments</div><div class="stat-value" id="statCount">0</div></div>
+        <div class="stat"><div class="stat-label">Baseline</div><div class="stat-value" id="statBaseline">—</div></div>
+        <div class="stat"><div class="stat-label">Best</div><div class="stat-value" id="statBest">—</div></div>
+      </div>
+      <h2 style="margin-top: 24px;">Per-eval pass rate</h2>
+      <div id="evalBreakdown"><div class="empty">No data yet</div></div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h2>Experiments</h2>
+    <table>
+      <thead><tr><th>#</th><th>Score</th><th>Pass rate</th><th>Status</th><th>Description</th></tr></thead>
+      <tbody id="expBody"><tr><td colspan="5" class="empty">No experiments yet</td></tr></tbody>
+    </table>
+  </div>
+
+<script>
+let chart;
+
+async function refresh() {
+  try {
+    const res = await fetch('results.json?t=' + Date.now());
+    const d = await res.json();
+    render(d);
+  } catch (e) {
+    document.getElementById('subtitle').textContent = 'Cannot load results.json — ' + e.message;
+  }
+}
+
+function render(d) {
+  document.getElementById('subtitle').textContent = `${d.skill_name} · max score ${d.max_score} · ${d.experiments.length} experiments logged`;
+
+  const statusEl = document.getElementById('statStatus');
+  statusEl.innerHTML = `<span class="status ${d.status}">${d.status}</span>`;
+
+  document.getElementById('statCount').textContent = d.experiments.length;
+  document.getElementById('statBaseline').textContent = d.baseline_score !== null ? d.baseline_score.toFixed(1) + '%' : '—';
+  document.getElementById('statBest').textContent = d.best_score !== null ? d.best_score.toFixed(1) + '%' : '—';
+
+  const tbody = document.getElementById('expBody');
+  if (d.experiments.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="5" class="empty">No experiments yet</td></tr>';
+  } else {
+    tbody.innerHTML = d.experiments.map(e => `
+      <tr>
+        <td class="score">${e.id}</td>
+        <td class="score">${e.score}/${e.max_score}</td>
+        <td class="score">${e.pass_rate.toFixed(1)}%</td>
+        <td><span class="badge ${e.status}">${e.status}</span></td>
+        <td>${escapeHtml(e.description || '')}</td>
+      </tr>
+    `).join('');
+  }
+
+  const breakdown = document.getElementById('evalBreakdown');
+  if (d.eval_breakdown.length === 0 || d.eval_breakdown.every(e => e.total === 0)) {
+    breakdown.innerHTML = '<div class="empty">No data yet</div>';
+  } else {
+    breakdown.innerHTML = d.eval_breakdown.map(e => {
+      const pct = e.total > 0 ? (e.pass_count / e.total * 100) : 0;
+      return `
+        <div class="eval-row">
+          <div class="eval-name">${escapeHtml(e.name)}</div>
+          <div class="eval-bar"><div class="eval-bar-fill" style="width: ${pct}%"></div></div>
+          <div class="eval-pct">${pct.toFixed(0)}%</div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  const labels = d.experiments.map(e => '#' + e.id);
+  const scores = d.experiments.map(e => e.pass_rate);
+  const colors = d.experiments.map(e => e.status === 'baseline' ? '#d8c5ea' : (e.status === 'keep' ? '#b5ead7' : '#ffd6d6'));
+
+  if (chart) chart.destroy();
+  const ctx = document.getElementById('chart').getContext('2d');
+  chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Pass rate %',
+        data: scores,
+        borderColor: '#a8d8ea',
+        backgroundColor: 'rgba(168, 216, 234, 0.1)',
+        pointBackgroundColor: colors,
+        pointBorderColor: colors,
+        pointRadius: 6,
+        pointHoverRadius: 8,
+        tension: 0.3,
+        fill: true,
+      }]
+    },
+    options: {
+      maintainAspectRatio: false,
+      scales: { y: { min: 0, max: 100, ticks: { callback: v => v + '%' } } },
+      plugins: { legend: { display: false } }
+    }
+  });
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+refresh();
+setInterval(refresh, 10000);
+</script>
+</body>
+</html>
