@@ -1,3 +1,5 @@
 experiment	score	max_score	pass_rate	status	description
-0	22	24	91.7%	baseline	original skill — 4 topics × 6 evals
-1	24	24	100.0%	keep	added 1.2 类比句长硬规则 + 禁括号补充原词 + 2 个失败示范
+0	22	24	91.7%	baseline	R1 baseline — 4 原主题 (Kafka/拖延症/OKR/WebSocket) × 6 evals
+1	24	24	100.0%	keep	R1 E1 — added 1.2 类比句长硬规则 (overfit 100% 见 reflection)
+2	25	28	89.3%	baseline	R2 baseline — 4 跨领域新主题 (TCP/斯多葛/复利/工业革命) × 7 evals
+3	27	28	96.4%	keep	R2 E1 — M1: 1.2 多步/对比/并列禁堆一句 (+7.1pp on cross-domain test)
