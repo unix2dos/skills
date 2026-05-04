@@ -1,6 +1,6 @@
 ---
 name: learn-map
-version: 4
+version: 4.1
 description: Use when user explicitly requests systematic learning of a topic via "学习"、"讲解"、"teach me"、"@learn-map" for any technical, humanities, science, or business topic. Do NOT auto-trigger on casual questions, brief explanations, or general "how does X work" inquiries.
 ---
 
@@ -121,6 +121,7 @@ description: Use when user explicitly requests systematic learning of a topic vi
 | 第 4 步答案块没"经验法则"句 | 加上 |
 | 第 5 步还在用小张/老李 | 切换到"你" |
 | 类比中途换了 | 全文一个比喻，重写 |
+| 第 4/5 步答案区没**显式**出现类比关键词（隐含/延伸不算） | 加 1 句把类比关键词写进答案 |
 | 出图但没过 4 条触发门槛 | 删图，改用表格 |
 | 文档里出现"自检通过"等元注释 | 全删 |
 
@@ -139,7 +140,7 @@ description: Use when user explicitly requests systematic learning of a topic vi
 □ 第 4 步：300-500 字
 □ 第 5 步：300-500 字
 □ 主体总量 ≤ 2600 字
-□ 类比在第 3/4/5 步各复用 ≥1 次
+□ 类比关键词在第 3/4/5 步答案区各**显式**出现 ≥1 次（隐含/延伸不算，必须 grep 得到）
 □ Worked example 过 4 条筛选（典型/决策/可压缩/真实）
 □ 不需要的附录完全没出现
 ```
