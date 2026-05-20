@@ -1,0 +1,15 @@
+id	source_blog	raw_style	expected_primary_cluster	expected_title	should_merge	must_not_recommend_as_main
+logs-incident-notes	自建日志搜索：为什么我们没用 CloudWatch Logs Insights	排障日志	固定成本的近期历史日志搜索链路	固定成本搜日志：从 CloudWatch 到 ripgrep	Firehose/S3/EC2/rg 是同一条最小链路	Firehose 双层 gzip;SSM 入口;不用 Lambda;成本模型
+logs-chat	自建日志搜索：为什么我们没用 CloudWatch Logs Insights	聊天记录	低成本历史日志搜索的最小系统	低成本历史日志搜索：从 CloudWatch 到 ripgrep	成本、延迟、文件格式和搜索入口共同回答同一问题	CloudWatch Logs Insights 费用;S3 lifecycle;cdlogs
+gitea-incident-notes	升级 Gitea 之后的半天踩坑	排障日志	Gitea Actions 按 job 拉起 ephemeral runner 的调度模型	按 Job 拉起 Runner：Gitea Actions 的 workflow_job 模型	workflow_job queued、ephemeral、Fargate task 和清理是同一生命周期	offline runner 清理脚本;act_runner 版本;升级踩坑复盘
+gitea-chat	升级 Gitea 之后的半天踩坑	聊天记录	一次性 runner 的事件语义和生命周期	一次性 Runner 怎么跑：Gitea Actions 的 workflow_job 模型	push/workflow_job/ephemeral 不能拆开讲	push fallback;webhook 勾选;API path
+postman-notes	用 OpenAPI 驱动 Postman Native Git	代码阅读笔记	用 OpenAPI 把 Postman 变成可生成资产	让 Postman 跟着 OpenAPI 走：从契约生成到 Native Git	OpenAPI、converter、postprocess、sync 共同构成生成链路	Bearer Auth 注入;删除 examples;Local View
+postman-chat	用 OpenAPI 驱动 Postman Native Git	聊天记录	接口调试资产的单一源头生成链路	把 Postman 变成生成物：用 OpenAPI 驱动 Native Git	本地生成和云端同步是同一边界设计	Postman UI 教程;openapi-to-postmanv2 参数;登录 token 脚本
+terraform-notes	把 Terraform 当库用：Embedded IaC 的工程内幕	代码阅读笔记	平台化 Terraform 的 Embedded IaC 模型	把 Terraform 收进平台：从 YAML 到 apply	embed、解压、模板、子进程、state 引用是同一执行模型	ALB priority;ACM 两阶段;Secret 立即删除
+terraform-chat	把 Terraform 当库用：Embedded IaC 的工程内幕	聊天记录	把 Terraform 作为平台内部执行引擎	把 Terraform 收进平台：从 YAML 到 apply	模块版本、输入生成、执行时机和日志都由平台接管	terraform_remote_state 单点;prevent_destroy;CodeBuild prereqs
+database-notes	一行 YAML 的旅行：从 db postgresql 到 DATABASE_URL	排障日志	数据库凭证从平台资源进入容器环境变量的链路	从 YAML 到环境变量：数据库凭证如何进入容器	db create、tfstate、Secret、ECS secrets、IAM role 是一条链路	db: postgresql 误会;recovery_window;publicly_accessible
+database-chat	一行 YAML 的旅行：从 db postgresql 到 DATABASE_URL	聊天记录	配置声明到容器启动前 Secret 注入链路	数据库凭证怎样进容器：从 RDS 到 DATABASE_URL	配置、资源创建、部署反查和容器注入不能拆开	Task role vs execution role 单篇;ECR tag;ECS completed 观察
+partition-notes	DATABASE_PARTITIONING_GUIDE	设计草稿	数据增长时如何选择分区、分表、分库分表	数据增长后怎么拆表：分区、分表和分库分表的选择	分区/分表/分库分表共同构成选择模型	GenLab 部署清单;MongoDB 是否绕开;物理分区
+partition-chat	DATABASE_PARTITIONING_GUIDE	聊天记录	PostgreSQL 分区、分表、分库分表的决策模型	数据变大后怎么拆：分区、分表和分库分表	概念区别、适用信号、反例和案例应合并	EnsurePartitions;Runway env 名;MongoDB sharding
+cli-notes	Runway CLI 工程化踩坑笔记	乱序 bullet	内部 CLI 的服务端边界设计	把边界放到服务端：内部 CLI 的工程化设计	DB tunnel、ECS 观察、冷静期、pgweb 都回答可信边界放哪里	WebSocket 不能 io.Copy;TCP_NODELAY;pgweb readiness
+cli-chat	Runway CLI 工程化踩坑笔记	聊天记录	内部平台工具的可信边界设计	把边界放到服务端：内部 CLI 的工程化设计	网络、安全、成功判断、反代范围都应收敛到同一主题	DB tunnel 单篇;ECS completed 单篇;pgweb 管理单篇

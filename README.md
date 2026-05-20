@@ -22,6 +22,7 @@ A curated collection of AI agent skills that extend agent capabilities for code 
 | 名称 | 描述 | 主要特性 | 适用范围 |
 |------|------|----------|----------|
 | ✍️ [technical-content-optimizer](./technical-content-optimizer/SKILL.md) | 技术博客润色，去除 AI 味，提升专业性 | 逻辑审查、语调转换、结构重组、去 AI 化 | 中文 |
+| 🧠 [blog-knowledge-extraction](./blog-knowledge-extraction/SKILL.md) | 从笔记、排障记录、设计总结中提取中文技术博客选题 | 上位知识簇、两阶段写作、autoresearch 验证 | 中文 |
 | 📊 [mermaid-generator](./mermaid-generator/SKILL.md) | 智能图表生成，自动选择最佳类型 | 智能类型选择、语法安全、鲜艳配色、15+ 图表类型 | 通用 |
 | ⚖️ [value-judge](./value-judge/SKILL.md) | 多维度价值评估，对书籍/项目/文章打分 | 类型识别、维度评分、结构化报告、推荐指数 | 通用 |
 

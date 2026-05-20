@@ -1,0 +1,34 @@
+{
+  "skill_name": "blog-knowledge-extraction",
+  "status": "complete",
+  "current_experiment": 1,
+  "baseline_score": 98.0,
+  "best_score": 100.0,
+  "experiments": [
+    {
+      "id": 0,
+      "score": 48,
+      "max_score": 49,
+      "pass_rate": 98.0,
+      "status": "baseline",
+      "description": "original skill; one run per source article across 7 blog materials"
+    },
+    {
+      "id": 1,
+      "score": 49,
+      "max_score": 49,
+      "pass_rate": 100.0,
+      "status": "keep",
+      "description": "constrain Stage One advice labels to the fixed label set"
+    }
+  ],
+  "eval_breakdown": [
+    {"name": "Accept Finished Article As Source", "pass_count": 14, "total": 14},
+    {"name": "Stop At Stage One", "pass_count": 14, "total": 14},
+    {"name": "Higher-Level Cluster Merging", "pass_count": 14, "total": 14},
+    {"name": "Transferable Reframing", "pass_count": 14, "total": 14},
+    {"name": "Complete Stage One Contract", "pass_count": 14, "total": 14},
+    {"name": "Not-Recommended Material", "pass_count": 14, "total": 14},
+    {"name": "Advice Label Consistency", "pass_count": 13, "total": 14}
+  ]
+}

@@ -1,0 +1,15 @@
+id	no_question	stage_one_only	cluster_match	merge_match	avoid_bad_main	label_consistency	contract_complete	score	max	notes
+logs-incident-notes	1	1	1	1	1	1	1	7	7	Primary cluster aligned; title wording uses Firehose/S3/ripgrep but still frames the system.
+logs-chat	1	1	1	1	1	1	1	7	7	Primary cluster aligned; title is slightly more local but recommendation keeps transferable cost-boundary model.
+gitea-incident-notes	1	1	1	1	1	1	1	7	7	Strong match to workflow_job queued / ephemeral runner lifecycle.
+gitea-chat	1	1	1	1	1	1	1	7	7	Strong match to event semantics and runner lifecycle.
+postman-notes	1	1	1	1	1	1	1	7	7	Strong match to OpenAPI-derived debugging assets.
+postman-chat	1	1	1	1	1	1	1	7	7	Strong match to single-source Postman generation.
+terraform-notes	1	1	1	1	1	1	1	7	7	Strong match to Embedded IaC platform model.
+terraform-chat	1	1	1	1	1	1	1	7	7	Strong match; wording is platform封装 Terraform 执行链路 rather than exact oracle phrase.
+database-notes	1	1	1	1	1	1	1	7	7	Primary title emphasizes ECS Secret but cluster covers full database-to-env chain.
+database-chat	1	1	1	1	1	1	1	7	7	Strong match to resource creation -> Secret -> ECS injection.
+partition-notes	1	1	1	1	1	1	1	7	7	Strong match to partition/table/sharding decision model.
+partition-chat	1	1	1	1	1	1	1	7	7	Strong match to layered large-table strategy.
+cli-notes	1	1	1	1	1	1	1	7	7	Strong match to service-side boundary design.
+cli-chat	1	1	1	1	1	1	1	7	7	Strong match to service-side boundary design.
