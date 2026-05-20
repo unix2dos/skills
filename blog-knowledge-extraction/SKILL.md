@@ -1,6 +1,6 @@
 ---
 name: blog-knowledge-extraction
-description: Use when converting notes, debugging records, design summaries, code snippets, or rough drafts into a Chinese technical blog. Trigger for 博客知识提取, 技术博客选题, 从笔记写博客, 提炼技术文章, 上位知识簇, 技术文章选题, or when the user wants a Chinese technical blog from source material.
+description: Only invoke when explicitly requested via "@blog-knowledge-extraction" or "博客知识提取". Do NOT auto-trigger. Manual-only skill for turning notes, debugging records, design summaries, code snippets, or rough drafts into a Chinese technical blog.
 ---
 
 # 博客知识提取
