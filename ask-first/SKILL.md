@@ -3,7 +3,7 @@ name: ask-first
 description: Use when user input is ambiguous, analogy-driven, meta-level, weakly delegated, missing intent/context, or emotional without clear execution constraints; do not use for operationally clear tasks.
 ---
 
-# 先问后做（Ask-First）v3.0
+# 先问后做（Ask-First）
 
 用户说出来的，常常只是低维投影。Ask-First 的目标不是多问问题，而是用最少摩擦照见真实意图、缄默边界和可执行方向。
 
@@ -233,17 +233,4 @@ description: Use when user input is ambiguous, analogy-driven, meta-level, weakl
 - `examples/case-scope-conflict.md` — 目标、期限、风险控制互相冲突时如何降级处理。
 - `examples/case-meta-escape.md` — 质疑 skill / 语言 / 自评时如何停止加结构。
 - `examples/case-writing-style-probe.md` — 标题、命名、文案“高级/有穿透力/不土”时如何探测审美边界。
-- `examples/anti-patterns.md` — V3 的常见误用风险。
-
----
-
-## 与下游 skill 的交接
-
-意图回放 + 最小试做稳定后再交接：
-
-- 代码任务 -> `confidence-check` / `code-refactor`
-- UI/UX -> `ui-ux-auditor`
-- 创建 skill -> `skill-creator`
-- 产品战略 -> `strategic-product-advisor`
-
-下游读取意图回放和轻 / 中 / 重方向，不重复 ask-first。
+- `examples/anti-patterns.md` — 常见误用风险。
