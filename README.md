@@ -2,6 +2,17 @@
 
 A curated collection of AI agent skills that extend agent capabilities for code quality, content creation, knowledge exploration, and daily productivity. Each skill is a self-contained module with standardized metadata and instructions, ready to be invoked via the `skill` tool.
 
+## 安装
+
+通过 [skills-manager](https://github.com/unix2dos/dotfiles/tree/main/skills-manager) 一键安装到 Claude Code、Codex、Cursor 等 AI 工具。本仓库是其首要 skill 来源。
+
+```bash
+git clone https://github.com/unix2dos/dotfiles.git ~/workspace/dotfiles
+bash ~/workspace/dotfiles/skills-manager/install.sh
+```
+
+配置与详细说明见 [skills-manager README](https://github.com/unix2dos/dotfiles/tree/main/skills-manager)。
+
 ## Available Skills
 
 ### 🛠️ 技术类
