@@ -112,9 +112,9 @@ description: "Only invoke when explicitly requested via \"@feynman-read\"、\"�
 
 这个 skill 是**完全独立的**，不依赖也不自动串联其他 skill：
 
-- `learn-map`：负责搜资料、建学习地图 → 是写作的上游
-- `blog-knowledge-extraction`：负责把笔记转成 blog → 是内容生产
-- `technical-content-optimizer`：负责润色 blog → 是写作的下游
+- `learn-topic`：负责搜资料、系统化讲解主题 → 是写作的上游
+- `notes-to-blog`：负责把笔记转成 blog → 是内容生产
+- `blog-refine`：负责润色 blog → 是写作的下游
 - `feynman-write`：负责从零学一个主题并写成博客 → 是学习型写作
 - **`feynman-read`：负责逼你理解已有文章 → 可以在任何环节独立触发**
 

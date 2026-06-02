@@ -140,16 +140,16 @@ description: "Only invoke when explicitly requested via \"@feynman-write\"、\"�
 
 这个 skill 是**独立的一体化流程**，不依赖也不自动串联其他 skill：
 
-- `learn-map`：通用学习工具，产出学习地图 → 适合探索性学习
-- `blog-knowledge-extraction`：把已有笔记/素材整理成博客 → 适合素材整理型写作
-- `technical-content-optimizer`：润色已有博客 → 是写作下游
+- `learn-topic`：通用学习工具，系统化讲解主题 → 适合探索性学习
+- `notes-to-blog`：把已有笔记/素材整理成博客 → 适合素材整理型写作
+- `blog-refine`：润色已有博客 → 是写作下游
 - `feynman-read`：对已有文章追问理解 → 适合"写完了消化"
 - **`feynman-write`：从零学一个主题并写成博客 → 适合"想搞懂再写"**
 
 选择指南：
 - **"我想学 X 并写成博客"** → 用 `feynman-write`
 - **"AI 帮我写完了这篇，我要消化它"** → 用 `feynman-read`
-- **"我有一堆笔记要整理成文"** → 用 `blog-knowledge-extraction`
+- **"我有一堆笔记要整理成文"** → 用 `notes-to-blog`
 
 ## 行为边界
 

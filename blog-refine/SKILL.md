@@ -1,6 +1,6 @@
 ---
-name: technical-content-optimizer
-description: Only invoke when explicitly requested via "润色博客"、"技术博客优化"、"@technical-content-optimizer" or "polish blog". Do NOT auto-trigger.
+name: blog-refine
+description: Only invoke when explicitly requested via "润色博客"、"技术博客优化"、"@blog-refine" or "polish blog". Do NOT auto-trigger.
 ---
 
 # 技术内容优化

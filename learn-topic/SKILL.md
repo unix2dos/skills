@@ -1,10 +1,10 @@
 ---
-name: learn-map
+name: learn-topic
 version: 4.2
-description: Use when user explicitly requests systematic learning of a topic via "学习"、"讲解"、"teach me"、"@learn-map" for any technical, humanities, science, or business topic. Do NOT auto-trigger on casual questions, brief explanations, or general "how does X work" inquiries.
+description: Use when user explicitly requests systematic learning of a topic via "学习"、"讲解"、"teach me"、"@learn-topic" for any technical, humanities, science, or business topic. Do NOT auto-trigger on casual questions, brief explanations, or general "how does X work" inquiries.
 ---
 
-# learn-map v4
+# learn-topic
 
 ## 一句话定位
 
@@ -18,7 +18,7 @@ description: Use when user explicitly requests systematic learning of a topic vi
 
 | 何时读 | 读哪个 |
 |---|---|
-| 第一次用 v4，或写得不顺 | `references/example.md`（沉没成本完整带旁注样例） |
+| 第一次用，或写得不顺 | `references/example.md`（沉没成本完整带旁注样例） |
 | 写每一步前需要详细模板 | `references/templates.md` |
 | 想知道某个规则的"为什么" | `references/methodology.md` |
 | 红旗触发但拿不准要不要修 | `references/self-checks.md` |
@@ -42,7 +42,7 @@ description: Use when user explicitly requests systematic learning of a topic vi
 
 ```
 1. Hook + 终点告知 (120-300 字)
-2. 演示 I-do          (400-700 字)  ← v4 加 30 秒 PF 预测题
+2. 演示 I-do          (400-700 字) 
 3. 拆解               (300-600 字)
 4. 半练 We-do         (300-500 字)
 5. 独挑 You-do + 自检 (300-500 字)
@@ -60,7 +60,7 @@ description: Use when user explicitly requests systematic learning of a topic vi
 
 ### 第 2 步：演示 I-do（400-700 字）
 
-- **⚡ v4 新增**：开头加 30 秒 PF 预测题（"先猜一下：你会选 a/b/c/d？"），激活先验
+- 开头加 30 秒 PF 预测题（"先猜一下：你会选 a/b/c/d？"），激活先验
 - **立单一类比**（按主题类型分流：技术→程序员词汇 / 抽象→幼儿园式 / 通用→生活场景）—— **第 3-5 步必须复用**，禁换比喻
 - **完整 worked example**：让主角逐步求解，每个决策点解释"为什么这步选 X 不选 Y"
 - **Worked example 必过 4 条选取标准**（典型性 / 决策密度 / 可压缩 / 真实性）—— 详见 templates.md
@@ -103,7 +103,7 @@ description: Use when user explicitly requests systematic learning of a topic vi
 
 ## 输出保存
 
-1. **保存目录**：`{cwd}/learn-map_outputs/`
+1. **保存目录**：`{cwd}/learn-topic_outputs/`
 2. **文件命名**：`{YYYY-MM-DD}_{学习主题}.md`
 3. **冲突处理**：追加 `_v2`、`_v3` 后缀
 4. **完成后**：告知用户绝对路径

@@ -32,8 +32,8 @@ bash ~/workspace/dotfiles/skills-manager/install.sh
 
 | 名称 | 描述 | 主要特性 | 适用范围 |
 |------|------|----------|----------|
-| ✍️ [technical-content-optimizer](./technical-content-optimizer/SKILL.md) | 技术博客润色，去除 AI 味，提升专业性 | 逻辑审查、语调转换、结构重组、去 AI 化 | 中文 |
-| 🧠 [blog-knowledge-extraction](./blog-knowledge-extraction/SKILL.md) | 从笔记、排障记录、设计总结中提取中文技术博客选题 | 上位知识簇、两阶段写作、autoresearch 验证 | 中文 |
+| ✍️ [blog-refine](./blog-refine/SKILL.md) | 技术博客润色，去除 AI 味，提升专业性 | 逻辑审查、语调转换、结构重组、去 AI 化 | 中文 |
+| 🧠 [notes-to-blog](./notes-to-blog/SKILL.md) | 从笔记、排障记录、设计总结中提取中文技术博客选题 | 上位知识簇、两阶段写作、autoresearch 验证 | 中文 |
 | 📊 [mermaid-generator](./mermaid-generator/SKILL.md) | 智能图表生成，自动选择最佳类型 | 智能类型选择、语法安全、鲜艳配色、15+ 图表类型 | 通用 |
 | ⚖️ [value-judge](./value-judge/SKILL.md) | 多维度价值评估，对书籍/项目/文章打分 | 类型识别、维度评分、结构化报告、推荐指数 | 通用 |
 | 📖 [feynman-read](./feynman-read/SKILL.md) | 费曼追问消化，逼你用自己的话改写已有文章 | 核心概念识别、小白→面试官追问、自然反思段落、风格保留 | 通用 |
@@ -51,7 +51,7 @@ bash ~/workspace/dotfiles/skills-manager/install.sh
 | 📚 [book-recommender](./book-recommender/SKILL.md) | 每日书籍推荐，非虚构类优先 | 豆瓣高分、金句摘录、阅读建议、防重复 | 通用 |
 | 🏛️ [history-autopsy](./history-autopsy/SKILL.md) | 历史大事件框架速览，形成认知框架 | 热点优先、框架概览、金句速记、查重机制 | 通用 |
 | 🌍 [geo-explorer](./geo-explorer/SKILL.md) | 地缘认知探索器，5分钟读懂一个地方的"地缘人设" | 热点优先、ASCII关系图、地图搜索、查重机制 | 通用 |
-| 📖 [learn-map](./learn-map/SKILL.md) | 系统化学习任何主题，费曼技巧深度讲解 | MECE架构图、5W2H分析、避坑指南、微型实践 | 通用 |
+| 📖 [learn-topic](./learn-topic/SKILL.md) | 系统化学习任何主题，费曼技巧深度讲解 | MECE架构图、5W2H分析、避坑指南、微型实践 | 通用 |
 | 🚀 [project-hunter](./project-hunter/SKILL.md) | AI 时代项目机会发现器，挖掘高潜力赚钱方向 | 多角度搜索、趋势洞察、四维评估、独立开发路线 | 通用 |
 
 ---

@@ -1,4 +1,4 @@
-# learn-map v4 详细模板
+# learn-map 详细模板
 
 每步的"具体怎么写"。SKILL.md 给骨架，本文给落地模板。
 

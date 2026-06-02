@@ -1,6 +1,6 @@
 ---
-name: blog-knowledge-extraction
-description: Only invoke when explicitly requested via "@blog-knowledge-extraction" or "博客知识提取". Do NOT auto-trigger. Manual-only skill for turning notes, debugging records, design summaries, code snippets, or rough drafts into a Chinese technical blog.
+name: notes-to-blog
+description: Only invoke when explicitly requested via "@notes-to-blog"、"博客知识提取"、"笔记整理成博客". Do NOT auto-trigger. Manual-only skill for turning notes, debugging records, design summaries, code snippets, or rough drafts into a Chinese technical blog.
 ---
 
 # 博客知识提取

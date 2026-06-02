@@ -1,4 +1,4 @@
-# learn-map v4 Red Flags 详细解析
+# learn-map Red Flags 详细解析
 
 每个红旗背后的"为什么是错"。SKILL.md 的 Red Flags 表是触发器，本文是当你拿不准时的判断依据。
 
