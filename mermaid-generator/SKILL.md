@@ -1,6 +1,6 @@
 ---
 name: mermaid-generator
-description: Use when the user needs to generate diagrams, flowcharts, sequence diagrams, ER diagrams, or any visual chart in Mermaid format - triggers on "画图"、"图表"、"流程图"、"mermaid"
+description: Only invoke when explicitly requested via "画图"、"图表"、"流程图"、"mermaid"、"@mermaid-generator". Do NOT auto-trigger.
 ---
 
 # Mermaid 图表生成

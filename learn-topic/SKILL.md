@@ -1,7 +1,7 @@
 ---
 name: learn-topic
 version: 4.2
-description: Use when user explicitly requests systematic learning of a topic via "学习"、"讲解"、"teach me"、"@learn-topic" for any technical, humanities, science, or business topic. Do NOT auto-trigger on casual questions, brief explanations, or general "how does X work" inquiries.
+description: Only invoke when explicitly requested via "学习"、"讲解"、"teach me"、"@learn-topic". Do NOT auto-trigger.
 ---
 
 # learn-topic

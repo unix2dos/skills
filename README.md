@@ -30,6 +30,8 @@ bash ~/workspace/dotfiles/skills-manager/install.sh
 
 ### ✨ 创作类
 
+> 💡 以下 skill 均为**手动触发**，需通过 `@skill名` 或指定关键词显式调用，不会自动触发。
+
 | 名称 | 描述 | 主要特性 | 适用范围 |
 |------|------|----------|----------|
 | ✍️ [blog-refine](./blog-refine/SKILL.md) | 技术博客润色，去除 AI 味，提升专业性 | 逻辑审查、语调转换、结构重组、去 AI 化 | 中文 |
@@ -40,6 +42,8 @@ bash ~/workspace/dotfiles/skills-manager/install.sh
 | ✍️ [feynman-write](./feynman-write/SKILL.md) | 费曼写作法，从零学一个主题并写成博客 | AI 研究简报、作者决策大纲、费曼逼问、AI 整合成文 | 中文 |
 
 ### 📚 信息类
+
+> 💡 以下 skill 均为**手动触发**，需通过 `@skill名` 或指定关键词显式调用，不会自动触发。
 
 | 名称 | 描述 | 主要特性 | 适用范围 |
 |------|------|----------|----------|
