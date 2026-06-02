@@ -1,6 +1,6 @@
 ---
-name: feynman
-description: "Only invoke when explicitly requested via \"@feynman\"、\"费曼\"、\"费曼追问\". Do NOT auto-trigger. 费曼学习法追问 skill：读取当前文章，找出核心概念逐一追问你，用你自己的话改写文章内容。追问你之后，把你的理解以自然段落写回文章。"
+name: feynman-read
+description: "Only invoke when explicitly requested via \"@feynman-read\"、\"费曼\"、\"费曼追问\". Do NOT auto-trigger. 费曼学习法追问 skill：读取当前文章，找出核心概念逐一追问你，用你自己的话改写文章内容。追问你之后，把你的理解以自然段落写回文章。"
 ---
 
 <what-to-do>
@@ -115,13 +115,13 @@ description: "Only invoke when explicitly requested via \"@feynman\"、\"费曼\
 - `learn-map`：负责搜资料、建学习地图 → 是写作的上游
 - `blog-knowledge-extraction`：负责把笔记转成 blog → 是内容生产
 - `technical-content-optimizer`：负责润色 blog → 是写作的下游
-- `feynman-writes`：负责从零学一个主题并写成博客 → 是学习型写作
-- **`feynman`：负责逼你理解已有文章 → 可以在任何环节独立触发**
+- `feynman-write`：负责从零学一个主题并写成博客 → 是学习型写作
+- **`feynman-read`：负责逼你理解已有文章 → 可以在任何环节独立触发**
 
 典型组合用法：
-- AI 帮你写完一篇 → `@feynman` 追问消化
-- 过几天想回顾 → `@feynman` 再追问一遍，看看还记得多少
-- 想从零学一个主题 → 用 `@feynman-writes`
+- AI 帮你写完一篇 → `@feynman-read` 追问消化
+- 过几天想回顾 → `@feynman-read` 再追问一遍，看看还记得多少
+- 想从零学一个主题 → 用 `@feynman-write`
 
 ## 行为边界
 

@@ -36,6 +36,8 @@ bash ~/workspace/dotfiles/skills-manager/install.sh
 | 🧠 [blog-knowledge-extraction](./blog-knowledge-extraction/SKILL.md) | 从笔记、排障记录、设计总结中提取中文技术博客选题 | 上位知识簇、两阶段写作、autoresearch 验证 | 中文 |
 | 📊 [mermaid-generator](./mermaid-generator/SKILL.md) | 智能图表生成，自动选择最佳类型 | 智能类型选择、语法安全、鲜艳配色、15+ 图表类型 | 通用 |
 | ⚖️ [value-judge](./value-judge/SKILL.md) | 多维度价值评估，对书籍/项目/文章打分 | 类型识别、维度评分、结构化报告、推荐指数 | 通用 |
+| 📖 [feynman-read](./feynman-read/SKILL.md) | 费曼追问消化，逼你用自己的话改写已有文章 | 核心概念识别、小白→面试官追问、自然反思段落、风格保留 | 通用 |
+| ✍️ [feynman-write](./feynman-write/SKILL.md) | 费曼写作法，从零学一个主题并写成博客 | AI 研究简报、作者决策大纲、费曼逼问、AI 整合成文 | 中文 |
 
 ### 📚 信息类
 

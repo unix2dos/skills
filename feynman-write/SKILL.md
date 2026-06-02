@@ -1,6 +1,6 @@
 ---
-name: feynman-writes
-description: "Only invoke when explicitly requested via \"@feynman-writes\"、\"费曼写作\"、\"用费曼写\". Do NOT auto-trigger. 费曼写作法：通过费曼逼问让作者自己讲清楚知识点，再整合成博客。适用于想真正搞懂一个主题的学习型写作。AI 做研究整理，作者做知识咀嚼。"
+name: feynman-write
+description: "Only invoke when explicitly requested via \"@feynman-write\"、\"费曼写作\"、\"用费曼写\". Do NOT auto-trigger. 费曼写作法：通过费曼逼问让作者自己讲清楚知识点，再整合成博客。适用于想真正搞懂一个主题的学习型写作。AI 做研究整理，作者做知识咀嚼。"
 ---
 
 <what-to-do>
@@ -143,12 +143,12 @@ description: "Only invoke when explicitly requested via \"@feynman-writes\"、\"
 - `learn-map`：通用学习工具，产出学习地图 → 适合探索性学习
 - `blog-knowledge-extraction`：把已有笔记/素材整理成博客 → 适合素材整理型写作
 - `technical-content-optimizer`：润色已有博客 → 是写作下游
-- `feynman`：对已有文章追问理解 → 适合"写完了消化"
-- **`feynman-writes`：从零学一个主题并写成博客 → 适合"想搞懂再写"**
+- `feynman-read`：对已有文章追问理解 → 适合"写完了消化"
+- **`feynman-write`：从零学一个主题并写成博客 → 适合"想搞懂再写"**
 
 选择指南：
-- **"我想学 X 并写成博客"** → 用 `feynman-writes`
-- **"AI 帮我写完了这篇，我要消化它"** → 用 `feynman`
+- **"我想学 X 并写成博客"** → 用 `feynman-write`
+- **"AI 帮我写完了这篇，我要消化它"** → 用 `feynman-read`
 - **"我有一堆笔记要整理成文"** → 用 `blog-knowledge-extraction`
 
 ## 行为边界
