@@ -1,4 +1,4 @@
-# learn-map Red Flags 详细解析
+# learn-topic Red Flags 详细解析
 
 每个红旗背后的"为什么是错"。SKILL.md 的 Red Flags 表是触发器，本文是当你拿不准时的判断依据。
 
@@ -7,7 +7,7 @@
 ## 🚩 第 1 步终点用"理解/掌握"
 
 **为什么是错**：
-"理解 X" 是 Bloom Understand 层级（能解释），"掌握 X" 模糊不清。learn-map v4 的目标是 Bloom **Apply**——能在新场景做事。
+"理解 X" 是 Bloom Understand 层级（能解释），"掌握 X" 模糊不清。learn-topic v4 的目标是 Bloom **Apply**——能在新场景做事。
 
 **测试**：终点是"能"+ 动作动词（识别/选对/设计/判断），就过；否则就违规。
 
