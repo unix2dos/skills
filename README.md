@@ -35,6 +35,7 @@ bash ~/workspace/dotfiles/skills-manager/install.sh
 | 名称 | 描述 | 主要特性 | 适用范围 |
 |------|------|----------|----------|
 | ✍️ [blog-refine](./blog-refine/SKILL.md) | 技术博客润色，去除 AI 味，提升专业性 | 逻辑审查、语调转换、结构重组、去 AI 化 | 中文 |
+| ✂️ [blog-content-editor](./blog-content-editor/SKILL.md) | 完整博客草稿的受控内容编辑 | 两阶段诊断、确认后增删、保留作者语气 | 中文 |
 | 🧠 [notes-to-blog](./notes-to-blog/SKILL.md) | 从笔记、排障记录、设计总结中提取中文技术博客选题 | 上位知识簇、两阶段写作、autoresearch 验证 | 中文 |
 | 📊 [mermaid-generator](./mermaid-generator/SKILL.md) | 智能图表生成，自动选择最佳类型 | 智能类型选择、语法安全、鲜艳配色、15+ 图表类型 | 通用 |
 | ⚖️ [value-judge](./value-judge/SKILL.md) | 多维度价值评估，对书籍/项目/文章打分 | 类型识别、维度评分、结构化报告、推荐指数 | 通用 |

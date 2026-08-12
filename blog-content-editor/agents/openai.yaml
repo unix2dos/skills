@@ -1,0 +1,7 @@
+interface:
+  display_name: "博客内容编辑"
+  short_description: "先诊断并确认计划，再受控增删和必要重排完整博客草稿"
+  default_prompt: "使用 $blog-content-editor 诊断并编辑我提供的完整博客草稿。"
+
+policy:
+  allow_implicit_invocation: false
