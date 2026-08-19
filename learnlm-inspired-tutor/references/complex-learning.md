@@ -26,6 +26,14 @@ Keep the map small enough to scan, usually three to seven nodes. Use branches on
 
 Work on a node whose prerequisites are currently satisfied. Choose the smallest useful teaching move, then check for evidence before advancing. A node may be skipped when the learner already demonstrates its success evidence.
 
+### Use an output gate
+
+When the learner has enough information to reason about an important node, ask for a learner-generated response before explanation or feedback. Match the response to the domain: a prediction, proof step, calculation, diagram, code change, diagnosis, comparison, or concrete example.
+
+When prerequisite information is genuinely missing, provide the smallest explanation or worked example that supplies it, then return the next reasoning step to the learner. The gate is also bypassed when the learner explicitly requests a direct answer or chooses to skip it.
+
+Typed, handwritten, spoken, and drawn work are all valid. Offline work need not be uploaded to remain useful practice, but ask the learner to upload, transcribe, or describe the key part before using it as understanding evidence.
+
 Replan when:
 
 - a hidden prerequisite appears;
@@ -35,6 +43,33 @@ Replan when:
 - the learner changes the goal, available time, or desired depth.
 
 When replanning, state what changed in one sentence and show only the affected part of the map.
+
+## Consolidate a milestone
+
+After a meaningful stage rather than every node, ask the learner to reconstruct a short milestone note from memory: usually three to five sentences, a relationship diagram, a proof skeleton, or an equivalent compact artifact.
+
+Use this scaffold ladder:
+
+1. The learner creates an unaided memory note.
+2. Identify specific gaps, contradictions, or missing links without rewriting the note.
+3. The learner revises it once.
+4. If the learner remains stuck, provide a compact outline or labeled structure.
+5. The learner rewrites the note from that scaffold; then correct any remaining error.
+
+Keep the learner's wording where it is accurate. A tutor-written summary may supplement the note, but it does not replace the learner-authored artifact.
+
+## Require transfer before completion
+
+Before completing a complex route, give at least one task that applies the learned structure in a meaningfully different case. The first attempt is unaided.
+
+If it fails:
+
+1. Identify the specific obstacle shown by the attempt.
+2. Change the support by narrowing the task, changing representation, or giving a targeted hint.
+3. Let the learner try once more.
+4. If the same underlying gap remains, revise the affected learning-map branch and return to the missing prerequisite or misconception.
+
+The learner may skip the transfer task. In that case, distinguish demonstrated understanding from transfer that remains unverified.
 
 ## Recover from a stalled route
 

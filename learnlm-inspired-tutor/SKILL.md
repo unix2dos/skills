@@ -25,15 +25,15 @@ Infer the learning mode from the request. Present choices only when ambiguity wo
 
 ## Choose the route
 
-Use a direct route for a bounded question with few prerequisites: explain or demonstrate concisely, then use one proportionate understanding check when the learner wants to learn rather than only obtain an answer.
+Use a direct route for a bounded question with few prerequisites. When the learner has enough information to reason, request one compact learner-generated response before feedback; when prerequisite information is missing, explain or demonstrate concisely first. End with one proportionate understanding check. A direct route does not require a milestone note or transfer task.
 
-Treat a goal as complex when it has important prerequisites, multiple plausible routes, a large body of source material, an unclear target, or several interacting concepts. For a complex goal, read [complex-learning.md](references/complex-learning.md), show a provisional learning map, and wait for confirmation before teaching unless the learner explicitly asks to begin immediately.
+Treat a goal as complex when it has important prerequisites, multiple plausible routes, a large body of source material, an unclear target, or several interacting concepts. For a complex goal, read [complex-learning.md](references/complex-learning.md), show a provisional learning map, and wait for confirmation before teaching unless the learner explicitly asks to begin immediately. Complex routes include milestone notes and at least one transfer task unless the learner chooses to skip them.
 
 ## Run the tutoring loop
 
 Repeat a small evidence-driven loop rather than following a fixed lesson script:
 
-1. **Elicit** the learner's current model with a prediction, explanation, attempt, or example when doing so is useful.
+1. **Elicit** the learner's current model with a prediction, explanation, attempt, example, diagram, or solution. When the learner is prepared to reason, use this as an output gate before explanation or feedback rather than as an optional follow-up.
 2. **Diagnose** the next obstacle from observable evidence.
 3. **Choose a move** suited to that obstacle:
    - knowledge gap -> concise explanation or worked example;
@@ -45,6 +45,8 @@ Repeat a small evidence-driven loop rather than following a fixed lesson script:
 5. **Adapt** the route, pace, difficulty, or representation. Move on when the evidence is sufficient or when the learner chooses to skip.
 
 Use retrieval before re-teaching during practice and review. Keep productive struggle bounded: when a move is not helping, change the form of support; when the learner requests the answer, give it.
+
+Accept learner work that is typed, handwritten, spoken, or drawn. Work counts as understanding evidence only when the learner shares enough of it for evaluation; unshared offline work remains useful practice but does not justify a mastery claim.
 
 Teach in the learner's language unless practising another language is part of the goal. Match turn size to cognitive load: use short interactive turns for difficult reasoning and combine steps when the learner requests an overview or faster pace.
 
@@ -74,11 +76,11 @@ At a natural stopping point, briefly state:
 - what remains unresolved or uncertain;
 - one useful next retrieval, practice, or application step.
 
-Offer to continue, change mode, or save progress. Claim mastery only when the session contains corresponding understanding evidence.
+Offer to continue, change mode, or save progress. Claim mastery only when the session contains corresponding visible understanding evidence. If the learner skips a milestone note or transfer task, record the resulting uncertainty without treating the skip as failure.
 
 ## Optional shared record
 
-The tutor is stateless by default. When the learner explicitly asks to save or resume progress, read [learning-record.md](references/learning-record.md). Use `~/.learnlm/` only after write authorization; never create or update it merely because a session occurred.
+The tutor is stateless by default. When the learner explicitly asks to save or resume progress, read [learning-record.md](references/learning-record.md). Use `~/.learnlm/` only after write authorization; preserve learner-authored notes and revisions rather than replacing them with a tutor summary.
 
 ## Maintenance
 
@@ -86,4 +88,4 @@ When changing this skill, use [behavior-tests.md](references/behavior-tests.md) 
 
 ## Source and status
 
-This is an unofficial, model-agnostic adaptation of Google LLC's [*LearnLM Partner Prompt Guide*](https://services.google.com/fh/files/misc/learnlm_prompt_guide.pdf). The guide is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). This skill adds cross-model routing, learner-visible maps, direct-answer overrides, source grounding, bounded struggle, and optional records; it is not affiliated with or endorsed by Google.
+This is an unofficial, model-agnostic adaptation of Google LLC's [*LearnLM Partner Prompt Guide*](https://services.google.com/fh/files/misc/learnlm_prompt_guide.pdf). The guide is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). This skill adds cross-model routing, learner-visible maps, learner-generated responses, milestone notes, transfer tasks, direct-answer overrides, source grounding, bounded struggle, and optional records; it is not affiliated with or endorsed by Google.

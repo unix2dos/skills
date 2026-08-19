@@ -6,7 +6,7 @@ Read this reference only when the learner explicitly asks to save, inspect, or r
 
 Use `~/.learnlm/` as the shared local directory across agents. Before the first write, resolve and show the exact path and summarize what will be stored. The learner's request to “save progress” authorizes the described write; ask again if the target or stored content materially changes.
 
-Ordinary tutor sessions remain stateless. Store compact learning evidence rather than raw conversation, and omit sensitive personal data, secrets, private source text, and unrelated activity.
+Ordinary tutor sessions remain stateless. Store compact learning evidence and learner-authorized notes rather than raw conversation, and omit sensitive personal data, secrets, private source text, and unrelated activity.
 
 ## Files
 
@@ -34,6 +34,12 @@ Updated: <ISO date>
 ## Demonstrated understanding
 - <Capability and the evidence observed>
 
+## Learner-authored notes
+### <Milestone>
+- Unaided: <learner's original wording or artifact reference>
+- Revised: <learner's revised wording or artifact reference>
+- Scaffold: <none, or the outline used after the learner remained stuck>
+
 ## Open gaps
 - <Specific unresolved misconception, prerequisite, or uncertainty>
 
@@ -47,7 +53,7 @@ Updated: <ISO date>
 - <Date>: <brief change since the previous session>
 ```
 
-Use evidence descriptions rather than numeric mastery scores. This first version does not calculate FSRS intervals, schedule notifications, or maintain a dashboard.
+Preserve the learner's wording except for formatting and clearly accepted corrections; place tutor additions outside the learner-authored note. Use evidence descriptions rather than numeric mastery scores. This version does not calculate FSRS intervals, schedule notifications, or maintain a dashboard.
 
 ## Resume
 
