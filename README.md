@@ -58,6 +58,7 @@ bash ~/workspace/dotfiles/skills-manager/install.sh
 | 🏛️ [history-autopsy](./history-autopsy/SKILL.md) | 历史大事件框架速览，形成认知框架 | 热点优先、框架概览、金句速记、查重机制 | 通用 |
 | 🌍 [geo-explorer](./geo-explorer/SKILL.md) | 地缘认知探索器，5分钟读懂一个地方的"地缘人设" | 热点优先、ASCII关系图、地图搜索、查重机制 | 通用 |
 | 📖 [learn-topic](./learn-topic/SKILL.md) | 系统化学习任何主题，费曼技巧深度讲解 | MECE架构图、5W2H分析、避坑指南、微型实践 | 通用 |
+| 🎓 [learnlm-inspired-tutor](./learnlm-inspired-tutor/SKILL.md) | 模型无关的 LearnLM 启发式导师，仅显式调用 | 复杂问题学习地图、自适应教学循环、资料优先、可选学习记录 | 通用 |
 | 🚀 [project-hunter](./project-hunter/SKILL.md) | AI 时代项目机会发现器，挖掘高潜力赚钱方向 | 多角度搜索、趋势洞察、四维评估、独立开发路线 | 通用 |
 
 ---

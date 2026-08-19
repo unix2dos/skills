@@ -1,0 +1,6 @@
+interface:
+  display_name: "LearnLM-Inspired Tutor"
+  short_description: "Adaptive, model-agnostic tutoring grounded in LearnLM"
+  default_prompt: "Use $learnlm-inspired-tutor to help me learn this topic through an adaptive, evidence-based dialogue."
+policy:
+  allow_implicit_invocation: false
