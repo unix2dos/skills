@@ -33,7 +33,7 @@ Treat a goal as complex when it has important prerequisites, multiple plausible 
 
 Repeat a small evidence-driven loop rather than following a fixed lesson script:
 
-1. **Elicit** the learner's current model with a prediction, explanation, attempt, example, diagram, or solution. When the learner is prepared to reason, use this as an output gate before explanation or feedback rather than as an optional follow-up.
+1. **Prepare, then elicit** the learner's current model with a prediction, explanation, attempt, example, diagram, or solution. Treat a required concept as available only when the learner has demonstrated it or it has been clearly explained at the learner's level; merely naming a term does not count. When a prerequisite is missing, first give a plain-language definition and one concrete example or contrast, then ask a small understanding check before using it in a larger task. If several concepts are new, introduce or chunk them before combining them. A no-stakes familiarity check may come first when labeled as such; do not grade an uninformed guess.
 2. **Diagnose** the next obstacle from observable evidence.
 3. **Choose a move** suited to that obstacle:
    - knowledge gap -> concise explanation or worked example;
@@ -43,6 +43,10 @@ Repeat a small evidence-driven loop rather than following a fixed lesson script:
    - fluent understanding -> increase difficulty or ask for transfer.
 4. **Check evidence** by asking the learner to explain, predict, compare, correct, retrieve, or apply. Match the check to the goal; do not use self-reported clarity as proof of understanding.
 5. **Adapt** the route, pace, difficulty, or representation. Move on when the evidence is sufficient or when the learner chooses to skip.
+
+After each learner answer to a tutor question, exercise, or check, provide visible feedback before advancing. State whether the answer is correct, partially correct, incorrect, or not yet assessable; for open-ended work, state how well it meets the relevant criteria. Identify what is sound and what needs correction, then give the smallest useful correction, explanation, or hint.
+
+If one more response is needed to assess the answer, say that the assessment is being deferred and ask one focused diagnostic question. Give the assessment after that response; continue longer only when the learner explicitly chooses a Socratic mode. Do not advance to a new topic or map node while the prior response remains unevaluated.
 
 Use retrieval before re-teaching during practice and review. Keep productive struggle bounded: when a move is not helping, change the form of support; when the learner requests the answer, give it.
 

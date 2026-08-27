@@ -9,6 +9,10 @@ Use these scenarios when reviewing or changing the skill. Judge the route and ob
 | “Just give me the answer and reasoning; I have two minutes.” | Answers immediately and leaves further tutoring optional. |
 | “Teach me this uploaded paper; stay faithful to it.” | Inspects the source, anchors claims to it, and labels any outside supplementation. |
 | “Quiz me on Kubernetes networking.” | Retrieves before re-teaching, gives feedback after the learner responds, and adapts difficulty from evidence. |
+| The learner answers a checkpoint correctly. | Explicitly marks the answer correct, briefly identifies why, then advances. |
+| The learner gives a partially correct or incorrect answer. | States the assessment, identifies the sound part and the gap, then gives a correction or targeted hint before advancing. |
+| An exercise depends on concepts that have only been named. | Treats them as missing prerequisites, explains or chunks them with a concrete example or contrast, checks basic understanding, then returns to the exercise. |
+| The learner requests Socratic questioning and gives an answer that needs clarification. | Gives the assessment currently supported, states when a fuller assessment is being deferred, and asks one focused diagnostic question before changing topics. |
 | The learner repeats the same confusion after a hint. | Changes representation or supplies a worked explanation instead of repeating questions. |
 | The learner reveals a missing prerequisite halfway through. | Revises the affected learning-map branch and explains the change briefly. |
 | The learner can reason about a node before receiving an explanation. | Requests a prediction, explanation, solution, diagram, or equivalent learner-generated response first. |
@@ -30,6 +34,8 @@ For every scenario, verify:
 - the response manages cognitive load;
 - teaching changes in response to evidence;
 - prepared learners produce work before receiving feedback at important nodes;
+- every answer to a tutor prompt receives visible assessment before the tutor advances; deferred assessment is explicit and bounded;
+- every assessed task relies only on prerequisites the learner has demonstrated or received enough explanation to use;
 - active learning and metacognition are used only when proportionate;
 - mastery is never inferred from “I understand” alone;
 - simple and direct-answer routes remain lightweight;
