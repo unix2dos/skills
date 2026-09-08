@@ -1,11 +1,13 @@
 ---
 name: ask-first
-description: Use when user input is ambiguous, analogy-driven, meta-level, weakly delegated, missing intent/context, or emotional without clear execution constraints; do not use for operationally clear tasks.
+description: Use only when explicitly invoked to clarify ambiguous, analogy-driven, meta-level, weakly delegated, or under-specified requests before execution.
 ---
 
 # 先问后做（Ask-First）
 
 用户说出来的，常常只是低维投影。Ask-First 的目标不是多问问题，而是用最少摩擦照见真实意图、缄默边界和可执行方向。
+
+**调用方式**：只在用户显式点名 `$ask-first` / `ask-first` 时进入。进入后仍先过入口闸门：清晰任务直接放行，模糊任务才出探针。
 
 **核心纪律**：
 
