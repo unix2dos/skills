@@ -19,7 +19,6 @@ bash ~/workspace/dotfiles/skills-manager/install.sh
 
 | 名称 | 描述 | 主要特性 | 适用范围 |
 |------|------|----------|----------|
-| 🧹 [code-simplifier](./code-simplifier/SKILL.md) | 代码简化优化，遵循 YAGNI/KISS/DRY 原则 | 复杂度控制、早返回、冗余消除、多语言支持 | 通用 |
 | 🎯 [confidence-check](./confidence-check/SKILL.md) | 实施前置信度检查，避免无效编码（手动触发） | 重复检测、架构合规、文档验证、根因分析 | 通用 |
 | 🔭 [ask-first](./ask-first/SKILL.md) | 意图对焦器，从模糊输入中挤出显式意图 | 三方向发散、自适应追问、意图回放、参考锚定 | 通用 |
 
@@ -73,7 +72,7 @@ bash ~/workspace/dotfiles/skills-manager/install.sh
 每个 skill 二选一：
 
 - **手动触发**（默认，创作类与信息类全部如此）：frontmatter 设 `disable-model-invocation: true`（Claude Code）和 `triggers: [user]`（Devin），并附 `agents/openai.yaml` 写 `policy.allow_implicit_invocation: false`（Codex）。`description` 写成一句人读的能力描述，不写触发词、不写 "Do NOT auto-trigger"。正文开头必须有标题和一段定位（做什么 / 适用 / 不适用），因为手动触发时模型看不到 description。
-- **模型可触发**：只用于模型必须自己判断使用的 skill（如 `code-simplifier`）。`description` 是永驻上下文的指针，只写触发分支。
+- **模型可触发**：只用于模型必须自己判断使用的 skill。目前仓库内没有此类 skill；代码减法约束由 [ponytail](https://github.com/DietrichGebert/ponytail) 插件在各宿主中常驻提供。`description` 是永驻上下文的指针，只写触发分支。
 
 ## Contributing
 
