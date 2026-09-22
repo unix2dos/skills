@@ -1,6 +1,9 @@
 ---
 name: geo-explorer
-description: Only invoke when explicitly requested via "地缘探索"、"@geo-explorer" or "geo explorer". Do NOT auto-trigger.
+description: 地缘认知探索：选一个国家、区域或地缘专题，用接地气的语言讲清它的地理逻辑和“地缘人设”，热点优先。
+disable-model-invocation: true
+triggers:
+  - user
 ---
 
 # 地缘认知探索器
@@ -43,7 +46,7 @@ description: Only invoke when explicitly requested via "地缘探索"、"@geo-ex
 
 ## 去重与保存
 
-**REQUIRED SUB-SKILL:** Use dedup-history
+**去重**：调用 `dedup-history` skill，读取其 SKILL.md 并按流程执行。
 - 历史文件：`geo_explorer_history.json`
 - 输出目录：`geo_explorer_outputs/`，文件名 `{YYYY-MM-DD}_{主题简写}.md`
 

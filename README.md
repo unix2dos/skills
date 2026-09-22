@@ -62,12 +62,19 @@ bash ~/workspace/dotfiles/skills-manager/install.sh
 └── [executables]     # Optional scripts, tools, or resources
 ```
 
+## 触发方式约定
+
+每个 skill 二选一：
+
+- **手动触发**（默认，创作类与信息类全部如此）：frontmatter 设 `disable-model-invocation: true`（Claude Code）和 `triggers: [user]`（Devin），并附 `agents/openai.yaml` 写 `policy.allow_implicit_invocation: false`（Codex）。`description` 写成一句人读的能力描述，不写触发词、不写 "Do NOT auto-trigger"。正文开头必须有标题和一段定位（做什么 / 适用 / 不适用），因为手动触发时模型看不到 description。
+- **模型可触发**：只用于模型必须自己判断使用的 skill（如 `code-simplifier`、`confidence-check`）或被其他 skill 运行时调用的共享参考（如 `dedup-history`）。`description` 是永驻上下文的指针，只写触发分支。
+
 ## Contributing
 
 Contributions welcome! Please ensure new skills follow these guidelines:
 
 - **Single Purpose** — each skill should do one thing well
-- **Standardized Format** — include `SKILL.md` with proper YAML frontmatter
+- **Standardized Format** — include `SKILL.md` with proper YAML frontmatter, following the 触发方式约定 above
 - **No Secrets** — do not include API keys or credentials
 
 ## License

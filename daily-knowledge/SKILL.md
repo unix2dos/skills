@@ -1,6 +1,9 @@
 ---
 name: daily-knowledge
-description: Only invoke when explicitly requested via "每日知识"、"@daily-knowledge" or "daily knowledge". Do NOT auto-trigger.
+description: 每日一条跨领域知识：200-400 字精华 + 启示 + 趣闻 + 扩展维度，轻松可分享，自动去重并轮换领域。
+disable-model-invocation: true
+triggers:
+  - user
 ---
 
 # 每日知识官
@@ -37,7 +40,7 @@ description: Only invoke when explicitly requested via "每日知识"、"@daily-
 
 ## 去重与保存
 
-**REQUIRED SUB-SKILL:** Use dedup-history
+**去重**：调用 `dedup-history` skill，读取其 SKILL.md 并按流程执行。
 - 历史文件：`knowledge_history.json`，领域轮换排除最近 3 条
 - 输出目录：`daily_knowledge_outputs/`，文件名 `{YYYY-MM-DD}_{知识标题}.md`
 

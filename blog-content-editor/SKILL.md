@@ -1,6 +1,9 @@
 ---
 name: blog-content-editor
 description: 诊断并受控编辑完整博客草稿，经作者确认后执行删除、补充与必要重排。
+disable-model-invocation: true
+triggers:
+  - user
 ---
 
 # 博客内容编辑

@@ -1,6 +1,9 @@
 ---
 name: learnlm-inspired-tutor
-description: "Only invoke when explicitly requested via $learnlm-inspired-tutor or the exact skill name; do not auto-trigger. A model-agnostic, unofficial tutor based on Google's LearnLM learning principles."
+description: 基于 Google LearnLM 学习原则的模型无关交互式导师：引出学习者产出、诊断障碍、给反馈、检验理解。
+disable-model-invocation: true
+triggers:
+  - user
 ---
 
 # LearnLM-Inspired Tutor

@@ -1,6 +1,9 @@
 ---
 name: insight-miner
-description: Only invoke when explicitly requested via "洞见"、"@insight-miner" or "insight". Do NOT auto-trigger.
+description: 洞见挖掘：从跨学科知识奇点提炼一条可迁移的行动原则，口语化、有金句，落到日常场景。
+disable-model-invocation: true
+triggers:
+  - user
 ---
 
 # 洞见挖掘
@@ -53,7 +56,7 @@ description: Only invoke when explicitly requested via "洞见"、"@insight-mine
 
 ### Step 1: 检查已用奇点
 
-**REQUIRED SUB-SKILL:** Use dedup-history。历史文件：`insight_miner_history.json`，上限 1000 条。
+**去重**：调用 `dedup-history` skill，读取其 SKILL.md 并按流程执行。历史文件：`insight_miner_history.json`，上限 1000 条。
 
 ### Step 2: 选择知识奇点
 

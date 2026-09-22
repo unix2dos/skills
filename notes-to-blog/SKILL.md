@@ -1,6 +1,9 @@
 ---
 name: notes-to-blog
-description: Only invoke when explicitly requested via "@notes-to-blog"、"博客知识提取"、"笔记整理成博客". Do NOT auto-trigger. Manual-only skill for turning notes, debugging records, design summaries, code snippets, or rough drafts into a Chinese technical blog.
+description: 把笔记、排障记录、设计总结、代码片段提炼为上位知识簇，确认方向后写成中文技术博客。
+disable-model-invocation: true
+triggers:
+  - user
 ---
 
 # 博客知识提取

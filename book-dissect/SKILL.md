@@ -1,6 +1,9 @@
 ---
 name: book-dissect
-description: Only invoke when explicitly requested via "拆书"、"拆解《书名》"、"@book-dissect" or "dissect book". Do NOT auto-trigger.
+description: 给一个书名，联网核实后产出 80% 逐段深度讲解 + 20% 价值鉴定的拆书报告。
+disable-model-invocation: true
+triggers:
+  - user
 ---
 
 # book-dissect

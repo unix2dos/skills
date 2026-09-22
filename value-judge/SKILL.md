@@ -1,6 +1,9 @@
 ---
 name: value-judge
-description: Only invoke when explicitly requested via "值不值得看"、"评估打分"、"@value-judge" or "evaluate value". Do NOT auto-trigger.
+description: 对书籍、文章、GitHub 项目、视频、论文做多维度价值评分，输出结构化评估报告和推荐指数。
+disable-model-invocation: true
+triggers:
+  - user
 ---
 
 # 价值判断与打分

@@ -1,11 +1,11 @@
 ---
 name: dedup-history
-description: Use when a content-generating skill needs deduplication against history records. Referenced as a sub-skill by skills that produce daily/random content.
+description: Shared dedup procedure for content-generating skills (daily-knowledge, insight-miner, wisdom-decoder, book-recommender, geo-explorer, history-autopsy). Invoke when a running skill says to dedup against its history file.
 ---
 
 # 通用去重流程
 
-多个 Skill 共享的内容去重机制。
+多个 Skill 共享的内容去重机制。本 skill 只含参考流程，不单独对用户触发；由调用方 skill 在运行中调用。
 
 ## 默认约定
 
@@ -15,7 +15,7 @@ description: Use when a content-generating skill needs deduplication against his
 | 上限条数 | 100 | 达到上限时移除最旧一条（FIFO） |
 | 领域轮换排除数 | 3 | 排除最近 N 条的领域 |
 
-调用方只需在自己的 SKILL.md 中声明 `**REQUIRED SUB-SKILL:** Use dedup-history`。如需覆盖默认值，显式声明即可。
+调用方在自己的 SKILL.md 中写明"调用 `dedup-history` skill"，并列出自己的历史文件名；未列出的参数使用上表默认值。
 
 ## 流程
 

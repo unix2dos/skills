@@ -1,6 +1,9 @@
 ---
 name: history-autopsy
-description: Only invoke when explicitly requested via "历史速览"、"@history-autopsy" or "history autopsy". Do NOT auto-trigger.
+description: 历史大事件框架速览：起因→进程→结果→影响，1500-2500 字，热点关联优先，附可脱口而出的金句。
+disable-model-invocation: true
+triggers:
+  - user
 ---
 
 # 历史大事件框架速览
@@ -98,7 +101,7 @@ description: Only invoke when explicitly requested via "历史速览"、"@histor
 
 ## 去重与保存
 
-**REQUIRED SUB-SKILL:** Use dedup-history
+**去重**：调用 `dedup-history` skill，读取其 SKILL.md 并按流程执行。
 - 历史文件：`history_autopsy_log.json`
 - 输出目录：`history_autopsy_outputs/`，文件名 `{YYYY-MM-DD}_{事件名称}.md`
 

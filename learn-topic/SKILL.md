@@ -1,7 +1,9 @@
 ---
 name: learn-topic
-version: 4.2
-description: Only invoke when explicitly requested via "学习"、"讲解"、"teach me"、"@learn-topic". Do NOT auto-trigger.
+description: 系统讲解一个新主题：5 步认知爬升（Hook→演示→拆解→半练→独挑），7-10 分钟读完达到能应用的层级。
+disable-model-invocation: true
+triggers:
+  - user
 ---
 
 # learn-topic

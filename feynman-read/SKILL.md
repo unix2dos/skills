@@ -1,7 +1,17 @@
 ---
 name: feynman-read
-description: "Only invoke when explicitly requested via \"@feynman-read\"、\"费曼\"、\"费曼追问\". Do NOT auto-trigger. 费曼学习法追问 skill：读取当前文章，找出核心概念逐一追问你，用你自己的话改写文章内容。追问你之后，把你的理解以自然段落写回文章。"
+description: 费曼追问：读取一篇文章，找出 3-5 个核心概念逐一追问作者，再把作者的回答以自然段落写回文章。
+disable-model-invocation: true
+triggers:
+  - user
 ---
+
+# 费曼追问（Feynman Read）
+
+对一篇**已经写好的文章**做费曼式消化：找出核心概念，逐个追问作者，让作者用自己的话讲清楚，再把这些话写回文章。目标是学习，不是测验；产出是作者自己的理解，不是 AI 的标准表述。
+
+适用：作者已有草稿或已发布文章，想确认自己真的懂了文中的概念。
+不适用：从零学一个主题并写成文章（用 `feynman-write`）；只想润色语言（用 `blog-refine`）。
 
 <what-to-do>
 

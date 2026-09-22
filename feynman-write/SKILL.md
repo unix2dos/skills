@@ -1,7 +1,17 @@
 ---
 name: feynman-write
-description: "Only invoke when explicitly requested via \"@feynman-write\"、\"费曼写作\"、\"用费曼写\". Do NOT auto-trigger. 费曼写作法：通过费曼逼问让作者自己讲清楚知识点，再整合成博客。适用于想真正搞懂一个主题的学习型写作。AI 做研究整理，作者做知识咀嚼。"
+description: 费曼写作法：AI 做研究简报，作者定大纲，AI 逐点逼问直到作者能用自己的话讲清，再整合成中文博客。
+disable-model-invocation: true
+triggers:
+  - user
 ---
+
+# 费曼写作（Feynman Write）
+
+从零学一个主题并写成中文博客。分工固定：AI 负责搜集整理研究素材和逼问，作者负责决定文章结构和咀嚼知识。四个阶段：AI 研究简报 → 作者定大纲 → 费曼逼问 → AI 整合成文。
+
+适用：作者想通过写作真正搞懂一个陌生主题。
+不适用：对已有文章做概念追问（用 `feynman-read`）；已有笔记或排障记录要提炼成博客（用 `notes-to-blog`）。
 
 <what-to-do>
 

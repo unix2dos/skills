@@ -1,6 +1,9 @@
 ---
 name: wisdom-decoder
-description: Only invoke when explicitly requested via "智慧解码"、"@wisdom-decoder" or "wisdom decoder". Do NOT auto-trigger.
+description: 智慧解码：把一条佛学、哲学或心理学智慧讲透，给出入门→进阶→精通的实践路线和有来源的禁忌洞察。
+disable-model-invocation: true
+triggers:
+  - user
 ---
 
 # 智慧解码器
@@ -30,7 +33,7 @@ description: Only invoke when explicitly requested via "智慧解码"、"@wisdom
 
 ## 去重与保存
 
-**REQUIRED SUB-SKILL:** Use dedup-history
+**去重**：调用 `dedup-history` skill，读取其 SKILL.md 并按流程执行。
 - 历史文件：`wisdom_history.json`，领域轮换排除最近 2 条
 - 输出目录：`wisdom_decoder_outputs/`，文件名 `{YYYY-MM-DD}_{主题}.md`
 

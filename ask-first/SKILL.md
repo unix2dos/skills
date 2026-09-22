@@ -1,6 +1,9 @@
 ---
 name: ask-first
-description: Use only when explicitly invoked to clarify ambiguous, analogy-driven, meta-level, weakly delegated, or under-specified requests before execution.
+description: 意图对焦器：对模糊、类比驱动、弱授权或元层面的请求，先用一招探针逼出真实意图和边界，再落到可执行方向。
+disable-model-invocation: true
+triggers:
+  - user
 ---
 
 # 先问后做（Ask-First）

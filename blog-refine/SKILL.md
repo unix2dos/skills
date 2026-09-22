@@ -1,6 +1,9 @@
 ---
 name: blog-refine
-description: Only invoke when explicitly requested via "润色博客"、"技术博客优化"、"@blog-refine" or "polish blog". Do NOT auto-trigger.
+description: 把中文技术博客草稿提升到一流工程博客水准：逻辑与代码审查、去冗余、去 AI 味、结构重组。
+disable-model-invocation: true
+triggers:
+  - user
 ---
 
 # 技术内容优化

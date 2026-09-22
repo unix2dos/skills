@@ -1,6 +1,9 @@
 ---
 name: book-recommender
-description: Only invoke when explicitly requested via "推荐一本书"、"书籍推荐"、"@book-rec" or "book recommendation". Do NOT auto-trigger.
+description: 推荐一本值得读的非虚构书并给出深度分析：核心论点、金句、怎么读、能学到什么；支持随机或按主题。
+disable-model-invocation: true
+triggers:
+  - user
 ---
 
 # 书籍推荐
@@ -44,7 +47,7 @@ description: Only invoke when explicitly requested via "推荐一本书"、"书�
 
 ### Step 1: 检查已推荐书籍
 
-**REQUIRED SUB-SKILL:** Use dedup-history。历史文件：`book_history.json`，上限 500 条。
+**去重**：调用 `dedup-history` skill，读取其 SKILL.md 并按流程执行。历史文件：`book_history.json`，上限 500 条。
 
 ### Step 2: 选择/确认书籍
 
