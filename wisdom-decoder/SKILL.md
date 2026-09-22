@@ -33,9 +33,13 @@ triggers:
 
 ## 去重与保存
 
-**去重**：调用 `dedup-history` skill，读取其 SKILL.md 并按流程执行。
-- 历史文件：`wisdom_history.json`，领域轮换排除最近 2 条
-- 输出目录：`wisdom_decoder_outputs/`，文件名 `{YYYY-MM-DD}_{主题}.md`
+历史文件 `wisdom_history.json`（与本 SKILL.md 同目录，不存在则初始化为 `[]`），每条 `{"title", "domain", "date": "YYYY-MM-DD"}`，上限 100 条，超出移除最旧一条。
+
+1. 读取历史，排除最近 2 条的领域后再选领域
+2. 候选主题若已在历史中则重选，最多 3 次；仍重复则输出提示"库存丰富但需要补充新内容"
+3. 生成内容后追加记录
+
+输出目录：`wisdom_decoder_outputs/`，文件名 `{YYYY-MM-DD}_{主题}.md`
 
 ## 输出格式（严格遵守）
 

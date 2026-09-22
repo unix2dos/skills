@@ -56,7 +56,7 @@ triggers:
 
 ### Step 1: 检查已用奇点
 
-**去重**：调用 `dedup-history` skill，读取其 SKILL.md 并按流程执行。历史文件：`insight_miner_history.json`，上限 1000 条。
+历史文件 `insight_miner_history.json`（与本 SKILL.md 同目录，不存在则初始化为 `[]`），每条 `{"title", "domain", "date": "YYYY-MM-DD"}`，上限 1000 条，超出移除最旧一条。读取历史；候选奇点若已在历史中则重选，最多 3 次，仍重复则输出提示"库存丰富但需要补充新内容"；生成后追加记录。
 
 ### Step 2: 选择知识奇点
 

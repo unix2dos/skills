@@ -48,21 +48,15 @@ bash ~/workspace/dotfiles/skills-manager/install.sh
 
 ### 🗓️ 低频备用：每日型内容
 
-> 💡 每日一篇的随机内容生成器。能力清楚、可保留，但不是主入口；全部**手动触发**，共用 `dedup-history` 去重。
+> 💡 每日一篇的随机内容生成器。能力清楚、可保留，但不是主入口；全部**手动触发**，各自用同目录下的 `*_history.json` 去重。
 
 | 名称 | 描述 | 主要特性 | 适用范围 |
 |------|------|----------|----------|
 | 📖 [daily-knowledge](./daily-knowledge/SKILL.md) | 每日知识官，轻松好读的跨领域知识分享 | L2-L3语气、查重机制、领域轮换、金句密度 | 通用 |
 | 💡 [insight-miner](./insight-miner/SKILL.md) | 每日洞见挖掘，跨学科思维模型生成 | 知识奇点、底层模型、行动原则、历史统计 | 通用 |
 | 🧘 [wisdom-decoder](./wisdom-decoder/SKILL.md) | 智慧解码器，佛学/哲学/心理学深度解读 | 核心解码、顶尖路线图、禁忌洞察、陌生视角 | 通用 |
-|  [book-recommender](./book-recommender/SKILL.md) | 每日书籍推荐，非虚构类优先 | 豆瓣高分、金句摘录、阅读建议、防重复 | 通用 |
-| � [hotspot-lens](./hotspot-lens/SKILL.md) | 热点透镜：用历史大事件或地缘人设看懂当下新闻 | 热点优先、history/geo 双模式、ASCII 关系图、金句速记、查重机制 | 通用 |
-
-### � 共享参考
-
-| 名称 | 描述 |
-|------|------|
-| [dedup-history](./dedup-history/SKILL.md) | 每日型 skill 共用的去重 / FIFO / 领域轮换流程，由调用方在运行中调用，不单独使用 |
+| 📚 [book-recommender](./book-recommender/SKILL.md) | 每日书籍推荐，非虚构类优先 | 豆瓣高分、金句摘录、阅读建议、防重复 | 通用 |
+| 🔭 [hotspot-lens](./hotspot-lens/SKILL.md) | 热点透镜：用历史大事件或地缘人设看懂当下新闻 | 热点优先、history/geo 双模式、ASCII 关系图、金句速记、查重机制 | 通用 |
 
 ---
 
@@ -79,7 +73,7 @@ bash ~/workspace/dotfiles/skills-manager/install.sh
 每个 skill 二选一：
 
 - **手动触发**（默认，创作类与信息类全部如此）：frontmatter 设 `disable-model-invocation: true`（Claude Code）和 `triggers: [user]`（Devin），并附 `agents/openai.yaml` 写 `policy.allow_implicit_invocation: false`（Codex）。`description` 写成一句人读的能力描述，不写触发词、不写 "Do NOT auto-trigger"。正文开头必须有标题和一段定位（做什么 / 适用 / 不适用），因为手动触发时模型看不到 description。
-- **模型可触发**：只用于模型必须自己判断使用的 skill（如 `code-simplifier`、`confidence-check`）或被其他 skill 运行时调用的共享参考（如 `dedup-history`）。`description` 是永驻上下文的指针，只写触发分支。
+- **模型可触发**：只用于模型必须自己判断使用的 skill（如 `code-simplifier`、`confidence-check`）。`description` 是永驻上下文的指针，只写触发分支。
 
 ## Contributing
 
