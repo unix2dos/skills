@@ -1,6 +1,6 @@
 ---
 name: dedup-history
-description: Shared dedup procedure for content-generating skills (daily-knowledge, insight-miner, wisdom-decoder, book-recommender, geo-explorer, history-autopsy). Invoke when a running skill says to dedup against its history file.
+description: Shared dedup procedure for content-generating skills (daily-knowledge, insight-miner, wisdom-decoder, book-recommender, hotspot-lens). Invoke when a running skill says to dedup against its history file.
 ---
 
 # 通用去重流程

@@ -36,21 +36,33 @@ bash ~/workspace/dotfiles/skills-manager/install.sh
 | 📖 [feynman-read](./feynman-read/SKILL.md) | 费曼追问消化，逼你用自己的话改写已有文章 | 核心概念识别、小白→面试官追问、自然反思段落、风格保留 | 通用 |
 | ✍️ [feynman-write](./feynman-write/SKILL.md) | 费曼写作法，从零学一个主题并写成博客 | AI 研究简报、作者决策大纲、费曼逼问、AI 整合成文 | 中文 |
 
-### 📚 信息类
+### 📚 学习类
 
 > 💡 以下 skill 均为**手动触发**，需通过 `@skill名` 或指定关键词显式调用，不会自动触发。
 
 | 名称 | 描述 | 主要特性 | 适用范围 |
 |------|------|----------|----------|
-| 📖 [daily-knowledge](./daily-knowledge/SKILL.md) | 每日知识官，轻松好读的跨领域知识分享 | L2-L3语气、查重机制、领域轮换、金句密度 | 通用 |
-| 🧘 [wisdom-decoder](./wisdom-decoder/SKILL.md) | 智慧解码器，佛学/哲学/心理学深度解读 | 核心解码、顶尖路线图、禁忌洞察、陌生视角 | 通用 |
-| 💡 [insight-miner](./insight-miner/SKILL.md) | 每日洞见挖掘，跨学科思维模型生成 | 知识奇点、底层模型、行动原则、历史统计 | 通用 |
-| 📚 [book-recommender](./book-recommender/SKILL.md) | 每日书籍推荐，非虚构类优先 | 豆瓣高分、金句摘录、阅读建议、防重复 | 通用 |
+| 📖 [learn-topic](./learn-topic/SKILL.md) | 系统化讲解一个新主题，写成可应用的教学文 | 5 步认知爬升、worked example、半练/独挑、自检 | 通用 |
+| 🎓 [learnlm-inspired-tutor](./learnlm-inspired-tutor/SKILL.md) | 模型无关的 LearnLM 启发式导师，交互式辅导 | 学习地图、学习者主动产出、阶段笔记、迁移实操、资料优先 | 通用 |
 | 📖 [book-dissect](./book-dissect/SKILL.md) | 拆书报告，逐段讲透剧情/论点再给价值鉴定 | 80%深度讲解+20%鉴定、叙事/论说双骨架、联网核实、字数下限防简略 | 中文 |
-| 🏛️ [history-autopsy](./history-autopsy/SKILL.md) | 历史大事件框架速览，形成认知框架 | 热点优先、框架概览、金句速记、查重机制 | 通用 |
-| 🌍 [geo-explorer](./geo-explorer/SKILL.md) | 地缘认知探索器，5分钟读懂一个地方的"地缘人设" | 热点优先、ASCII关系图、地图搜索、查重机制 | 通用 |
-| 📖 [learn-topic](./learn-topic/SKILL.md) | 系统化学习任何主题，费曼技巧深度讲解 | MECE架构图、5W2H分析、避坑指南、微型实践 | 通用 |
-| 🎓 [learnlm-inspired-tutor](./learnlm-inspired-tutor/SKILL.md) | 模型无关的 LearnLM 启发式导师，仅显式调用 | 学习地图、学习者主动产出、阶段笔记、迁移实操、资料优先 | 通用 |
+
+### 🗓️ 低频备用：每日型内容
+
+> 💡 每日一篇的随机内容生成器。能力清楚、可保留，但不是主入口；全部**手动触发**，共用 `dedup-history` 去重。
+
+| 名称 | 描述 | 主要特性 | 适用范围 |
+|------|------|----------|----------|
+| 📖 [daily-knowledge](./daily-knowledge/SKILL.md) | 每日知识官，轻松好读的跨领域知识分享 | L2-L3语气、查重机制、领域轮换、金句密度 | 通用 |
+| 💡 [insight-miner](./insight-miner/SKILL.md) | 每日洞见挖掘，跨学科思维模型生成 | 知识奇点、底层模型、行动原则、历史统计 | 通用 |
+| 🧘 [wisdom-decoder](./wisdom-decoder/SKILL.md) | 智慧解码器，佛学/哲学/心理学深度解读 | 核心解码、顶尖路线图、禁忌洞察、陌生视角 | 通用 |
+|  [book-recommender](./book-recommender/SKILL.md) | 每日书籍推荐，非虚构类优先 | 豆瓣高分、金句摘录、阅读建议、防重复 | 通用 |
+| � [hotspot-lens](./hotspot-lens/SKILL.md) | 热点透镜：用历史大事件或地缘人设看懂当下新闻 | 热点优先、history/geo 双模式、ASCII 关系图、金句速记、查重机制 | 通用 |
+
+### � 共享参考
+
+| 名称 | 描述 |
+|------|------|
+| [dedup-history](./dedup-history/SKILL.md) | 每日型 skill 共用的去重 / FIFO / 领域轮换流程，由调用方在运行中调用，不单独使用 |
 
 ---
 
