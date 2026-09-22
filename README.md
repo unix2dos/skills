@@ -55,7 +55,7 @@ bash ~/workspace/dotfiles/skills-manager/install.sh
 | 💡 [insight-miner](./insight-miner/SKILL.md) | 每日洞见挖掘，跨学科思维模型生成 | 知识奇点、底层模型、行动原则、历史统计 | 通用 |
 | 🧘 [wisdom-decoder](./wisdom-decoder/SKILL.md) | 智慧解码器，佛学/哲学/心理学深度解读 | 核心解码、顶尖路线图、禁忌洞察、陌生视角 | 通用 |
 | 📚 [book-recommender](./book-recommender/SKILL.md) | 每日书籍推荐，非虚构类优先 | 豆瓣高分、金句摘录、阅读建议、防重复 | 通用 |
-| 🔭 [hotspot-lens](./hotspot-lens/SKILL.md) | 热点透镜：用历史大事件或地缘人设看懂当下新闻 | 热点优先、history/geo 双模式、ASCII 关系图、金句速记、查重机制 | 通用 |
+| 🔭 [hotspot-lens](./hotspot-lens/SKILL.md) | 热点透镜：一条新闻，地理透镜 + 历史透镜合写一篇 | 热点配对、ASCII 关系图、两镜合一推演观察点、金句速记、查重机制 | 通用 |
 
 ---
 
