@@ -25,8 +25,6 @@ bash ~/workspace/dotfiles/skills-manager/install.sh
 | 🎯 [confidence-check](./confidence-check/SKILL.md) | 实施前置信度检查，避免无效编码 | 重复检测、架构合规、文档验证、根因分析 | 通用 |
 | 🔭 [ask-first](./ask-first/SKILL.md) | 意图对焦器，从模糊输入中挤出显式意图 | 三方向发散、自适应追问、意图回放、参考锚定 | 通用 |
 | 👑 [strategic-product-advisor](./strategic-product-advisor/SKILL.md) | 顶级战略产品师，深度战略审视与商业化路径 | 五维战略诊断、商业化路线图、PMF评估、竞品分析 | 通用 |
-| 🎨 [ui-ux-auditor](./ui-ux-auditor/SKILL.md) | 顶级 UI/UX 设计审计师，系统性设计审查与体验重构 | 六维设计诊断、视觉层次、留白与呼吸感、一致性审查 | 通用 |
-| 🔬 [autoresearch](./autoresearch/SKILL.md) | 自动化 Skill 优化，基于 Karpathy autoresearch 方法论 | 二元评估、自主实验循环、变异保留/丢弃、实时仪表盘 | 通用 |
 
 ### ✨ 创作类
 
@@ -36,8 +34,7 @@ bash ~/workspace/dotfiles/skills-manager/install.sh
 |------|------|----------|----------|
 | ✍️ [blog-refine](./blog-refine/SKILL.md) | 技术博客润色，去除 AI 味，提升专业性 | 逻辑审查、语调转换、结构重组、去 AI 化 | 中文 |
 | ✂️ [blog-content-editor](./blog-content-editor/SKILL.md) | 完整博客草稿的受控内容编辑 | 两阶段诊断、确认后增删、保留作者语气 | 中文 |
-| 🧠 [notes-to-blog](./notes-to-blog/SKILL.md) | 从笔记、排障记录、设计总结中提取中文技术博客选题 | 上位知识簇、两阶段写作、autoresearch 验证 | 中文 |
-| 📊 [mermaid-generator](./mermaid-generator/SKILL.md) | 智能图表生成，自动选择最佳类型 | 智能类型选择、语法安全、鲜艳配色、15+ 图表类型 | 通用 |
+| 🧠 [notes-to-blog](./notes-to-blog/SKILL.md) | 从笔记、排障记录、设计总结中提取中文技术博客选题 | 上位知识簇、两阶段写作、官方资料核实 | 中文 |
 | ⚖️ [value-judge](./value-judge/SKILL.md) | 多维度价值评估，对书籍/项目/文章打分 | 类型识别、维度评分、结构化报告、推荐指数 | 通用 |
 | 📖 [feynman-read](./feynman-read/SKILL.md) | 费曼追问消化，逼你用自己的话改写已有文章 | 核心概念识别、小白→面试官追问、自然反思段落、风格保留 | 通用 |
 | ✍️ [feynman-write](./feynman-write/SKILL.md) | 费曼写作法，从零学一个主题并写成博客 | AI 研究简报、作者决策大纲、费曼逼问、AI 整合成文 | 中文 |
