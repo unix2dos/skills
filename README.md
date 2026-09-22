@@ -41,7 +41,7 @@ bash ~/workspace/dotfiles/skills-manager/install.sh
 
 | 名称 | 描述 | 主要特性 | 适用范围 |
 |------|------|----------|----------|
-| 📖 [learn-topic](./learn-topic/SKILL.md) | 系统化讲解一个新主题，写成可应用的教学文 | 5 步认知爬升、worked example、半练/独挑、自检 | 通用 |
+| 📖 [teach-me](./teach-me/SKILL.md) | 系统化讲解一个新主题，写成可应用的教学文 | 5 步认知爬升、worked example、半练/独挑、自检 | 通用 |
 | 🎓 [learnlm-inspired-tutor](./learnlm-inspired-tutor/SKILL.md) | 模型无关的 LearnLM 启发式导师，交互式辅导 | 学习地图、学习者主动产出、阶段笔记、迁移实操、资料优先 | 通用 |
 | 📖 [book-dissect](./book-dissect/SKILL.md) | 拆书报告，逐段讲透剧情/论点再给价值鉴定 | 80%深度讲解+20%鉴定、叙事/论说双骨架、联网核实、字数下限防简略 | 中文 |
 

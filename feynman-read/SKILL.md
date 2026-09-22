@@ -122,7 +122,7 @@ triggers:
 
 这个 skill 是**完全独立的**，不依赖也不自动串联其他 skill：
 
-- `learn-topic`：负责搜资料、系统化讲解主题 → 是写作的上游
+- `teach-me`：负责搜资料、系统化讲解主题 → 是写作的上游
 - `notes-to-blog`：负责把笔记转成 blog → 是内容生产
 - `blog-refine`：负责润色 blog → 是写作的下游
 - `feynman-write`：负责从零学一个主题并写成博客 → 是学习型写作

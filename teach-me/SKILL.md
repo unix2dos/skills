@@ -1,12 +1,12 @@
 ---
-name: learn-topic
+name: teach-me
 description: 系统讲解一个新主题：5 步认知爬升（Hook→演示→拆解→半练→独挑），7-10 分钟读完达到能应用的层级。
 disable-model-invocation: true
 triggers:
   - user
 ---
 
-# learn-topic
+# teach-me
 
 ## 一句话定位
 
@@ -105,7 +105,7 @@ triggers:
 
 ## 输出保存
 
-1. **保存目录**：`{cwd}/learn-topic_outputs/`
+1. **保存目录**：`{cwd}/teach-me_outputs/`
 2. **文件命名**：`{YYYY-MM-DD}_{学习主题}.md`
 3. **冲突处理**：追加 `_v2`、`_v3` 后缀
 4. **完成后**：告知用户绝对路径
