@@ -1,6 +1,9 @@
 ---
 name: confidence-check
-description: Use when starting complex tasks like feature development, bug fixes, or code refactoring - runs a pre-implementation confidence check to avoid wasting tokens on wrong directions
+description: 编码前对新功能 / Bug 修复 / 重构做结构化前置检查（重复实现、架构合规、根因、官方文档），给出继续 / 澄清 / 暂停判定。
+disable-model-invocation: true
+triggers:
+  - user
 ---
 
 # 实施前置信度检查
