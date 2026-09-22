@@ -14,8 +14,8 @@ description: Use when code has excessive complexity, deep nesting, unused abstra
 - 需要"减法"：删代码、砍抽象、inline 只用一次的函数
 
 ## When NOT to Use
-- 需要改接口签名、拆模块、引入设计模式 → 用 **code-refactor**
-- 需要审查安全/并发问题 → 用 **go-code-review**
+- 需要改接口签名、拆模块、引入设计模式
+- 需要审查安全/并发问题
 - 代码结构没问题，只是需要扩展新功能 → 直接写代码
 
 ## Core Principles

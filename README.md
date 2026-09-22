@@ -19,8 +19,6 @@ bash ~/workspace/dotfiles/skills-manager/install.sh
 
 | 名称 | 描述 | 主要特性 | 适用范围 |
 |------|------|----------|----------|
-| 🔍 [go-code-review](./go-code-review/SKILL.md) | Go 代码深度审查，聚焦性能、安全、并发、可读性 | 智能范围检测、性能审查、并发安全、安全扫描 | Go |
-| 🔧 [code-refactor](./code-refactor/SKILL.md) | 代码重构专家，遵循 SOLID 原则和企业设计模式 | 行为等价、可维护性、可扩展性、可测试性 | Go |
 | 🧹 [code-simplifier](./code-simplifier/SKILL.md) | 代码简化优化，遵循 YAGNI/KISS/DRY 原则 | 复杂度控制、早返回、冗余消除、多语言支持 | 通用 |
 | 🎯 [confidence-check](./confidence-check/SKILL.md) | 实施前置信度检查，避免无效编码 | 重复检测、架构合规、文档验证、根因分析 | 通用 |
 | 🔭 [ask-first](./ask-first/SKILL.md) | 意图对焦器，从模糊输入中挤出显式意图 | 三方向发散、自适应追问、意图回放、参考锚定 | 通用 |
